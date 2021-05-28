@@ -10,4 +10,4 @@ run:
 `ros2 run tellobot pose_ml_node`
 
 launch file:
-`cd src/tellobot/launch && ros2 launch basic_launch.py`
+`ros2 launch src/tellobot/launch/basic_launch.py`

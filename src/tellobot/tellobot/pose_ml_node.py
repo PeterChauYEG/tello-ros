@@ -15,7 +15,7 @@ class PoseMLNode(Node):
             UInt8MultiArray,
             'video_frames',
             self.listener_callback,
-            10)
+            60)
         self.pose_publisher = self.create_publisher(String, 'pose', 10)
         self.pose_points_publisher = self.create_publisher(Int16MultiArray, 'pose_points', 10)
 
@@ -36,20 +36,16 @@ class PoseMLNode(Node):
         return msg
 
     def listener_callback(self, msg):
-        self.get_logger().info('POSE ML: Receiving video frame')
-
         resized_frame = self.convert_ros_msg_to_frame(msg)
         pose, pose_points = self.pose_ml.detect(resized_frame)
 
         if pose is not None:
             msg = self.convert_pose_to_ros_msg(pose)
             self.pose_publisher.publish(msg)
-            self.get_logger().info('POSE ML: Publishing pose')
 
         if len(pose_points) != 0:
             msg = self.convert_pose_points_to_ros_msg(pose_points)
             self.pose_points_publisher.publish(msg)
-            self.get_logger().info('POSE ML: Publishing pose_points')
 
 def main(args=None):
     rclpy.init(args=args)

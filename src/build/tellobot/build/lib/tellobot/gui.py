@@ -82,14 +82,14 @@ class GUI:
             (self.center_point[0] - CENTER_BOX_HALF_SIZE, self.center_point[1] + CENTER_BOX_HALF_SIZE),
         ]
 
-    def draw_info(self, frame, current_pose = '--', drone_cmd = '--'):
+    def draw_info(self, frame, current_pose = '--', drone_cmd = '--', cam_fps = '--',gui_fps = '--'):
         # DRAW COMMAND
         cv2.putText(
             frame,
             'Detected pose: {0}'.format(current_pose),
             (16, 32),
             cv2.FONT_HERSHEY_PLAIN,
-            1.75,
+            1.25,
             NORMAL_COLOR,
             2)
 
@@ -97,9 +97,26 @@ class GUI:
         cv2.putText(
             frame,
             'Drone CMD: {0}'.format(drone_cmd),
+            (16, 48),
+            cv2.FONT_HERSHEY_PLAIN,
+            1.25,
+            NORMAL_COLOR,
+            2)
+
+        cv2.putText(
+            frame,
+            'CAM FPS: {0}'.format(cam_fps),
             (16, 64),
             cv2.FONT_HERSHEY_PLAIN,
-            1.75,
+            1.25,
+            NORMAL_COLOR,
+            2)
+        cv2.putText(
+            frame,
+            'GUI FPS: {0}'.format(gui_fps),
+            (16, 80),
+            cv2.FONT_HERSHEY_PLAIN,
+            1.25,
             NORMAL_COLOR,
             2)
 
@@ -147,9 +164,9 @@ class GUI:
                 box_line_color,
                 2)
 
-    def update_image(self, frame, points, ai, current_pose, drone_cmd):
+    def update_image(self, frame, points, ai, current_pose, drone_cmd, cam_fps, gui_fps):
         if frame is not None:
             draw_pose(frame, ai, points)
-            self.draw_info(frame, current_pose, drone_cmd)
+            self.draw_info(frame, current_pose, drone_cmd, cam_fps, gui_fps)
             self.draw_box(frame, ai)
             cv2.imshow(WINDOW, frame)
