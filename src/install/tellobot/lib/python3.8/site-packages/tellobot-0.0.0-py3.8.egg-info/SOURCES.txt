@@ -11,6 +11,7 @@ setup.py
 resource/tellobot
 tellobot/__init__.py
 tellobot/ai.py
+tellobot/ai_node.py
 tellobot/camera.py
 tellobot/camera_pub_node.py
 tellobot/gui.py

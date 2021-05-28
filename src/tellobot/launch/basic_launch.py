@@ -31,4 +31,11 @@ def generate_launch_description():
             output='screen',
             arguments=['--ros-args', '--log-level', logger]
         ),
+        Node(
+            package='tellobot',
+            node_executable='ai_node',
+            name='ai_node',
+            output='screen',
+            arguments=['--ros-args', '--log-level', logger]
+        ),
     ])

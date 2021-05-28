@@ -22,7 +22,8 @@ setup(
         'console_scripts': [
             'camera_pub_node = tellobot.camera_pub_node:main',
             'gui_node = tellobot.gui_node:main',
-            'pose_ml_node = tellobot.pose_ml_node:main'
+            'pose_ml_node = tellobot.pose_ml_node:main',
+            'ai_node = tellobot.ai_node:main'
         ],
     },
 )

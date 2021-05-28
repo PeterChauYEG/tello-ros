@@ -1,4 +1,5 @@
 import cv2
+from tellobot.camera import WINDOW_WIDTH, WINDOW_HEIGHT
 
 # +++++++++++++===============================
 WINDOW = "ML SHIT"
@@ -9,12 +10,13 @@ NORMAL_COLOR = (66, 144, 245)
 ACTIVE_COLOR = (0, 0, 245)
 overflow_null = -999
 
-def draw_pose(frame, ai, points):
+
+def draw_pose(frame, current_pose, points):
     pose_line_color = NORMAL_COLOR
 
     # highlight skeleton when there is a pose
-    # if ai.current_pose != '':
-    #     pose_line_color = ACTIVE_COLOR
+    if current_pose != '':
+        pose_line_color = ACTIVE_COLOR
 
     # Draw the detected skeleton points
     if len(points) != 0:
@@ -58,31 +60,25 @@ class GUI:
         self.window_width = None
         self.window_height = None
 
-        self.center_box_points = None
-        self.center_point = None
+        self.center_point = (int(WINDOW_WIDTH / 2), int(WINDOW_HEIGHT / 2))
+        # self.center_point = (320, 240)
+        self.center_box_points = self.get_center_box_points()
 
         cv2.namedWindow(WINDOW)
         cv2.moveWindow(WINDOW, 600, 360)  # do this dynamically
-        cv2.resizeWindow(WINDOW, 600, 500)
+        # cv2.resizeWindow(WINDOW, WINDOW_HEIGHT, WINDOW_WIDTH)
 
-    def set_window_size(self, frame):
-        self.window_width = frame.shape[0]
-        self.window_height = frame.shape[0]
-        cv2.resizeWindow(WINDOW, self.window_width, self.window_height)
-
-    def get_center_box_points(self, frame):
-        w = frame.shape[0]
-        h = frame.shape[1]
-
-        self.center_point = (int(h / 2), int(w / 2))
-        self.center_box_points = [
+    def get_center_box_points(self):
+        return [
             (self.center_point[0] - CENTER_BOX_HALF_SIZE, self.center_point[1] - CENTER_BOX_HALF_SIZE),
             (self.center_point[0] + CENTER_BOX_HALF_SIZE, self.center_point[1] - CENTER_BOX_HALF_SIZE),
             (self.center_point[0] + CENTER_BOX_HALF_SIZE, self.center_point[1] + CENTER_BOX_HALF_SIZE),
             (self.center_point[0] - CENTER_BOX_HALF_SIZE, self.center_point[1] + CENTER_BOX_HALF_SIZE),
         ]
 
-    def draw_info(self, frame, current_pose = '--', drone_cmd = '--', cam_fps = '--',gui_fps = '--'):
+    def draw_info(self, frame, current_pose, drone_cmd, cam_fps, gui_fps):
+        print('%s' % frame.shape[0])
+        print('%s' % frame.shape[1])
         # DRAW COMMAND
         cv2.putText(
             frame,
@@ -120,14 +116,13 @@ class GUI:
             NORMAL_COLOR,
             2)
 
-    def draw_box(self, frame, ai):
+    def draw_box(self, frame, is_pose_in_box):
         box_line_color = NORMAL_COLOR
 
-        # # highlight box
-        # if ai.is_pose_in_box:
-        #     box_line_color = ACTIVE_COLOR
+        # highlight box
+        if is_pose_in_box:
+            box_line_color = ACTIVE_COLOR
 
-        print(self.center_point)
         # DRAW Center
         cv2.circle(
             frame,
@@ -164,9 +159,9 @@ class GUI:
                 box_line_color,
                 2)
 
-    def update_image(self, frame, points, ai, current_pose, drone_cmd, cam_fps, gui_fps):
+    def update_image(self, frame, points, current_pose, drone_cmd, cam_fps, gui_fps, is_pose_in_box):
         if frame is not None:
-            draw_pose(frame, ai, points)
+            draw_pose(frame, current_pose, points)
             self.draw_info(frame, current_pose, drone_cmd, cam_fps, gui_fps)
-            self.draw_box(frame, ai)
+            self.draw_box(frame, is_pose_in_box)
             cv2.imshow(WINDOW, frame)

@@ -1,8 +1,8 @@
 import cv2
 
 VIDEO_CAPTURE_DEVICE = 1
-WINDOW_WIDTH = 600
-WINDOW_HEIGHT = 500
+WINDOW_WIDTH = 640
+WINDOW_HEIGHT = 480
 WINDOW_BRIGHTNESS = 150
 
 
@@ -12,6 +12,7 @@ class Camera:
         self.feed.set(3, WINDOW_WIDTH)
         self.feed.set(4, WINDOW_HEIGHT)
         self.feed.set(10, WINDOW_BRIGHTNESS)
+        self.feed.set(cv2.CAP_PROP_FPS, 10)
 
     def get_frame(self):
         if self.feed.isOpened():

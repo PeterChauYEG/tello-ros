@@ -1,3 +1,5 @@
+from tellobot.gui import WINDOW_WIDTH, WINDOW_HEIGHT
+
 CENTER_BOX_HALF_SIZE = 128
 POSE_CENTERED_SENSITIVITY = 50
 
@@ -13,6 +15,7 @@ class AI:
         self.drone_cmd = ''
         self.find_human_tick = 0
         self.max_find_human_period = 0.5
+        self.center_point = (WINDOW_HEIGHT / 2, WINDOW_WIDTH / 2)
 
     def reset_state(self):
         self.current_pose = ''
@@ -53,8 +56,8 @@ class AI:
     def update_current_pose(self, current_pose):
         self.current_pose = current_pose
 
-    def get_sum_of_distance(self, points, center_point):
-        if center_point is not None and points is not None:
+    def get_sum_of_distance(self, points):
+        if self.center_point is not None and points is not None:
             for point in points:
                 if point is not None:
                     self.distance = {
@@ -62,15 +65,15 @@ class AI:
                         "y": 0
                     }
 
-                    if point[0] < center_point[0] - CENTER_BOX_HALF_SIZE:
-                        self.distance['x'] = self.distance['x'] + (point[0] - (center_point[0] - CENTER_BOX_HALF_SIZE))
-                    elif point[0] > center_point[0] + CENTER_BOX_HALF_SIZE:
-                        self.distance['x'] = self.distance['x'] + (point[0] - (center_point[0] + CENTER_BOX_HALF_SIZE))
+                    if point[0] < self.center_point[0] - CENTER_BOX_HALF_SIZE:
+                        self.distance['x'] = self.distance['x'] + (point[0] - (self.center_point[0] - CENTER_BOX_HALF_SIZE))
+                    elif point[0] > self.center_point[0] + CENTER_BOX_HALF_SIZE:
+                        self.distance['x'] = self.distance['x'] + (point[0] - (self.center_point[0] + CENTER_BOX_HALF_SIZE))
 
-                    if point[1] < center_point[1] - CENTER_BOX_HALF_SIZE:
-                        self.distance['y'] = self.distance['y'] + (point[1] - (center_point[1] - CENTER_BOX_HALF_SIZE))
-                    elif point[1] > center_point[1] + CENTER_BOX_HALF_SIZE:
-                        self.distance['y'] = self.distance['y'] + (point[1] - (center_point[1] + CENTER_BOX_HALF_SIZE))
+                    if point[1] < self.center_point[1] - CENTER_BOX_HALF_SIZE:
+                        self.distance['y'] = self.distance['y'] + (point[1] - (self.center_point[1] - CENTER_BOX_HALF_SIZE))
+                    elif point[1] > self.center_point[1] + CENTER_BOX_HALF_SIZE:
+                        self.distance['y'] = self.distance['y'] + (point[1] - (self.center_point[1] + CENTER_BOX_HALF_SIZE))
 
     def get_is_pose_in_box(self):
         if POSE_CENTERED_SENSITIVITY > self.distance[

@@ -5,15 +5,15 @@ import time
 
 from tellobot.camera import Camera
 
-class VideoPublisher(Node):
+class CamPubNode(Node):
     def __init__(self):
-        super().__init__('video_publisher')
+        super().__init__('cam_pub_node')
 
         self.camera = Camera()
 
         self.publisher_ = self.create_publisher(UInt8MultiArray, 'video_frames', 60)
         self.fps_publisher = self.create_publisher(Float32, 'fps', 10)
-        timer_period = 0.016
+        timer_period = 0.001
         self.timer = self.create_timer(timer_period, self.timer_callback)
         self.frames = 0
         self.fps = 0.00
@@ -55,9 +55,9 @@ class VideoPublisher(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    video_publisher = VideoPublisher()
-    rclpy.spin(video_publisher)
-    video_publisher.destroy_node()
+    cam_pub_node = CamPubNode()
+    rclpy.spin(cam_pub_node)
+    cam_pub_node.destroy_node()
     rclpy.shutdown()
 
 if __name__ == '__main__':
