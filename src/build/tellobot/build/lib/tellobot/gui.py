@@ -57,16 +57,11 @@ def draw_pose(frame, current_pose, points):
 
 class GUI:
     def __init__(self):
-        self.window_width = None
-        self.window_height = None
-
         self.center_point = (int(WINDOW_WIDTH / 2), int(WINDOW_HEIGHT / 2))
-        # self.center_point = (320, 240)
         self.center_box_points = self.get_center_box_points()
 
         cv2.namedWindow(WINDOW)
         cv2.moveWindow(WINDOW, 600, 360)  # do this dynamically
-        # cv2.resizeWindow(WINDOW, WINDOW_HEIGHT, WINDOW_WIDTH)
 
     def get_center_box_points(self):
         return [
@@ -77,8 +72,6 @@ class GUI:
         ]
 
     def draw_info(self, frame, current_pose, drone_cmd, cam_fps, gui_fps):
-        print('%s' % frame.shape[0])
-        print('%s' % frame.shape[1])
         # DRAW COMMAND
         cv2.putText(
             frame,

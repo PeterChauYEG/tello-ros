@@ -1,0 +1,35 @@
+/usr/local/lib/python3.8/site-packages/setuptools/dist.py:642: UserWarning: Usage of dash-separated 'script-dir' will not be supported in future versions. Please use the underscore name 'script_dir' instead
+  warnings.warn(
+/usr/local/lib/python3.8/site-packages/setuptools/dist.py:642: UserWarning: Usage of dash-separated 'install-scripts' will not be supported in future versions. Please use the underscore name 'install_scripts' instead
+  warnings.warn(
+  File "/Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/cvui.py", line 2622
+    __internal.begin(COLUMN, aBlock.where, aBlock.anchor.x, aBlock.anchor.y, aWidth, aHeight, aPadding)"""
+A (very) simple UI lib built on top of OpenCV drawing primitives.
+Version: 2.7
+Use of cvui revolves around calling cvui.init() to initialize the lib,
+rendering cvui components to a np.ndarray (that you handle yourself) and
+finally showing that np.ndarray on the screen using cvui.imshow(), which
+is cvui's version of cv2.imshow(). Alternatively you can use cv2.imshow()
+to show things, but in such case you must call cvui.update() yourself
+before calling cv.imshow().
+E.g.:
+	import numpy as np
+	import cv2
+	import cvui
+	WINDOW_NAME = 'CVUI Hello World!'
+	frame = np.zeros((200, 500, 3), np.uint8)
+	cvui.init(WINDOW_NAME)
+	while (True):
+		# Fill the frame with a nice color
+		frame[:] = (49, 52, 49)
+		cvui.text(frame, x, y, 'Hello world!')
+		cvui.imshow(WINDOW_NAME, frame)
+		if cv2.waitKey(20) == 27:
+			break
+Read the full documentation at https://dovyski.github.io/cvui/
+Copyright (c) 2018 Fernando Bevilacqua <dovyski@gmail.com>
+Licensed under the MIT license.
+"""
+                                                                                                       ^
+SyntaxError: invalid syntax
+

@@ -103,7 +103,6 @@ class GUINode(Node):
 
         cv2.waitKey(1)
 
-
 def main(args=None):
     rclpy.init(args=args)
 
