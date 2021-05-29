@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e6b7c52-96dc-4b8b-9b15-d3eca34e35e1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/camera.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/camera_pub_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/camera_pub_node.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/build/tellobot/colcon_command_prefix_setup_py.sh.env" beforeDir="false" afterPath="$PROJECT_DIR$/src/build/tellobot/colcon_command_prefix_setup_py.sh.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/camera_pub_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/camera_pub_node.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/latest_build" beforeDir="false" afterPath="$PROJECT_DIR$/src/log/latest_build" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/setup.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/camera_pub_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/camera_pub_node.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/gui.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/gui_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/gui_node.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

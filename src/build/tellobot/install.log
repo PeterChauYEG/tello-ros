@@ -1,6 +1,7 @@
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/ai.py
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/ai_node.py
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/__init__.py
+/Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/drone_node.py
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/camera.py
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/gui_node.py
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/gui_buttons.py
@@ -14,6 +15,7 @@
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/__pycache__/ai.cpython-38.pyc
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/__pycache__/ai_node.cpython-38.pyc
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/__pycache__/__init__.cpython-38.pyc
+/Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/__pycache__/drone_node.cpython-38.pyc
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/__pycache__/camera.cpython-38.pyc
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/__pycache__/gui_node.cpython-38.pyc
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/__pycache__/gui_buttons.cpython-38.pyc
@@ -35,6 +37,7 @@
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot-0.0.0-py3.8.egg-info/dependency_links.txt
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/tellobot/ai_node
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/tellobot/camera_pub_node
+/Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/tellobot/drone_node
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/tellobot/gui_buttons_node
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/tellobot/gui_node
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/tellobot/pose_ml_node

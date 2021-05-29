@@ -12,7 +12,7 @@ class CamPubNode(Node):
         self.camera = Camera()
         self.camera.start()
 
-        self.publisher_ = self.create_publisher(UInt8MultiArray, 'video_frames', 100)
+        self.publisher_ = self.create_publisher(UInt8MultiArray, 'video_frames', 1)
         self.fps_publisher = self.create_publisher(Float32, 'fps', 60)
         timer_period = 0.0001
         self.timer = self.create_timer(timer_period, self.timer_callback)
@@ -45,7 +45,7 @@ class CamPubNode(Node):
             self.fps = self.frames / seconds
 
     def timer_callback(self):
-        if self.fps > 10:
+        if self.fps > 60:
             grabbed, frame = self.camera.read_frame()
 
             if grabbed == True and frame is not None:
@@ -54,6 +54,7 @@ class CamPubNode(Node):
 
         self.calculate_fps()
         self.fps_publisher.publish(self.convert_fps_to_ros_msg(self.fps))
+        
 def main(args=None):
     rclpy.init(args=args)
     cam_pub_node = CamPubNode()

@@ -22,6 +22,9 @@ class GUINode(Node):
         self.frames = 0
         self.start_time = 0
         self.end_time = 0
+        self.drone_battery = 0
+        self.drone_height = 0
+        self.drone_speed = 0
 
         self.gui = GUI()
 
@@ -30,6 +33,22 @@ class GUINode(Node):
             'video_frames',
             self.listener_video_frames_callback,
             1)
+
+        self.drone_height_subscription = self.create_subscription(
+            Float32,
+            'drone_height',
+            self.drone_height_callback,
+            10)
+        self.drone_battery_subscription = self.create_subscription(
+            Float32,
+            'drone_battery',
+            self.drone_battery_callback,
+            10)
+        self.drone_speed_subscription = self.create_subscription(
+            Float32,
+            'drone_speed',
+            self.drone_speed_callback,
+            10)
 
         self.fps_subscription = self.create_subscription(
             Float32,
@@ -79,9 +98,21 @@ class GUINode(Node):
             self.gui_fps  = round(self.frames / seconds, 2)
 
     def fps_callback(self, msg):
-        round_fps = round(msg.data, 2)
-        self.cam_fps = round_fps
-        self.calculate_fps()
+            round_fps = round(msg.data, 2)
+            self.cam_fps = round_fps
+            self.calculate_fps()
+
+    def drone_height_callback(self, msg):
+        rounded = round(msg.data, 2)
+        self.drone_height = rounded
+
+    def drone_battery_callback(self, msg):
+        rounded = round(msg.data, 2)
+        self.drone_battery = rounded
+
+    def drone_speed_callback(self, msg):
+        rounded = round(msg.data, 2)
+        self.drone_speed = rounded
 
     def listener_pose_callback(self, msg):
         self.pose = msg.data
@@ -100,7 +131,7 @@ class GUINode(Node):
     def listener_video_frames_callback(self, msg):
         resized_frame = self.convert_ros_msg_to_frame(msg)
 
-        self.gui.update_image(resized_frame, self.pose_points, self.pose, self.drone_cmd, self.cam_fps, self.gui_fps, self.is_pose_in_box)
+        self.gui.update_image(resized_frame, self.pose_points, self.pose, self.drone_cmd, self.cam_fps, self.gui_fps, self.is_pose_in_box, self.drone_speed, self.drone_height, self.drone_battery)
 
         cv2.waitKey(1)
 

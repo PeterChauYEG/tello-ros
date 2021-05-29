@@ -24,7 +24,8 @@ setup(
             'gui_node = tellobot.gui_node:main',
             'pose_ml_node = tellobot.pose_ml_node:main',
             'ai_node = tellobot.ai_node:main',
-            'gui_buttons_node = tellobot.gui_buttons_node:main'
+            'gui_buttons_node = tellobot.gui_buttons_node:main',
+            'drone_node = tellobot.drone_node:main'
         ],
     },
 )
