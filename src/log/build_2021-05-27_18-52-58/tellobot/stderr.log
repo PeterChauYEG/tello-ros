@@ -1,8 +1,0 @@
-/usr/local/lib/python3.8/site-packages/setuptools/dist.py:642: UserWarning: Usage of dash-separated 'script-dir' will not be supported in future versions. Please use the underscore name 'script_dir' instead
-  warnings.warn(
-/usr/local/lib/python3.8/site-packages/setuptools/dist.py:642: UserWarning: Usage of dash-separated 'install-scripts' will not be supported in future versions. Please use the underscore name 'install_scripts' instead
-  warnings.warn(
-/Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/pose_ml.py:302: SyntaxWarning: "is" with a literal. Did you mean "=="?
-  if self.period is 0:
-/Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/pose_ml.py:307: SyntaxWarning: "is" with a literal. Did you mean "=="?
-  if self.period is 0:

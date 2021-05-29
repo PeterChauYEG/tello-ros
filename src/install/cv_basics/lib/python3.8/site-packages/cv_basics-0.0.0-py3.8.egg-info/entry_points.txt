@@ -1,3 +1,0 @@
-[console_scripts]
-img_publisher = cv_basics.webcam_pub:main
-

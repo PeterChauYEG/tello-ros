@@ -22,7 +22,6 @@ function _colcon_prefix_chain_powershell_source_script {
 }
 
 # source chained prefixes
-_colcon_prefix_chain_powershell_source_script "/Users/peterchau/robotics/ros-drone/install\local_setup.ps1"
 _colcon_prefix_chain_powershell_source_script "/Users/peterchau/learn_ros/sample_ws/src/install\local_setup.ps1"
 _colcon_prefix_chain_powershell_source_script "/Users/peterchau/ros\local_setup.ps1"
 _colcon_prefix_chain_powershell_source_script "/Users/peterchau/learn_ros/sample_ws/install\local_setup.ps1"
