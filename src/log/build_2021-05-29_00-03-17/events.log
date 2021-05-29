@@ -1,0 +1,47 @@
+[0.000000] (-) TimerEvent: {}
+[0.002502] (tellobot) JobQueued: {'identifier': 'tellobot', 'dependencies': OrderedDict()}
+[0.002611] (tellobot) JobStarted: {'identifier': 'tellobot'}
+[0.103568] (-) TimerEvent: {}
+[0.204819] (-) TimerEvent: {}
+[0.305715] (-) TimerEvent: {}
+[0.379055] (tellobot) Command: {'cmd': ['/usr/local/opt/python@3.8/bin/python3.8', 'setup.py', 'egg_info', '--egg-base', '../build/tellobot', 'build', '--build-base', '/Users/peterchau/robotics/ros-drone/src/build/tellobot/build', 'install', '--prefix', '/Users/peterchau/robotics/ros-drone/src/install/tellobot', '--record', '/Users/peterchau/robotics/ros-drone/src/build/tellobot/install.log', '--single-version-externally-managed'], 'cwd': '/Users/peterchau/robotics/ros-drone/src/tellobot', 'env': {'AUTOJUMP_ERROR_PATH': '/Users/peterchau/Library/autojump/errors.log', '__GIT_PROMPT_IGNORE_STASH': '', 'TERM_PROGRAM': 'tmux', 'ANDROID_HOME': '/Users/peterchau/Library/Android/sdk', 'AUTOJUMP_SOURCED': '1', 'NVM_CD_FLAGS': '', 'SHELL': '/bin/bash', 'TERM': 'screen-256color', 'TMPDIR': '/var/folders/ln/_888p6tn7wx6b5qdykjk1clr0000gn/T/', 'CONDA_SHLVL': '1', 'CONDA_PROMPT_MODIFIER': '(base)', 'TERM_PROGRAM_VERSION': '3.2', 'ROS_PYTHON_VERSION': '3', 'TERM_SESSION_ID': 'w0t0p0:23F522D4-7736-4BB2-B783-4BD6C4053D18', 'COLCON_PREFIX_PATH': '/Users/peterchau/robotics/ros-drone/src/install:/Users/peterchau/ros', 'ROS_VERSION': '2', 'AMENT_PREFIX_PATH': '/Users/peterchau/robotics/ros-drone/src/install/tellobot:/Users/peterchau/ros', '__GIT_PROMPT_SHOW_UPSTREAM': '', 'NVM_DIR': '/Users/peterchau/.nvm', 'USER': 'peterchau', '__GIT_PROMPT_SHOW_UNTRACKED_FILES': 'all', 'COMMAND_MODE': 'unix2003', 'CONDA_EXE': '/opt/anaconda3/bin/conda', 'SSH_AUTH_SOCK': '/Users/peterchau/.gnupg/S.gpg-agent.ssh', '__CF_USER_TEXT_ENCODING': '0x1F5:0x0:0x52', 'PIVOTAL_API_TOKEN': '1b00da4946ad14548d0d50a960383609', 'TMUX': '/private/tmp/tmux-501/default,1087,15', '_CE_CONDA': '', 'PATH': '/Users/peterchau/ros/bin:/usr/local/opt/opencv@2/bin:/usr/local/opt/opencv@2/bin:/usr/local/opt/opencv@2/bin:/usr/local/opt/opencv@3/bin:/usr/local/opt/python@3.8/bin:/opt/anaconda3/bin:/Users/peterchau/.nvm/versions/node/v8.14.1/bin:/Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/usr/local/share/dotnet:/opt/X11/bin:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/peterchau/src/peartherapeutics/dev-utils:~/Library/Android/sdk/platform-tools:~/Library/Android/sdk/tools:/usr/local/go/bin', 'CONDA_PREFIX': '/opt/anaconda3', '__CFBundleIdentifier': 'com.googlecode.iterm2', 'PWD': '/Users/peterchau/robotics/ros-drone/src/build/tellobot', 'COLCON': '1', 'JAVA_HOME': '/Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home', 'AWS_SECRET_ACCESS_KEY': '6sRw1GqK0Z6MaFvDf13F2VllEtXcrU8JTUekpWg3', 'LANG': 'en_CA.UTF-8', 'ITERM_PROFILE': 'Default', 'TMUX_PANE': '%30', 'XPC_FLAGS': '0x0', 'XPC_SERVICE_NAME': '0', '_CE_M': '', 'AWS_ACCESS_KEY_ID': 'AKIAJURBCBKK7GPGB4VQ', 'GPG_TTY': '/dev/ttys030', 'COLORFGBG': '15;0', 'HOME': '/Users/peterchau', 'SHLVL': '3', 'ROS_DISTRO': 'eloquent', 'LC_TERMINAL_VERSION': '3.4.6', 'GIT_BRANCH': 'main', 'PEAR_DEV_UTILS_PATH': '/Users/peterchau/src/peartherapeutics/dev-utils', '__GIT_PROMPT_SHOW_CHANGED_FILES_COUNT': '1', 'DYLD_LIBRARY_PATH': '/Users/peterchau/ros/opt/yaml_cpp_vendor/lib:/Users/peterchau/ros/opt/rviz_ogre_vendor/lib:/Users/peterchau/ros/lib', 'ITERM_SESSION_ID': 'w0t0p0:23F522D4-7736-4BB2-B783-4BD6C4053D18', '__GIT_PROMPT_IGNORE_SUBMODULES': '', 'CONDA_PYTHON_EXE': '/opt/anaconda3/bin/python', 'LOGNAME': 'peterchau', 'PYTHONPATH': '/Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages:/Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages:/Users/peterchau/ros/lib/python3.8/site-packages', 'TMUX_PLUGIN_MANAGER_PATH': '/Users/peterchau/.tmux/plugins/', 'CONDA_DEFAULT_ENV': 'base', 'NVM_BIN': '/Users/peterchau/.nvm/versions/node/v8.14.1/bin', 'PKG_CONFIG_PATH': '/Users/peterchau/ros/lib/pkgconfig', 'DISPLAY': '/private/tmp/com.apple.launchd.ercBS5XVGQ/org.macosforge.xquartz:0', 'LC_TERMINAL': 'iTerm2', 'CMAKE_PREFIX_PATH': '/Users/peterchau/ros', 'ROS_LOCALHOST_ONLY': '0', 'COLORTERM': 'truecolor', '_': '/usr/bin/env'}, 'shell': False}
+[0.405880] (-) TimerEvent: {}
+[0.507420] (-) TimerEvent: {}
+[0.612631] (-) TimerEvent: {}
+[0.622120] (tellobot) StdoutLine: {'line': b'running egg_info\n'}
+[0.622732] (tellobot) StdoutLine: {'line': b'writing ../build/tellobot/tellobot.egg-info/PKG-INFO\n'}
+[0.623191] (tellobot) StdoutLine: {'line': b'writing dependency_links to ../build/tellobot/tellobot.egg-info/dependency_links.txt\n'}
+[0.623673] (tellobot) StdoutLine: {'line': b'writing entry points to ../build/tellobot/tellobot.egg-info/entry_points.txt\n'}
+[0.624053] (tellobot) StdoutLine: {'line': b'writing requirements to ../build/tellobot/tellobot.egg-info/requires.txt\n'}
+[0.624439] (tellobot) StdoutLine: {'line': b'writing top-level names to ../build/tellobot/tellobot.egg-info/top_level.txt\n'}
+[0.641403] (tellobot) StdoutLine: {'line': b"reading manifest file '../build/tellobot/tellobot.egg-info/SOURCES.txt'\n"}
+[0.642358] (tellobot) StdoutLine: {'line': b"writing manifest file '../build/tellobot/tellobot.egg-info/SOURCES.txt'\n"}
+[0.642622] (tellobot) StdoutLine: {'line': b'running build\n'}
+[0.642748] (tellobot) StdoutLine: {'line': b'running build_py\n'}
+[0.643215] (tellobot) StdoutLine: {'line': b'copying tellobot/gui_node.py -> /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot\n'}
+[0.643616] (tellobot) StdoutLine: {'line': b'copying tellobot/camera_pub_node.py -> /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot\n'}
+[0.644555] (tellobot) StdoutLine: {'line': b'running install\n'}
+[0.644886] (tellobot) StdoutLine: {'line': b'running install_lib\n'}
+[0.645783] (tellobot) StdoutLine: {'line': b'copying /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot/gui_node.py -> /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot\n'}
+[0.646103] (tellobot) StdoutLine: {'line': b'copying /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot/camera_pub_node.py -> /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot\n'}
+[0.647280] (tellobot) StdoutLine: {'line': b'byte-compiling /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/gui_node.py to gui_node.cpython-38.pyc\n'}
+[0.648323] (tellobot) StdoutLine: {'line': b'byte-compiling /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/camera_pub_node.py to camera_pub_node.cpython-38.pyc\n'}
+[0.649167] (tellobot) StdoutLine: {'line': b'running install_data\n'}
+[0.649615] (tellobot) StdoutLine: {'line': b'running install_egg_info\n'}
+[0.651079] (tellobot) StdoutLine: {'line': b"removing '/Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot-0.0.0-py3.8.egg-info' (and everything under it)\n"}
+[0.651889] (tellobot) StdoutLine: {'line': b'Copying ../build/tellobot/tellobot.egg-info to /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot-0.0.0-py3.8.egg-info\n'}
+[0.654323] (tellobot) StdoutLine: {'line': b'running install_scripts\n'}
+[0.686020] (tellobot) StdoutLine: {'line': b'Installing ai_node script to /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/tellobot\n'}
+[0.686574] (tellobot) StdoutLine: {'line': b'Installing camera_pub_node script to /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/tellobot\n'}
+[0.686985] (tellobot) StdoutLine: {'line': b'Installing gui_buttons_node script to /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/tellobot\n'}
+[0.687516] (tellobot) StdoutLine: {'line': b'Installing gui_node script to /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/tellobot\n'}
+[0.687804] (tellobot) StdoutLine: {'line': b'Installing pose_ml_node script to /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/tellobot\n'}
+[0.689015] (tellobot) StdoutLine: {'line': b"writing list of installed files to '/Users/peterchau/robotics/ros-drone/src/build/tellobot/install.log'\n"}
+[0.689539] (tellobot) StderrLine: {'line': b"/usr/local/lib/python3.8/site-packages/setuptools/dist.py:642: UserWarning: Usage of dash-separated 'script-dir' will not be supported in future versions. Please use the underscore name 'script_dir' instead\n"}
+[0.689865] (tellobot) StderrLine: {'line': b'  warnings.warn(\n'}
+[0.690071] (tellobot) StderrLine: {'line': b"/usr/local/lib/python3.8/site-packages/setuptools/dist.py:642: UserWarning: Usage of dash-separated 'install-scripts' will not be supported in future versions. Please use the underscore name 'install_scripts' instead\n"}
+[0.690317] (tellobot) StderrLine: {'line': b'  warnings.warn(\n'}
+[0.714853] (-) TimerEvent: {}
+[0.719774] (tellobot) CommandEnded: {'returncode': 0}
+[0.762275] (tellobot) JobEnded: {'identifier': 'tellobot', 'rc': 0}
+[0.763630] (-) EventReactorShutdown: {}
