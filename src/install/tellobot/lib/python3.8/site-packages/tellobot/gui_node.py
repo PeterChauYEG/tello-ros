@@ -6,6 +6,7 @@ import numpy as np
 import time
 
 from tellobot.gui import GUI
+from tellobot.cmds import CMDS
 from tellobot.camera import WINDOW_WIDTH, WINDOW_HEIGHT
 
 class GUINode(Node):
@@ -14,7 +15,7 @@ class GUINode(Node):
 
         self.pose = '--'
         self.pose_points = []
-        self.drone_cmd = '--'
+        self.drone_cmd = CMDS['NONE']
         self.is_pose_in_box = False
         self.cam_fps = 0
         self.gui_fps = 0

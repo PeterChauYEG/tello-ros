@@ -14,6 +14,7 @@ tellobot/ai.py
 tellobot/ai_node.py
 tellobot/camera.py
 tellobot/camera_pub_node.py
+tellobot/cmds.py
 tellobot/cvui.py
 tellobot/gui.py
 tellobot/gui_buttons.py
