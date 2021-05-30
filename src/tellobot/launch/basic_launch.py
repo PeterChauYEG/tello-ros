@@ -50,6 +50,9 @@ def generate_launch_description():
             node_executable='drone_node',
             name='drone_node',
             output='screen',
-            arguments=['--ros-args', '--log-level', logger]
+            arguments=['--ros-args', '--log-level', logger],
+            parameters=[
+                {'drone_type': 'fake_tello'}
+            ]
         ),
     ])

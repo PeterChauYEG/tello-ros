@@ -17,14 +17,6 @@ class GUINode(Node):
         self.pose_points = []
         self.drone_cmd = CMDS['NONE']
         self.is_pose_in_box = False
-        self.cam_fps = 0
-        self.gui_fps = 0
-        self.frames = 0
-        self.start_time = 0
-        self.end_time = 0
-        self.drone_battery = 0
-        self.drone_height = 0
-        self.drone_speed = 0
 
         self.gui = GUI()
 
@@ -34,38 +26,10 @@ class GUINode(Node):
             self.listener_video_frames_callback,
             1)
 
-        self.drone_height_subscription = self.create_subscription(
-            Float32,
-            'drone_height',
-            self.drone_height_callback,
-            10)
-        self.drone_battery_subscription = self.create_subscription(
-            Float32,
-            'drone_battery',
-            self.drone_battery_callback,
-            10)
-        self.drone_speed_subscription = self.create_subscription(
-            Float32,
-            'drone_speed',
-            self.drone_speed_callback,
-            10)
-
-        self.fps_subscription = self.create_subscription(
-            Float32,
-            'fps',
-            self.fps_callback,
-            60)
-
         self.pose_subscription = self.create_subscription(
             String,
             'pose',
             self.listener_pose_callback,
-            10)
-
-        self.drone_cmd_subscription = self.create_subscription(
-            String,
-            'drone_cmd',
-            self.listener_drone_cmd_callback,
             10)
 
         self.is_pose_in_box_subscription = self.create_subscription(
@@ -85,40 +49,8 @@ class GUINode(Node):
         resized_frame = current_frame.reshape(WINDOW_HEIGHT, WINDOW_WIDTH, 3)
         return resized_frame
 
-    def calculate_fps(self):
-        self.frames += 1
-
-        if self.start_time == 0:
-            self.start_time = time.time()
-
-        self.end_time = time.time()
-        seconds = self.end_time - self.start_time
-
-        if seconds > 0:
-            self.gui_fps  = round(self.frames / seconds, 2)
-
-    def fps_callback(self, msg):
-            round_fps = round(msg.data, 2)
-            self.cam_fps = round_fps
-            self.calculate_fps()
-
-    def drone_height_callback(self, msg):
-        rounded = round(msg.data, 2)
-        self.drone_height = rounded
-
-    def drone_battery_callback(self, msg):
-        rounded = round(msg.data, 2)
-        self.drone_battery = rounded
-
-    def drone_speed_callback(self, msg):
-        rounded = round(msg.data, 2)
-        self.drone_speed = rounded
-
     def listener_pose_callback(self, msg):
         self.pose = msg.data
-
-    def listener_drone_cmd_callback(self, msg):
-        self.drone_cmd = msg.data
 
     def listener_is_pose_in_box_callback(self, msg):
         self.is_pose_in_box = msg.data
@@ -131,7 +63,7 @@ class GUINode(Node):
     def listener_video_frames_callback(self, msg):
         resized_frame = self.convert_ros_msg_to_frame(msg)
 
-        self.gui.update_image(resized_frame, self.pose_points, self.pose, self.drone_cmd, self.cam_fps, self.gui_fps, self.is_pose_in_box, self.drone_speed, self.drone_height, self.drone_battery)
+        self.gui.update_image(resized_frame, self.pose_points, self.pose, self.is_pose_in_box)
 
         cv2.waitKey(1)
 

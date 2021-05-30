@@ -17,6 +17,7 @@ tellobot/camera_pub_node.py
 tellobot/cmds.py
 tellobot/cvui.py
 tellobot/drone_node.py
+tellobot/fake_tello.py
 tellobot/gui.py
 tellobot/gui_buttons.py
 tellobot/gui_buttons_node.py

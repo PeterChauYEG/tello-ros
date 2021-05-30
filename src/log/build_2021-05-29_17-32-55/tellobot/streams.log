@@ -1,0 +1,33 @@
+[0.449s] Invoking command in '/Users/peterchau/robotics/ros-drone/src/tellobot': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages:${PYTHONPATH} SHLVL=3 _=/usr/bin/env /usr/local/opt/python@3.8/bin/python3.8 setup.py egg_info --egg-base ../build/tellobot build --build-base /Users/peterchau/robotics/ros-drone/src/build/tellobot/build install --prefix /Users/peterchau/robotics/ros-drone/src/install/tellobot --record /Users/peterchau/robotics/ros-drone/src/build/tellobot/install.log --single-version-externally-managed
+[0.756s] running egg_info
+[0.756s] writing ../build/tellobot/tellobot.egg-info/PKG-INFO
+[0.757s] writing dependency_links to ../build/tellobot/tellobot.egg-info/dependency_links.txt
+[0.757s] writing entry points to ../build/tellobot/tellobot.egg-info/entry_points.txt
+[0.758s] writing requirements to ../build/tellobot/tellobot.egg-info/requires.txt
+[0.758s] writing top-level names to ../build/tellobot/tellobot.egg-info/top_level.txt
+[0.788s] reading manifest file '../build/tellobot/tellobot.egg-info/SOURCES.txt'
+[0.789s] writing manifest file '../build/tellobot/tellobot.egg-info/SOURCES.txt'
+[0.789s] running build
+[0.790s] running build_py
+[0.791s] copying tellobot/gui_buttons.py -> /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot
+[0.792s] running install
+[0.792s] running install_lib
+[0.794s] copying /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot/gui_buttons.py -> /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot
+[0.795s] byte-compiling /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/gui_buttons.py to gui_buttons.cpython-38.pyc
+[0.797s] running install_data
+[0.798s] running install_egg_info
+[0.800s] removing '/Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot-0.0.0-py3.8.egg-info' (and everything under it)
+[0.801s] Copying ../build/tellobot/tellobot.egg-info to /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot-0.0.0-py3.8.egg-info
+[0.803s] running install_scripts
+[0.848s] Installing ai_node script to /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/tellobot
+[0.849s] Installing camera_pub_node script to /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/tellobot
+[0.849s] Installing drone_node script to /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/tellobot
+[0.849s] Installing gui_buttons_node script to /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/tellobot
+[0.850s] Installing gui_node script to /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/tellobot
+[0.850s] Installing pose_ml_node script to /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/tellobot
+[0.851s] writing list of installed files to '/Users/peterchau/robotics/ros-drone/src/build/tellobot/install.log'
+[0.851s] /usr/local/lib/python3.8/site-packages/setuptools/dist.py:642: UserWarning: Usage of dash-separated 'script-dir' will not be supported in future versions. Please use the underscore name 'script_dir' instead
+[0.851s]   warnings.warn(
+[0.852s] /usr/local/lib/python3.8/site-packages/setuptools/dist.py:642: UserWarning: Usage of dash-separated 'install-scripts' will not be supported in future versions. Please use the underscore name 'install_scripts' instead
+[0.852s]   warnings.warn(
+[0.875s] Invoked command in '/Users/peterchau/robotics/ros-drone/src/tellobot' returned '0': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages:${PYTHONPATH} SHLVL=3 _=/usr/bin/env /usr/local/opt/python@3.8/bin/python3.8 setup.py egg_info --egg-base ../build/tellobot build --build-base /Users/peterchau/robotics/ros-drone/src/build/tellobot/build install --prefix /Users/peterchau/robotics/ros-drone/src/install/tellobot --record /Users/peterchau/robotics/ros-drone/src/build/tellobot/install.log --single-version-externally-managed
