@@ -19,8 +19,8 @@ def generate_launch_description():
         ),
         Node(
             package='tellobot',
-            node_executable='gui_node',
-            name='gui_node',
+            node_executable='gui_camera_node',
+            name='gui_camera_node',
             output='screen',
             arguments=['--ros-args', '--log-level', logger]
         ),

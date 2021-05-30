@@ -11,7 +11,6 @@ class GUIButtons:
     def __init__(self):
         cvui.init(WINDOW)
         self.frame = np.zeros((200, 500, 3), np.uint8)
-        self.frame[:] = (49, 52, 49)
         self.cam_fps = 0
         self.drone_height = 0
         self.drone_battery = 0
@@ -67,10 +66,7 @@ class GUIButtons:
             'CAM FPS: {0}'.format(self.cam_fps))
 
     def show(self, publish_user_cmd):
-        while True:
-            self.draw_buttons(publish_user_cmd)
-            self.draw_info()
-            cvui.imshow(WINDOW, self.frame)
-
-            if cv2.waitKey(20) == 27:
-                break
+        self.frame[:] = (49, 52, 49)
+        self.draw_buttons(publish_user_cmd)
+        self.draw_info()
+        cvui.imshow(WINDOW, self.frame)

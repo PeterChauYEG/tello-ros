@@ -3,9 +3,7 @@ from rclpy.node import Node
 from std_msgs.msg import Int16MultiArray, String, UInt8MultiArray, Float32, Bool
 
 from tellobot.fake_tello import FakeTello
-from tellobot.gui import GUI
 from tellobot.cmds import CMDS, TELLO_CMDS
-
 
 class DroneNode(Node):
     def __init__(self):
@@ -13,7 +11,6 @@ class DroneNode(Node):
 
         timer_period = 0.1
 
-        self.gui = GUI()
         self.fake_tello = FakeTello('fake_tello')
         self.tello = FakeTello('tello')
         self.drone = self.fake_tello

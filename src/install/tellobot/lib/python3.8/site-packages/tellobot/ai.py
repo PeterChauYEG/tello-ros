@@ -1,4 +1,4 @@
-from tellobot.gui import WINDOW_WIDTH, WINDOW_HEIGHT
+from tellobot.camera import WINDOW_WIDTH, WINDOW_HEIGHT
 from tellobot.cmds import CMDS
 
 CENTER_BOX_HALF_SIZE = 128

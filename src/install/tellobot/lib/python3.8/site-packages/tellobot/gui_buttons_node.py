@@ -1,7 +1,8 @@
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import String,Float32
+from std_msgs.msg import String, Float32
 from tellobot.gui_buttons import GUIButtons
+import cv2
 
 class GUIButtonsNode(Node):
     def __init__(self):
@@ -46,7 +47,9 @@ class GUIButtonsNode(Node):
             10)
 
         self.gui_buttons = GUIButtons()
-        self.gui_buttons.show(self.publish_user_cmd)
+        
+        timer_period = 0.01
+        self.timer = self.create_timer(timer_period, self.timer_callback)
 
     def convert_user_cmd_to_ros_msg(self, user_cmd):
         msg = String()
@@ -74,10 +77,17 @@ class GUIButtonsNode(Node):
 
     def listener_drone_cmd_callback(self, msg):
         self.gui_buttons.drone_cmd = msg.data
+        self.get_logger().info('drone cmd %s!' % self.gui_buttons.drone_cmd)
 
     def listener_pose_callback(self, msg):
         self.gui_buttons.pose = msg.data
 
+
+    def timer_callback(self):
+        self.gui_buttons.show(self.publish_user_cmd)
+
+        cv2.waitKey(1)
+        
 def main(args=None):
     rclpy.init(args=args)
 

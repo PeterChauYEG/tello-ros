@@ -300,12 +300,12 @@ class PoseML:
         self.preprocess(frame)
 
         # get the output of the neural network and calculate the period of the process
-        if self.period is 0:
+        if self.period == 0:
             period_start_time = time.time()
 
         output = self.net.forward()
 
-        if self.period is 0:
+        if self.period == 0:
             period_end_time = time.time()
 
             # calculation the period of pose reconigtion for 6 times,and get the average value

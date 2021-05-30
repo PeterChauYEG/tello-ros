@@ -18,10 +18,10 @@ tellobot/cmds.py
 tellobot/cvui.py
 tellobot/drone_node.py
 tellobot/fake_tello.py
-tellobot/gui.py
 tellobot/gui_buttons.py
 tellobot/gui_buttons_node.py
-tellobot/gui_node.py
+tellobot/gui_camera.py
+tellobot/gui_camera_node.py
 tellobot/pose_ml.py
 tellobot/pose_ml_node.py
 test/test_copyright.py
