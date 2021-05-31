@@ -44,7 +44,6 @@ class AINode(Node):
         return msg
 
     def listener_user_cmd_callback(self, msg):
-        self.get_logger().info('user cmd: %s' % msg.data)
         self.ai.update_user_cmd(msg.data)
         self.drone_cmd_publisher.publish(self.convert_drone_cmd_to_ros_msg(self.ai.drone_cmd))
 

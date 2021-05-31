@@ -12,10 +12,12 @@ def generate_launch_description():
         ),
         Node(
             package='tellobot',
-            node_executable='camera_pub_node',
-            name='camera_pub_node',
+            node_executable='camera_node',
+            name='camera_node',
             output='screen',
-            arguments=['--ros-args', '--log-level', logger]
+            parameters=[
+                {'camera_type': 'web_camera'}
+            ]
         ),
         Node(
             package='tellobot',

@@ -7,17 +7,10 @@ WINDOW_HEIGHT = 480
 WINDOW_BRIGHTNESS = 150
 
 
-class Camera:
+class WebCamera:
     def __init__(self):
-        self.stream_stopped = False
-
-        self.feed = cv2.VideoCapture(VIDEO_CAPTURE_DEVICE)
-        self.feed.set(3, WINDOW_WIDTH)
-        self.feed.set(4, WINDOW_HEIGHT)
-        self.feed.set(10, WINDOW_BRIGHTNESS)
-        self.feed.set(cv2.CAP_PROP_FPS, 10)
-
-        self.grabbed, self.frame = self.feed.read()
+        self.stream_stopped = True
+        self.name = 'web_camera'
 
     def get_frame(self):
         self.grabbed, self.frame = self.feed.read()
@@ -26,8 +19,18 @@ class Camera:
         return self.grabbed, self.frame
 
     def start(self):
+        print('tick')
+
+        self.stream_stopped = False
+        self.feed = cv2.VideoCapture(VIDEO_CAPTURE_DEVICE)
+        self.feed.set(3, WINDOW_WIDTH)
+        self.feed.set(4, WINDOW_HEIGHT)
+        self.feed.set(10, WINDOW_BRIGHTNESS)
+        self.feed.set(cv2.CAP_PROP_FPS, 10)
+
+        self.grabbed, self.frame = self.feed.read()
+
         Thread(target=self.update, args=()).start()
-        return self
 
     def update(self):
         while True:

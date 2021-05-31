@@ -12,8 +12,7 @@ resource/tellobot
 tellobot/__init__.py
 tellobot/ai.py
 tellobot/ai_node.py
-tellobot/camera.py
-tellobot/camera_pub_node.py
+tellobot/camera_node.py
 tellobot/cmds.py
 tellobot/cvui.py
 tellobot/drone_node.py
@@ -24,6 +23,8 @@ tellobot/gui_camera.py
 tellobot/gui_camera_node.py
 tellobot/pose_ml.py
 tellobot/pose_ml_node.py
+tellobot/tello_camera.py
+tellobot/web_camera.py
 test/test_copyright.py
 test/test_flake8.py
 test/test_pep257.py

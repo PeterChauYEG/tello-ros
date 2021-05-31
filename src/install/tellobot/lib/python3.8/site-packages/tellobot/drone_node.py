@@ -52,20 +52,16 @@ class DroneNode(Node):
     def handle_drone_type(self):
         drone_type = self.get_parameter('drone_type').get_parameter_value().string_value
 
-        if self.drone.name != drone_type:
-            self.get_logger().info('drone type %s!' % drone_type)
+        self.drone.stop()
+        
+        if drone_type == 'fake_tello':
+            self.drone = self.fake_tello
+        else:
+            self.drone = self.tello
 
-            self.drone.stop()
-            if drone_type == 'fake_tello':
-                self.drone = self.fake_tello
-            else:
-                self.drone = self.tello
-
-            self.drone.start()
+        self.drone.start()
 
     def timer_callback(self):
-        self.handle_drone_type()
-
         drone_height = self.drone.get_height()
         drone_battery = self.drone.get_battery()
         drone_speed = self.drone.get_speed()
@@ -79,7 +75,6 @@ class DroneNode(Node):
 
         if tello_cmd != CMDS['NONE']:
             self.drone.send_command(tello_cmd)
-            self.get_logger().info('Tello cmd: %s' % tello_cmd)
         else:
             self.user_cmd_publisher.publish(self.create_none_user_cmd_ros_msg(tello_cmd))
 

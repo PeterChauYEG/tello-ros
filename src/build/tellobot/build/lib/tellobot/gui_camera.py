@@ -1,5 +1,5 @@
 import cv2
-from tellobot.camera import WINDOW_WIDTH, WINDOW_HEIGHT
+from tellobot.web_camera import WINDOW_WIDTH, WINDOW_HEIGHT
 
 # +++++++++++++===============================
 WINDOW = "ML SHIT"

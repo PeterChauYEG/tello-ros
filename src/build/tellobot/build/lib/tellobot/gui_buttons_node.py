@@ -77,7 +77,6 @@ class GUIButtonsNode(Node):
 
     def listener_drone_cmd_callback(self, msg):
         self.gui_buttons.drone_cmd = msg.data
-        self.get_logger().info('drone cmd %s!' % self.gui_buttons.drone_cmd)
 
     def listener_pose_callback(self, msg):
         self.gui_buttons.pose = msg.data
