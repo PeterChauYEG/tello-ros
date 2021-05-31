@@ -21,7 +21,10 @@ class WebCamera:
         self.thread = Thread(target=self.update, args=(), daemon=True)
 
     def get_frame(self):
-        self.grabbed, self.frame = self.feed.read()
+        self.grabbed, frame = self.feed.read()
+
+        if self.grabbed and frame is not None:
+            self.frame = frame.reshape(-1).tolist()
 
     def read_frame(self):
         return self.grabbed, self.frame
@@ -47,5 +50,5 @@ class WebCamera:
         self.thread_started = False
 
     def __del__(self):
-        pass
+        self.thread.stop()
 

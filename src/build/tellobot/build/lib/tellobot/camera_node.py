@@ -6,6 +6,7 @@ import time
 from tellobot.web_camera import WebCamera
 from tellobot.tello_camera import TelloCamera
 
+
 class CameraNode(Node):
     def __init__(self):
         super().__init__('camera_node')
@@ -34,11 +35,12 @@ class CameraNode(Node):
             self.camera = WebCamera()
         else:
             self.camera = TelloCamera()
-        
+
         self.camera.start()
 
     def convert_frame_to_ros_msg(self, frame):
-        flattened_frame = frame.reshape(-1).tolist()
+        # flattened_frame = frame.reshape(-1).tolist()
+        flattened_frame = frame
         msg = UInt8MultiArray()
         msg.data = flattened_frame
         return msg
@@ -72,16 +74,18 @@ class CameraNode(Node):
         self.calculate_fps()
         self.fps_publisher.publish(self.convert_fps_to_ros_msg(self.fps))
 
+
 def main(args=None):
     rclpy.init(args=args)
     cam_pub_node = CameraNode()
-    
+
     rclpy.spin(cam_pub_node)
-    
+
     cam_pub_node.camera.stop()
     del cam_pub_node.camera
     cam_pub_node.destroy_node()
     rclpy.shutdown()
+
 
 if __name__ == '__main__':
     main()

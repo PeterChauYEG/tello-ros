@@ -27,7 +27,9 @@ class TelloCamera:
 
             if len(res_string) != 1460:
                 for frame in self.h264_decode(self.packet_data):
-                    self.frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+                    new_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+                    new_frame = new_frame.reshape(-1).tolist()
+                    self.frame = new_frame
                     self.grabbed = True
                 self.packet_data = b""
 
@@ -64,9 +66,7 @@ class TelloCamera:
 
             if frame is not None:
                 frame = np.fromstring(frame, dtype=np.ubyte, count=len(frame), sep='')
-                # frame = (frame.reshape((h, int(ls / 3), 3)))
-                # frame = frame[:, :w, :]
-                frame= frame.reshape(WINDOW_HEIGHT, WINDOW_WIDTH, 3)
+                frame = frame.reshape(WINDOW_HEIGHT, WINDOW_WIDTH, 3)
                 res_frame_list.append(frame)
 
         return res_frame_list
