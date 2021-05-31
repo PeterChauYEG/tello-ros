@@ -14,6 +14,7 @@
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/gui_buttons_node.py
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/cmds.py
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/web_camera.py
+/Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/libh264decoder/__init__.py
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/__pycache__/fake_tello.cpython-38.pyc
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/__pycache__/ai.cpython-38.pyc
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/__pycache__/ai_node.cpython-38.pyc
@@ -30,8 +31,11 @@
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/__pycache__/gui_buttons_node.cpython-38.pyc
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/__pycache__/cmds.cpython-38.pyc
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/__pycache__/web_camera.cpython-38.pyc
+/Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/libh264decoder/__pycache__/__init__.cpython-38.pyc
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/share/ament_index/resource_index/packages/tellobot
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/share/tellobot/package.xml
+/Users/peterchau/robotics/ros-drone/src/install/tellobot/share/tellobot/launch/basic.launch.py
+/Users/peterchau/robotics/ros-drone/src/install/tellobot/share/tellobot/launch/tello_camera.launch.py
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot-0.0.0-py3.8.egg-info/PKG-INFO
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot-0.0.0-py3.8.egg-info/zip-safe
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot-0.0.0-py3.8.egg-info/SOURCES.txt

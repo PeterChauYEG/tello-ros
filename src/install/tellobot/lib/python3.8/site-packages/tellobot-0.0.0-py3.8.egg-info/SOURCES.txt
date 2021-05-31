@@ -8,6 +8,9 @@ setup.py
 ../build/tellobot/tellobot.egg-info/requires.txt
 ../build/tellobot/tellobot.egg-info/top_level.txt
 ../build/tellobot/tellobot.egg-info/zip-safe
+launch/basic.launch.py
+launch/tello_camera.launch.py
+libh264decoder/__init__.py
 resource/tellobot
 tellobot/__init__.py
 tellobot/ai.py

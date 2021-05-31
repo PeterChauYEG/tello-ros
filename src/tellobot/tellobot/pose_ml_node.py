@@ -3,6 +3,7 @@ from rclpy.node import Node
 from std_msgs.msg import Int16MultiArray, String, UInt8MultiArray
 import numpy as np
 
+from tellobot.web_camera import WINDOW_WIDTH, WINDOW_HEIGHT
 from tellobot.pose_ml import PoseML
 
 class PoseMLNode(Node):
@@ -21,7 +22,7 @@ class PoseMLNode(Node):
 
     def convert_ros_msg_to_frame(self, msg):
         current_frame = np.array(msg.data)
-        resized_frame = current_frame.reshape(480,640,3)
+        resized_frame = current_frame.reshape(WINDOW_HEIGHT,WINDOW_WIDTH,3)
         return resized_frame
 
     def convert_pose_points_to_ros_msg(self, pose_points):

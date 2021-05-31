@@ -81,10 +81,10 @@ class DroneNode(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-
     drone_node = DroneNode()
 
     rclpy.spin(drone_node)
+    
     drone_node.destroy_node()
     rclpy.shutdown()
 

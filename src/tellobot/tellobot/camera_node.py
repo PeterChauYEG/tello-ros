@@ -10,9 +10,7 @@ class CameraNode(Node):
     def __init__(self):
         super().__init__('camera_node')
 
-        self.web_camera = WebCamera()
-        self.tello_camera = TelloCamera()
-        self.camera = self.web_camera
+        self.camera = None
 
         self.declare_parameter('camera_type', 'web_camera')
         self.handle_camera_type()
@@ -29,14 +27,14 @@ class CameraNode(Node):
     def handle_camera_type(self):
         camera_type = self.get_parameter('camera_type').get_parameter_value().string_value
 
-        self.camera.stop()
+        if self.camera:
+            self.camera.stop()
 
         if camera_type == 'web_camera':
-            self.camera = self.web_camera
+            self.camera = WebCamera()
         else:
-            self.camera = self.tello_camera
+            self.camera = TelloCamera()
         
-        print('tick %s' % self.camera.name)
         self.camera.start()
 
     def convert_frame_to_ros_msg(self, frame):
@@ -64,7 +62,7 @@ class CameraNode(Node):
 
     def timer_callback(self):
         if self.fps > 60:
-            if self.camera.stream_stopped == False:
+            if self.camera and self.camera.thread_started == True:
                 grabbed, frame = self.camera.read_frame()
 
                 if grabbed == True and frame is not None:
@@ -77,8 +75,11 @@ class CameraNode(Node):
 def main(args=None):
     rclpy.init(args=args)
     cam_pub_node = CameraNode()
+    
     rclpy.spin(cam_pub_node)
+    
     cam_pub_node.camera.stop()
+    del cam_pub_node.camera
     cam_pub_node.destroy_node()
     rclpy.shutdown()
 

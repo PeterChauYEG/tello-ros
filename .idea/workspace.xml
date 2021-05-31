@@ -5,37 +5,245 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e6b7c52-96dc-4b8b-9b15-d3eca34e35e1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/tellobot/tellobot/web_camera.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tellobot/launch/tello_camera.launch.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tellobot/libh264decoder/libh264decoder.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tellobot/tellobot/h264decoder/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tellobot/tellobot/h264decoder/Linux/libh264decoder.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tellobot/tellobot/h264decoder/Mac/libh264decoder.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tellobot/tellobot/h264decoder/Windows/x64/libh264decoder.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tellobot/tellobot/h264decoder/Windows/x86/libh264decoder.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tellobot/tellobot/h264decoder/h264decoder.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tellobot/tellobot/h264decoder/h264decoder.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tellobot/tellobot/h264decoder/h264decoder_python.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tellobot/tellobot/h264decoder/readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/ai.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/ai.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/ai_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/ai_node.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/drone_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/drone_node.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/gui_buttons_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/gui_buttons_node.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/gui_camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/gui_camera.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/gui_camera_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/gui_camera_node.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/build/tellobot/colcon_command_prefix_setup_py.sh.env" beforeDir="false" afterPath="$PROJECT_DIR$/src/build/tellobot/colcon_command_prefix_setup_py.sh.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/build/tellobot/install.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/build/tellobot/install.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/build/tellobot/tellobot.egg-info/SOURCES.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/build/tellobot/tellobot.egg-info/SOURCES.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/build/tellobot/tellobot.egg-info/entry_points.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/build/tellobot/tellobot.egg-info/entry_points.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot-0.0.0-py3.8.egg-info/SOURCES.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot-0.0.0-py3.8.egg-info/SOURCES.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot-0.0.0-py3.8.egg-info/entry_points.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot-0.0.0-py3.8.egg-info/entry_points.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/ai.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/ai.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/ai_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/ai_node.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/drone_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/drone_node.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/gui_buttons_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/gui_buttons_node.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/gui_camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/gui_camera.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/gui_camera_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/gui_camera_node.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/log/latest_build" beforeDir="false" afterPath="$PROJECT_DIR$/src/log/latest_build" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tellobot/launch/basic_launch.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/launch/basic_launch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/build/.built_by" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/build/COLCON_IGNORE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/libh264decoder/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/ai.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/ai_node.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/camera.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/camera_node.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/camera_pub_node.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/cmds.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/cvui.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/drone_node.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/fake_tello.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/gui_buttons.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/gui_buttons_node.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/gui_camera.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/gui_camera_node.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/pose_ml.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/pose_ml_node.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/tello_camera.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/web_camera.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/build/tellobot/colcon_build.rc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/build/tellobot/colcon_command_prefix_setup_py.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/build/tellobot/colcon_command_prefix_setup_py.sh.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/build/tellobot/install.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/build/tellobot/tellobot.egg-info/PKG-INFO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/build/tellobot/tellobot.egg-info/SOURCES.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/build/tellobot/tellobot.egg-info/dependency_links.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/build/tellobot/tellobot.egg-info/entry_points.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/build/tellobot/tellobot.egg-info/requires.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/build/tellobot/tellobot.egg-info/top_level.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/build/tellobot/tellobot.egg-info/zip-safe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/.colcon_install_layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/COLCON_IGNORE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/_local_setup_util_ps1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/_local_setup_util_sh.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/local_setup.bash" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/local_setup.ps1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/local_setup.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/local_setup.zsh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/setup.bash" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/setup.ps1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/setup.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/setup.zsh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot-0.0.0-py3.8.egg-info/PKG-INFO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot-0.0.0-py3.8.egg-info/SOURCES.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot-0.0.0-py3.8.egg-info/dependency_links.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot-0.0.0-py3.8.egg-info/entry_points.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot-0.0.0-py3.8.egg-info/requires.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot-0.0.0-py3.8.egg-info/top_level.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot-0.0.0-py3.8.egg-info/zip-safe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/ai.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/ai_node.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/camera.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/camera_node.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/camera_pub_node.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/cmds.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/cvui.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/drone_node.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/fake_tello.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/gui_buttons.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/gui_buttons_node.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/gui_camera.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/gui_camera_node.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/pose_ml.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/pose_ml_node.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/tello_camera.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/web_camera.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/tellobot/ai_node" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/tellobot/camera_node" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/tellobot/camera_pub_node" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/tellobot/drone_node" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/tellobot/gui_buttons_node" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/tellobot/gui_camera_node" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/tellobot/pose_ml_node" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/share/ament_index/resource_index/packages/tellobot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/share/colcon-core/packages/tellobot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/share/tellobot/hook/ament_prefix_path.dsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/share/tellobot/hook/ament_prefix_path.ps1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/share/tellobot/hook/ament_prefix_path.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/share/tellobot/hook/pythonpath.dsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/share/tellobot/hook/pythonpath.ps1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/share/tellobot/hook/pythonpath.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/share/tellobot/package.bash" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/share/tellobot/package.dsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/share/tellobot/package.ps1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/share/tellobot/package.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/share/tellobot/package.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/share/tellobot/package.zsh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/COLCON_IGNORE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-17-58/events.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-17-58/logger_all.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-17-58/tellobot/command.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-17-58/tellobot/stderr.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-17-58/tellobot/stdout.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-17-58/tellobot/stdout_stderr.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-17-58/tellobot/streams.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-20-14/events.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-20-14/logger_all.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-20-14/tellobot/command.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-20-14/tellobot/stderr.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-20-14/tellobot/stdout.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-20-14/tellobot/stdout_stderr.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-20-14/tellobot/streams.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-22-25/events.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-22-25/logger_all.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-22-25/tellobot/command.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-22-25/tellobot/stderr.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-22-25/tellobot/stdout.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-22-25/tellobot/stdout_stderr.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-22-25/tellobot/streams.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-25-16/events.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-25-16/logger_all.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-25-16/tellobot/command.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-25-16/tellobot/stderr.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-25-16/tellobot/stdout.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-25-16/tellobot/stdout_stderr.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-25-16/tellobot/streams.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-25-40/events.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-25-40/logger_all.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-25-40/tellobot/command.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-25-40/tellobot/stderr.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-25-40/tellobot/stdout.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-25-40/tellobot/stdout_stderr.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-25-40/tellobot/streams.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-26-34/events.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-26-34/logger_all.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-26-34/tellobot/command.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-26-34/tellobot/stderr.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-26-34/tellobot/stdout.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-26-34/tellobot/stdout_stderr.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-26-34/tellobot/streams.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-26-38/events.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-26-38/logger_all.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-26-38/tellobot/command.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-26-38/tellobot/stderr.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-26-38/tellobot/stdout.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-26-38/tellobot/stdout_stderr.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-26-38/tellobot/streams.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-27-27/events.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-27-27/logger_all.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-27-27/tellobot/command.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-27-27/tellobot/stderr.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-27-27/tellobot/stdout.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-27-27/tellobot/stdout_stderr.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-27-27/tellobot/streams.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-31-21/events.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-31-21/logger_all.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-31-21/tellobot/command.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-31-21/tellobot/stderr.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-31-21/tellobot/stdout.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-31-21/tellobot/stdout_stderr.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-31-21/tellobot/streams.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-33-58/events.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-33-58/logger_all.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-33-58/tellobot/command.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-33-58/tellobot/stderr.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-33-58/tellobot/stdout.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-33-58/tellobot/stdout_stderr.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-29_23-33-58/tellobot/streams.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_16-58-21/events.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_16-58-21/logger_all.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_16-58-21/tellobot/command.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_16-58-21/tellobot/stderr.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_16-58-21/tellobot/stdout.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_16-58-21/tellobot/stdout_stderr.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_16-58-21/tellobot/streams.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-00-58/events.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-00-58/logger_all.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-00-58/tellobot/command.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-00-58/tellobot/stderr.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-00-58/tellobot/stdout.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-00-58/tellobot/stdout_stderr.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-00-58/tellobot/streams.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-02-03/events.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-02-03/logger_all.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-02-03/tellobot/command.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-02-03/tellobot/stderr.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-02-03/tellobot/stdout.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-02-03/tellobot/stdout_stderr.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-02-03/tellobot/streams.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-04-00/events.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-04-00/logger_all.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-04-00/tellobot/command.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-04-00/tellobot/stderr.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-04-00/tellobot/stdout.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-04-00/tellobot/stdout_stderr.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-04-00/tellobot/streams.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-04-36/events.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-04-36/logger_all.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-04-36/tellobot/command.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-04-36/tellobot/stderr.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-04-36/tellobot/stdout.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-04-36/tellobot/stdout_stderr.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-04-36/tellobot/streams.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-06-40/events.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-06-40/logger_all.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-06-40/tellobot/command.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-06-40/tellobot/stderr.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-06-40/tellobot/stdout.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-06-40/tellobot/stdout_stderr.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-06-40/tellobot/streams.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-07-56/events.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-07-56/logger_all.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-07-56/tellobot/command.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-07-56/tellobot/stderr.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-07-56/tellobot/stdout.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-07-56/tellobot/stdout_stderr.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-07-56/tellobot/streams.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-10-18/events.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-10-18/logger_all.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-10-18/tellobot/command.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-10-18/tellobot/stderr.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-10-18/tellobot/stdout.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-10-18/tellobot/stdout_stderr.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/build_2021-05-30_17-10-18/tellobot/streams.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/latest" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log/latest_build" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/launch/basic_launch.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/launch/basic.launch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/package.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/package.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tellobot/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/setup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/ai.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/ai.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/ai_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/ai_node.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/tello_camera.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/camera_pub_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/camera_node.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/camera_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/camera_node.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/drone_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/drone_node.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/gui_buttons_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/gui_buttons_node.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/gui_camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/gui_camera.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/gui_camera_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/gui_camera_node.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/pose_ml_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/pose_ml_node.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/tello_camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/tello_camera.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/web_camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/web_camera.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,13 +278,20 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/tellobot/tellobot" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/build/tellobot/build/lib/libh264decoder" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/tellobot/tellobot" />
+      <recent name="$PROJECT_DIR$/src/build/tellobot/build/lib/libh264decoder" />
+      <recent name="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/libh264decoder" />
+      <recent name="$PROJECT_DIR$/src/tellobot/libh264decoder" />
+      <recent name="$PROJECT_DIR$/src/tellobot/tellobot/h264decoder/Mac" />
+      <recent name="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/h264decoder" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/tellobot/resource" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
