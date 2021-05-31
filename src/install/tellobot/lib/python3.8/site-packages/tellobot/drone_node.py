@@ -2,7 +2,8 @@ import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Int16MultiArray, String, UInt8MultiArray, Float32, Bool
 
-from tellobot.fake_tello import FakeTello
+from tellobot.fake_drone import FakeDrone
+from tellobot.tello_drone import TelloDrone
 from tellobot.cmds import CMDS, TELLO_CMDS
 
 class DroneNode(Node):
@@ -11,11 +12,9 @@ class DroneNode(Node):
 
         timer_period = 0.1
 
-        self.fake_tello = FakeTello('fake_tello')
-        self.tello = FakeTello('tello')
-        self.drone = self.fake_tello
+        self.drone = None
 
-        self.declare_parameter('drone_type', 'fake_tello')
+        self.declare_parameter('drone_type', 'fake_drone')
         self.handle_drone_type()
 
         self.drone_cmd_subscription = self.create_subscription(
@@ -44,7 +43,7 @@ class DroneNode(Node):
     def convert_drone_cmd_to_tello_cmd(self, drone_cmd):
         tello_cmd = TELLO_CMDS[drone_cmd]
 
-        if drone_cmd != CMDS['TAKE_OFF'] or drone_cmd != CMDS['LAND']:
+        if drone_cmd != CMDS['TAKE_OFF'] and drone_cmd != CMDS['LAND']:
             tello_cmd = tello_cmd + ' %d' % 1
 
         return tello_cmd
@@ -52,12 +51,13 @@ class DroneNode(Node):
     def handle_drone_type(self):
         drone_type = self.get_parameter('drone_type').get_parameter_value().string_value
 
-        self.drone.stop()
-        
-        if drone_type == 'fake_tello':
-            self.drone = self.fake_tello
+        if self.drone:
+            self.drone.stop()
+
+        if drone_type == 'fake_drone':
+            self.drone = FakeDrone()
         else:
-            self.drone = self.tello
+            self.drone = TelloDrone()
 
         self.drone.start()
 
@@ -74,7 +74,12 @@ class DroneNode(Node):
         tello_cmd = self.convert_drone_cmd_to_tello_cmd(msg.data)
 
         if tello_cmd != CMDS['NONE']:
-            self.drone.send_command(tello_cmd)
+            if tello_cmd == CMDS['TAKE_OFF']:
+                self.drone.takeoff()
+            if tello_cmd == CMDS['LAND']:
+                self.drone.land()
+            else:
+                self.drone.send_command(tello_cmd)
         else:
             self.user_cmd_publisher.publish(self.create_none_user_cmd_ros_msg(tello_cmd))
 
@@ -84,7 +89,7 @@ def main(args=None):
     drone_node = DroneNode()
 
     rclpy.spin(drone_node)
-    
+
     drone_node.destroy_node()
     rclpy.shutdown()
 

@@ -1,4 +1,4 @@
-/Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/fake_tello.py
+/Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/fake_drone.py
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/ai.py
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/ai_node.py
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/gui_camera.py
@@ -6,6 +6,7 @@
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/drone_node.py
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/tello_camera.py
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/gui_buttons.py
+/Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/tello_drone.py
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/gui_camera_node.py
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/camera_node.py
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/cvui.py
@@ -15,7 +16,7 @@
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/cmds.py
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/web_camera.py
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/libh264decoder/__init__.py
-/Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/__pycache__/fake_tello.cpython-38.pyc
+/Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/__pycache__/fake_drone.cpython-38.pyc
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/__pycache__/ai.cpython-38.pyc
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/__pycache__/ai_node.cpython-38.pyc
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/__pycache__/gui_camera.cpython-38.pyc
@@ -23,6 +24,7 @@
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/__pycache__/drone_node.cpython-38.pyc
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/__pycache__/tello_camera.cpython-38.pyc
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/__pycache__/gui_buttons.cpython-38.pyc
+/Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/__pycache__/tello_drone.cpython-38.pyc
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/__pycache__/gui_camera_node.cpython-38.pyc
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/__pycache__/camera_node.cpython-38.pyc
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/__pycache__/cvui.cpython-38.pyc
@@ -34,6 +36,7 @@
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/libh264decoder/__pycache__/__init__.cpython-38.pyc
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/share/ament_index/resource_index/packages/tellobot
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/share/tellobot/package.xml
+/Users/peterchau/robotics/ros-drone/src/install/tellobot/share/tellobot/launch/tello.launch.py
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/share/tellobot/launch/basic.launch.py
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/share/tellobot/launch/tello_camera.launch.py
 /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot-0.0.0-py3.8.egg-info/PKG-INFO

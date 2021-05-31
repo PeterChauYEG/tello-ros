@@ -1,0 +1,96 @@
+[0.565s] Invoking command in '/Users/peterchau/robotics/ros-drone/src/tellobot': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages:${PYTHONPATH} SHLVL=3 _=/usr/bin/env /usr/local/opt/python@3.8/bin/python3.8 setup.py egg_info --egg-base ../build/tellobot build --build-base /Users/peterchau/robotics/ros-drone/src/build/tellobot/build install --prefix /Users/peterchau/robotics/ros-drone/src/install/tellobot --record /Users/peterchau/robotics/ros-drone/src/build/tellobot/install.log --single-version-externally-managed
+[0.914s] running egg_info
+[0.914s] creating ../build/tellobot/tellobot.egg-info
+[0.915s] writing ../build/tellobot/tellobot.egg-info/PKG-INFO
+[0.915s] writing dependency_links to ../build/tellobot/tellobot.egg-info/dependency_links.txt
+[0.916s] writing entry points to ../build/tellobot/tellobot.egg-info/entry_points.txt
+[0.916s] writing requirements to ../build/tellobot/tellobot.egg-info/requires.txt
+[0.917s] writing top-level names to ../build/tellobot/tellobot.egg-info/top_level.txt
+[0.917s] writing manifest file '../build/tellobot/tellobot.egg-info/SOURCES.txt'
+[0.942s] reading manifest file '../build/tellobot/tellobot.egg-info/SOURCES.txt'
+[0.944s] writing manifest file '../build/tellobot/tellobot.egg-info/SOURCES.txt'
+[0.944s] running build
+[0.944s] running build_py
+[0.945s] creating /Users/peterchau/robotics/ros-drone/src/build/tellobot/build
+[0.945s] creating /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib
+[0.946s] creating /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot
+[0.946s] copying tellobot/fake_tello.py -> /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot
+[0.946s] copying tellobot/ai.py -> /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot
+[0.946s] copying tellobot/ai_node.py -> /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot
+[0.947s] copying tellobot/gui_camera.py -> /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot
+[0.947s] copying tellobot/__init__.py -> /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot
+[0.947s] copying tellobot/drone_node.py -> /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot
+[0.948s] copying tellobot/tello_camera.py -> /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot
+[0.948s] copying tellobot/gui_buttons.py -> /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot
+[0.948s] copying tellobot/gui_camera_node.py -> /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot
+[0.949s] copying tellobot/camera_node.py -> /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot
+[0.949s] copying tellobot/cvui.py -> /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot
+[0.950s] copying tellobot/pose_ml.py -> /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot
+[0.950s] copying tellobot/pose_ml_node.py -> /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot
+[0.950s] copying tellobot/gui_buttons_node.py -> /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot
+[0.951s] copying tellobot/cmds.py -> /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot
+[0.951s] copying tellobot/web_camera.py -> /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot
+[0.951s] creating /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/libh264decoder
+[0.952s] copying libh264decoder/__init__.py -> /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/libh264decoder
+[0.953s] running install
+[0.954s] running install_lib
+[0.955s] creating /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/libh264decoder
+[0.955s] copying /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/libh264decoder/__init__.py -> /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/libh264decoder
+[0.956s] creating /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot
+[0.956s] copying /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot/fake_tello.py -> /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot
+[0.957s] copying /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot/ai.py -> /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot
+[0.957s] copying /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot/ai_node.py -> /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot
+[0.957s] copying /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot/gui_camera.py -> /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot
+[0.958s] copying /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot/__init__.py -> /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot
+[0.958s] copying /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot/drone_node.py -> /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot
+[0.958s] copying /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot/tello_camera.py -> /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot
+[0.959s] copying /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot/gui_buttons.py -> /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot
+[0.959s] copying /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot/gui_camera_node.py -> /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot
+[0.960s] copying /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot/camera_node.py -> /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot
+[0.960s] copying /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot/cvui.py -> /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot
+[0.961s] copying /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot/pose_ml.py -> /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot
+[0.961s] copying /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot/pose_ml_node.py -> /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot
+[0.962s] copying /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot/gui_buttons_node.py -> /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot
+[0.962s] copying /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot/cmds.py -> /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot
+[0.962s] copying /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot/web_camera.py -> /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot
+[0.963s] byte-compiling /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/libh264decoder/__init__.py to __init__.cpython-38.pyc
+[0.964s] byte-compiling /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/fake_tello.py to fake_tello.cpython-38.pyc
+[0.965s] byte-compiling /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/ai.py to ai.cpython-38.pyc
+[0.965s] byte-compiling /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/ai_node.py to ai_node.cpython-38.pyc
+[0.967s] byte-compiling /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/gui_camera.py to gui_camera.cpython-38.pyc
+[0.968s] byte-compiling /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/__init__.py to __init__.cpython-38.pyc
+[0.968s] byte-compiling /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/drone_node.py to drone_node.cpython-38.pyc
+[0.969s] byte-compiling /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/tello_camera.py to tello_camera.cpython-38.pyc
+[0.970s] byte-compiling /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/gui_buttons.py to gui_buttons.cpython-38.pyc
+[0.970s] byte-compiling /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/gui_camera_node.py to gui_camera_node.cpython-38.pyc
+[0.971s] byte-compiling /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/camera_node.py to camera_node.cpython-38.pyc
+[0.972s] byte-compiling /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/cvui.py to cvui.cpython-38.pyc
+[0.992s] byte-compiling /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/pose_ml.py to pose_ml.cpython-38.pyc
+[0.994s] byte-compiling /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/pose_ml_node.py to pose_ml_node.cpython-38.pyc
+[0.995s] byte-compiling /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/gui_buttons_node.py to gui_buttons_node.cpython-38.pyc
+[0.996s] byte-compiling /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/cmds.py to cmds.cpython-38.pyc
+[0.996s] byte-compiling /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/web_camera.py to web_camera.cpython-38.pyc
+[0.997s] running install_data
+[0.998s] creating /Users/peterchau/robotics/ros-drone/src/install/tellobot/share/ament_index
+[0.998s] creating /Users/peterchau/robotics/ros-drone/src/install/tellobot/share/ament_index/resource_index
+[0.998s] creating /Users/peterchau/robotics/ros-drone/src/install/tellobot/share/ament_index/resource_index/packages
+[0.998s] copying resource/tellobot -> /Users/peterchau/robotics/ros-drone/src/install/tellobot/share/ament_index/resource_index/packages
+[0.999s] copying package.xml -> /Users/peterchau/robotics/ros-drone/src/install/tellobot/share/tellobot
+[0.999s] creating /Users/peterchau/robotics/ros-drone/src/install/tellobot/share/tellobot/launch
+[0.999s] copying launch/basic.launch.py -> /Users/peterchau/robotics/ros-drone/src/install/tellobot/share/tellobot/launch
+[0.999s] copying launch/tello_camera.launch.py -> /Users/peterchau/robotics/ros-drone/src/install/tellobot/share/tellobot/launch
+[1.000s] running install_egg_info
+[1.001s] Copying ../build/tellobot/tellobot.egg-info to /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot-0.0.0-py3.8.egg-info
+[1.005s] running install_scripts
+[1.046s] Installing ai_node script to /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/tellobot
+[1.046s] Installing camera_node script to /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/tellobot
+[1.047s] Installing drone_node script to /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/tellobot
+[1.047s] Installing gui_buttons_node script to /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/tellobot
+[1.047s] Installing gui_camera_node script to /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/tellobot
+[1.047s] Installing pose_ml_node script to /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/tellobot
+[1.049s] writing list of installed files to '/Users/peterchau/robotics/ros-drone/src/build/tellobot/install.log'
+[1.049s] /usr/local/lib/python3.8/site-packages/setuptools/dist.py:642: UserWarning: Usage of dash-separated 'script-dir' will not be supported in future versions. Please use the underscore name 'script_dir' instead
+[1.049s]   warnings.warn(
+[1.049s] /usr/local/lib/python3.8/site-packages/setuptools/dist.py:642: UserWarning: Usage of dash-separated 'install-scripts' will not be supported in future versions. Please use the underscore name 'install_scripts' instead
+[1.049s]   warnings.warn(
+[1.071s] Invoked command in '/Users/peterchau/robotics/ros-drone/src/tellobot' returned '0': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages:${PYTHONPATH} SHLVL=3 _=/usr/bin/env /usr/local/opt/python@3.8/bin/python3.8 setup.py egg_info --egg-base ../build/tellobot build --build-base /Users/peterchau/robotics/ros-drone/src/build/tellobot/build install --prefix /Users/peterchau/robotics/ros-drone/src/install/tellobot --record /Users/peterchau/robotics/ros-drone/src/build/tellobot/install.log --single-version-externally-managed

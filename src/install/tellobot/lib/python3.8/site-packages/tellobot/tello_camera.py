@@ -13,7 +13,6 @@ class TelloCamera:
         self.thread_started = False
         self.frame = None
         self.grabbed = False
-        self.socket = None
         self.socket_video = None
         self.packet_data = b""
 

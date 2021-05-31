@@ -54,7 +54,7 @@ def generate_launch_description():
             output='screen',
             arguments=['--ros-args', '--log-level', logger],
             parameters=[
-                {'drone_type': 'fake_tello'}
+                {'drone_type': 'fake_drone'}
             ]
         ),
     ])
