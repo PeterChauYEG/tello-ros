@@ -4,7 +4,7 @@ import numpy as np
 import h264decoder
 import cv2
 
-from tellobot.resolutions import TELLO_CAMERA_FRAME_WIDTH, TELLO_CAMERA_FRAME_HEIGHT
+from tellobot.resolutions import TELLO_CAMERA_FRAME_WIDTH, TELLO_CAMERA_FRAME_HEIGHT, TARGET_FRAME_WIDTH, TARGET_FRAME_HEIGHT
 
 class TelloCamera:
     def __init__(self):
@@ -27,17 +27,20 @@ class TelloCamera:
             if len(res_string) != 1460:
                 for frame in self.h264_decode(self.packet_data):
                     self.raw_frame = frame
-                    self.grabbed = True
+                    self.grabbed = False
                     self.packet_data = b""
 
         except socket.error as exc:
             print ("Caught exception socket.error : %s" % exc)
 
     def read_frame(self):
-        if self.grabbed and self.raw_frame is not None:
-            new_frame = cv2.cvtColor(self.raw_frame, cv2.COLOR_BGR2RGB)
-            self.frame = new_frame.reshape(-1).tolist()
-            
+        if self.grabbed == False and self.raw_frame is not None:
+            resized_frame = cv2.resize(self.raw_frame, dsize=(TARGET_FRAME_WIDTH,TARGET_FRAME_HEIGHT), interpolation=cv2.INTER_LINEAR)
+            recolored_frame = cv2.cvtColor(resized_frame, cv2.COLOR_BGR2RGB)
+            self.frame = recolored_frame.reshape(-1).tolist()
+            self.grabbed = True
+            self.raw_frame = None
+
         return self.grabbed, self.frame
 
     def start(self):

@@ -45,9 +45,9 @@ class GUICCameraNode(Node):
 
     def convert_ros_msg_to_frame(self, msg):
         current_frame = np.array(msg.data)
-        reshaped_frame = current_frame.reshape(TELLO_CAMERA_FRAME_HEIGHT, TELLO_CAMERA_FRAME_WIDTH, 3)
-        resized_frame = cv2.resize(reshaped_frame, dsize=(TARGET_FRAME_HEIGHT, TARGET_FRAME_WIDTH), interpolation=cv2.INTER_CUBIC)
-        return resized_frame
+        reshaped_frame = current_frame.reshape(TARGET_FRAME_HEIGHT, TARGET_FRAME_WIDTH, 3)
+
+        return reshaped_frame
 
     def listener_pose_callback(self, msg):
         self.pose = msg.data
