@@ -1,4 +1,4 @@
-from tellobot.web_camera import WINDOW_WIDTH, WINDOW_HEIGHT
+from tellobot.resolutions import TARGET_FRAME_WIDTH, TARGET_FRAME_HEIGHT
 from tellobot.cmds import CMDS
 
 CENTER_BOX_HALF_SIZE = 128
@@ -16,7 +16,7 @@ class AI:
         self.drone_cmd = CMDS['NONE']
         self.find_human_tick = 0
         self.max_find_human_period = 0.5
-        self.center_point = (WINDOW_HEIGHT / 2, WINDOW_WIDTH / 2)
+        self.center_point = (TARGET_FRAME_HEIGHT / 2, TARGET_FRAME_WIDTH / 2)
         self.user_cmd = CMDS['NONE']
 
     def reset_state(self):

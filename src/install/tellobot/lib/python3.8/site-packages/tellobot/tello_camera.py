@@ -4,7 +4,7 @@ import numpy as np
 import h264decoder
 import cv2
 
-from tellobot.web_camera import WINDOW_WIDTH, WINDOW_HEIGHT
+from tellobot.resolutions import TELLO_CAMERA_FRAME_WIDTH, TELLO_CAMERA_FRAME_HEIGHT
 
 class TelloCamera:
     def __init__(self):
@@ -65,7 +65,7 @@ class TelloCamera:
 
             if frame is not None:
                 frame = np.fromstring(frame, dtype=np.ubyte, count=len(frame), sep='')
-                frame = frame.reshape(WINDOW_HEIGHT, WINDOW_WIDTH, 3)
+                frame = frame.reshape(TELLO_CAMERA_FRAME_HEIGHT, TELLO_CAMERA_FRAME_WIDTH, 3)
                 res_frame_list.append(frame)
 
         return res_frame_list

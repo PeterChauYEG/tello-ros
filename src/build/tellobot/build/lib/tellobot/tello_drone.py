@@ -1,6 +1,5 @@
 import socket
 from threading import Thread, Timer
-import time
 from tellobot.cmds import TELLO_CMDS
 
 class TelloDrone:

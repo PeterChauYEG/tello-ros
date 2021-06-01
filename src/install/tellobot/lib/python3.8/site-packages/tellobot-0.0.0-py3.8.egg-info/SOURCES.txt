@@ -27,6 +27,7 @@ tellobot/gui_camera.py
 tellobot/gui_camera_node.py
 tellobot/pose_ml.py
 tellobot/pose_ml_node.py
+tellobot/resolutions.py
 tellobot/tello_camera.py
 tellobot/tello_drone.py
 tellobot/web_camera.py

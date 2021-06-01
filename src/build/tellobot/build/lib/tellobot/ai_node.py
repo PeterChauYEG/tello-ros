@@ -4,7 +4,6 @@ from std_msgs.msg import Int16MultiArray, String, Bool
 import numpy as np
 
 from tellobot.ai import AI
-from tellobot.cmds import CMDS
 
 class AINode(Node):
     def __init__(self):

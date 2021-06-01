@@ -1,11 +1,10 @@
 import cv2
-from tellobot.web_camera import WINDOW_WIDTH, WINDOW_HEIGHT
+from tellobot.resolutions import TARGET_FRAME_WIDTH, TARGET_FRAME_HEIGHT
 
 # +++++++++++++===============================
 WINDOW = "ML SHIT"
 POSE_PAIRS = [[0, 1], [1, 2], [2, 3], [3, 4], [1, 5], [5, 6], [6, 7], [1, 14], [14, 8], [8, 9], [9, 10], [14, 11],
               [11, 12], [12, 13]]
-CENTER_BOX_HALF_SIZE = 128
 NORMAL_COLOR = (66, 144, 245)
 ACTIVE_COLOR = (0, 0, 245)
 overflow_null = -999
@@ -57,18 +56,20 @@ def draw_pose(frame, current_pose, points):
 
 class GUICamera:
     def __init__(self):
-        self.center_point = (int(WINDOW_WIDTH / 2), int(WINDOW_HEIGHT / 2))
+        self.center_point = (int(TARGET_FRAME_WIDTH / 2), int(TARGET_FRAME_HEIGHT / 2))
         self.center_box_points = self.get_center_box_points()
 
         cv2.namedWindow(WINDOW)
         cv2.moveWindow(WINDOW, 600, 360)  # do this dynamically
 
     def get_center_box_points(self):
+        center_box_half_size = int(TARGET_FRAME_HEIGHT / 3)
+
         return [
-            (self.center_point[0] - CENTER_BOX_HALF_SIZE, self.center_point[1] - CENTER_BOX_HALF_SIZE),
-            (self.center_point[0] + CENTER_BOX_HALF_SIZE, self.center_point[1] - CENTER_BOX_HALF_SIZE),
-            (self.center_point[0] + CENTER_BOX_HALF_SIZE, self.center_point[1] + CENTER_BOX_HALF_SIZE),
-            (self.center_point[0] - CENTER_BOX_HALF_SIZE, self.center_point[1] + CENTER_BOX_HALF_SIZE),
+            (self.center_point[0] - center_box_half_size, self.center_point[1] - center_box_half_size),
+            (self.center_point[0] + center_box_half_size, self.center_point[1] - center_box_half_size),
+            (self.center_point[0] + center_box_half_size, self.center_point[1] + center_box_half_size),
+            (self.center_point[0] - center_box_half_size, self.center_point[1] + center_box_half_size),
         ]
 
     def draw_box(self, frame, is_pose_in_box):
@@ -82,7 +83,7 @@ class GUICamera:
         cv2.circle(
             frame,
             self.center_point,
-            8,
+            4,
             box_line_color,
             thickness=-1,
             lineType=cv2.FILLED)

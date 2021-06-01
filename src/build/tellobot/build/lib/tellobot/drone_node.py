@@ -1,6 +1,6 @@
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import Int16MultiArray, String, UInt8MultiArray, Float32, Bool
+from std_msgs.msg import Int16MultiArray, String, Float32, Bool
 
 from tellobot.fake_drone import FakeDrone
 from tellobot.tello_drone import TelloDrone

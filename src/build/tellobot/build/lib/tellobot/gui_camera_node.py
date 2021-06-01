@@ -1,12 +1,12 @@
 import rclpy
 from rclpy.node import Node
 import cv2
-from std_msgs.msg import Int16MultiArray, String, UInt8MultiArray, Float32, Bool
+from std_msgs.msg import String, Int16MultiArray, Float32, Bool, UInt8MultiArray
 import numpy as np
 
 from tellobot.gui_camera import GUICamera
 from tellobot.cmds import CMDS
-from tellobot.web_camera import WINDOW_WIDTH, WINDOW_HEIGHT
+from tellobot.resolutions import TARGET_FRAME_WIDTH, TARGET_FRAME_HEIGHT
 
 class GUICCameraNode(Node):
     def __init__(self):
@@ -45,7 +45,7 @@ class GUICCameraNode(Node):
 
     def convert_ros_msg_to_frame(self, msg):
         current_frame = np.array(msg.data)
-        resized_frame = current_frame.reshape(WINDOW_HEIGHT, WINDOW_WIDTH, 3)
+        resized_frame = current_frame.reshape(TARGET_FRAME_HEIGHT, TARGET_FRAME_WIDTH, 3)
         return resized_frame
 
     def listener_pose_callback(self, msg):

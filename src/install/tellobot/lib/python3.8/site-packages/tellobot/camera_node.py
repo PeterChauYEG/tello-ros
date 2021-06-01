@@ -39,7 +39,6 @@ class CameraNode(Node):
         self.camera.start()
 
     def convert_frame_to_ros_msg(self, frame):
-        # flattened_frame = frame.reshape(-1).tolist()
         flattened_frame = frame
         msg = UInt8MultiArray()
         msg.data = flattened_frame
