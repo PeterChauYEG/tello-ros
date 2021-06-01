@@ -23,7 +23,6 @@ class WebCamera:
     def read_frame(self):
         if self.grabbed and self.raw_frame is not None:
             self.frame = self.raw_frame.reshape(-1).tolist()
-            self.raw_frame = None
 
         return self.grabbed, self.frame
 

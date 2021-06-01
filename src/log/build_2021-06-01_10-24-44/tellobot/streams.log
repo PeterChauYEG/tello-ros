@@ -1,0 +1,39 @@
+[0.464s] Invoking command in '/Users/peterchau/robotics/ros-drone/src/tellobot': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages:${PYTHONPATH} SHLVL=3 _=/usr/bin/env /usr/local/opt/python@3.8/bin/python3.8 setup.py egg_info --egg-base ../build/tellobot build --build-base /Users/peterchau/robotics/ros-drone/src/build/tellobot/build install --prefix /Users/peterchau/robotics/ros-drone/src/install/tellobot --record /Users/peterchau/robotics/ros-drone/src/build/tellobot/install.log --single-version-externally-managed
+[0.707s] running egg_info
+[0.708s] writing ../build/tellobot/tellobot.egg-info/PKG-INFO
+[0.708s] writing dependency_links to ../build/tellobot/tellobot.egg-info/dependency_links.txt
+[0.708s] writing entry points to ../build/tellobot/tellobot.egg-info/entry_points.txt
+[0.709s] writing requirements to ../build/tellobot/tellobot.egg-info/requires.txt
+[0.709s] writing top-level names to ../build/tellobot/tellobot.egg-info/top_level.txt
+[0.732s] reading manifest file '../build/tellobot/tellobot.egg-info/SOURCES.txt'
+[0.735s] writing manifest file '../build/tellobot/tellobot.egg-info/SOURCES.txt'
+[0.735s] running build
+[0.735s] running build_py
+[0.736s] copying tellobot/tello_camera.py -> /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot
+[0.737s] copying tellobot/resolutions.py -> /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot
+[0.737s] copying tellobot/gui_camera_node.py -> /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot
+[0.739s] running install
+[0.740s] running install_lib
+[0.742s] copying /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot/tello_camera.py -> /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot
+[0.743s] copying /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot/resolutions.py -> /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot
+[0.743s] copying /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot/gui_camera_node.py -> /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot
+[0.745s] byte-compiling /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/tello_camera.py to tello_camera.cpython-38.pyc
+[0.746s] byte-compiling /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/resolutions.py to resolutions.cpython-38.pyc
+[0.747s] byte-compiling /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/gui_camera_node.py to gui_camera_node.cpython-38.pyc
+[0.749s] running install_data
+[0.749s] running install_egg_info
+[0.751s] removing '/Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot-0.0.0-py3.8.egg-info' (and everything under it)
+[0.752s] Copying ../build/tellobot/tellobot.egg-info to /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot-0.0.0-py3.8.egg-info
+[0.755s] running install_scripts
+[0.795s] Installing ai_node script to /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/tellobot
+[0.796s] Installing camera_node script to /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/tellobot
+[0.796s] Installing drone_node script to /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/tellobot
+[0.797s] Installing gui_buttons_node script to /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/tellobot
+[0.797s] Installing gui_camera_node script to /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/tellobot
+[0.797s] Installing pose_ml_node script to /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/tellobot
+[0.798s] writing list of installed files to '/Users/peterchau/robotics/ros-drone/src/build/tellobot/install.log'
+[0.799s] /usr/local/lib/python3.8/site-packages/setuptools/dist.py:642: UserWarning: Usage of dash-separated 'script-dir' will not be supported in future versions. Please use the underscore name 'script_dir' instead
+[0.799s]   warnings.warn(
+[0.799s] /usr/local/lib/python3.8/site-packages/setuptools/dist.py:642: UserWarning: Usage of dash-separated 'install-scripts' will not be supported in future versions. Please use the underscore name 'install_scripts' instead
+[0.799s]   warnings.warn(
+[0.818s] Invoked command in '/Users/peterchau/robotics/ros-drone/src/tellobot' returned '0': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages:${PYTHONPATH} SHLVL=3 _=/usr/bin/env /usr/local/opt/python@3.8/bin/python3.8 setup.py egg_info --egg-base ../build/tellobot build --build-base /Users/peterchau/robotics/ros-drone/src/build/tellobot/build install --prefix /Users/peterchau/robotics/ros-drone/src/install/tellobot --record /Users/peterchau/robotics/ros-drone/src/build/tellobot/install.log --single-version-externally-managed

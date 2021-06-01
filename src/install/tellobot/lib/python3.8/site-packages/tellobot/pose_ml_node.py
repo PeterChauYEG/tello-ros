@@ -3,7 +3,7 @@ from rclpy.node import Node
 from std_msgs.msg import Int16MultiArray, String, UInt8MultiArray
 import numpy as np
 
-from tellobot.web_camera import WINDOW_WIDTH, WINDOW_HEIGHT
+from tellobot.resolutions import WINDOW_WIDTH, WINDOW_HEIGHT
 from tellobot.pose_ml import PoseML
 
 class PoseMLNode(Node):

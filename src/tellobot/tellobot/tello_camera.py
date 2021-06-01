@@ -15,7 +15,7 @@ class TelloCamera:
         self.grabbed = False
         self.socket_video = None
         self.packet_data = b""
-
+        self.raw_frame = None
         self.decoder = h264decoder.H264Decoder()
         self.thread = Thread(target=self.update, args=(), daemon=True)
 
@@ -26,16 +26,18 @@ class TelloCamera:
 
             if len(res_string) != 1460:
                 for frame in self.h264_decode(self.packet_data):
-                    new_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-                    new_frame = new_frame.reshape(-1).tolist()
-                    self.frame = new_frame
+                    self.raw_frame = frame
                     self.grabbed = True
-                self.packet_data = b""
+                    self.packet_data = b""
 
         except socket.error as exc:
             print ("Caught exception socket.error : %s" % exc)
 
     def read_frame(self):
+        if self.grabbed and self.raw_frame is not None:
+            new_frame = cv2.cvtColor(self.raw_frame, cv2.COLOR_BGR2RGB)
+            self.frame = new_frame.reshape(-1).tolist()
+            
         return self.grabbed, self.frame
 
     def start(self):

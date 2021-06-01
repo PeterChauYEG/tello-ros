@@ -1,0 +1,31 @@
+running egg_info
+writing ../build/tellobot/tellobot.egg-info/PKG-INFO
+writing dependency_links to ../build/tellobot/tellobot.egg-info/dependency_links.txt
+writing entry points to ../build/tellobot/tellobot.egg-info/entry_points.txt
+writing requirements to ../build/tellobot/tellobot.egg-info/requires.txt
+writing top-level names to ../build/tellobot/tellobot.egg-info/top_level.txt
+reading manifest file '../build/tellobot/tellobot.egg-info/SOURCES.txt'
+writing manifest file '../build/tellobot/tellobot.egg-info/SOURCES.txt'
+running build
+running build_py
+copying tellobot/gui_camera_node.py -> /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot
+running install
+running install_lib
+copying /Users/peterchau/robotics/ros-drone/src/build/tellobot/build/lib/tellobot/gui_camera_node.py -> /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot
+byte-compiling /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot/gui_camera_node.py to gui_camera_node.cpython-38.pyc
+running install_data
+running install_egg_info
+removing '/Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot-0.0.0-py3.8.egg-info' (and everything under it)
+Copying ../build/tellobot/tellobot.egg-info to /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/python3.8/site-packages/tellobot-0.0.0-py3.8.egg-info
+running install_scripts
+Installing ai_node script to /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/tellobot
+Installing camera_node script to /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/tellobot
+Installing drone_node script to /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/tellobot
+Installing gui_buttons_node script to /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/tellobot
+Installing gui_camera_node script to /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/tellobot
+Installing pose_ml_node script to /Users/peterchau/robotics/ros-drone/src/install/tellobot/lib/tellobot
+writing list of installed files to '/Users/peterchau/robotics/ros-drone/src/build/tellobot/install.log'
+/usr/local/lib/python3.8/site-packages/setuptools/dist.py:642: UserWarning: Usage of dash-separated 'script-dir' will not be supported in future versions. Please use the underscore name 'script_dir' instead
+  warnings.warn(
+/usr/local/lib/python3.8/site-packages/setuptools/dist.py:642: UserWarning: Usage of dash-separated 'install-scripts' will not be supported in future versions. Please use the underscore name 'install_scripts' instead
+  warnings.warn(

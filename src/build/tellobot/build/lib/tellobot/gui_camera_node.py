@@ -6,7 +6,7 @@ import numpy as np
 
 from tellobot.gui_camera import GUICamera
 from tellobot.cmds import CMDS
-from tellobot.resolutions import TARGET_FRAME_WIDTH, TARGET_FRAME_HEIGHT
+from tellobot.resolutions import TARGET_FRAME_WIDTH, TARGET_FRAME_HEIGHT,  TELLO_CAMERA_FRAME_WIDTH, TELLO_CAMERA_FRAME_HEIGHT
 
 class GUICCameraNode(Node):
     def __init__(self):
@@ -45,7 +45,8 @@ class GUICCameraNode(Node):
 
     def convert_ros_msg_to_frame(self, msg):
         current_frame = np.array(msg.data)
-        resized_frame = current_frame.reshape(TARGET_FRAME_HEIGHT, TARGET_FRAME_WIDTH, 3)
+        reshaped_frame = current_frame.reshape(TELLO_CAMERA_FRAME_HEIGHT, TELLO_CAMERA_FRAME_WIDTH, 3)
+        resized_frame = cv2.resize(reshaped_frame, dsize=(TARGET_FRAME_HEIGHT, TARGET_FRAME_WIDTH), interpolation=cv2.INTER_CUBIC)
         return resized_frame
 
     def listener_pose_callback(self, msg):
