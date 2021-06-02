@@ -16,7 +16,7 @@ class CameraNode(Node):
         self.declare_parameter('camera_type', 'web_camera')
         self.handle_camera_type()
 
-        self.publisher_ = self.create_publisher(UInt8MultiArray, 'video_frames', 1)
+        self.publisher_ = self.create_publisher(UInt8MultiArray, 'video_frames', 20)
         self.fps_publisher = self.create_publisher(Float32, 'fps', 60)
         timer_period = 0.0001
         self.timer = self.create_timer(timer_period, self.timer_callback)
@@ -49,28 +49,24 @@ class CameraNode(Node):
         msg.data = fps
         return msg
 
+    def set_start_time(self):
+        self.start_time = time.time()
+
     def calculate_fps(self):
-        self.frames += 1
-
-        if self.start_time == 0:
-            self.start_time = time.time()
-
         self.end_time = time.time()
         seconds = self.end_time - self.start_time
-
-        if seconds > 0:
-            self.fps = self.frames / seconds
+        self.fps = 1 / seconds
 
     def timer_callback(self):
-        if self.fps >= 60 or self.fps == 0:
-            if self.camera and self.camera.thread_started:
-                grabbed, frame = self.camera.read_frame()
+        if self.camera and self.camera.thread_started:
+            self.set_start_time()
+            grabbed, frame = self.camera.read_frame()
 
-                if grabbed and frame is not None:
-                    msg = self.convert_frame_to_ros_msg(frame)
-                    self.publisher_.publish(msg)
+            if grabbed and frame is not None:
+                msg = self.convert_frame_to_ros_msg(frame)
+                self.publisher_.publish(msg)
+                self.calculate_fps()
 
-        self.calculate_fps()
         self.fps_publisher.publish(self.convert_fps_to_ros_msg(self.fps))
 
 

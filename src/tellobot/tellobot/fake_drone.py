@@ -4,11 +4,11 @@ class FakeDrone:
         self.started = False
 
     def start(self):
-        if self.started == False:
+        if not self.started:
             self.started = True
 
     def stop(self):
-        if self.started == True:
+        if self.started:
             self.started = False
 
     def send_command(self, command):
@@ -17,14 +17,11 @@ class FakeDrone:
     def get_response(self):
         return 'ok'
 
-    def get_height(self):
-        return 10.0
-
     def get_battery(self):
-        return 10.0
+        return 100
 
     def get_speed(self):
-        return 10.0
+        return 1
 
     def land(self):
         return True

@@ -12,9 +12,8 @@ class GUIButtons:
         cvui.init(WINDOW)
         self.frame = np.zeros((200, 700, 3), np.uint8)
         self.cam_fps = 0
-        self.drone_height = 0
-        self.drone_battery = 0
-        self.drone_speed = 0
+        self.drone_battery = 100
+        self.drone_speed = 1
         self.drone_cmd = 0
         self.pose = 0
 
@@ -63,25 +62,20 @@ class GUIButtons:
             self.frame,
             416,
             48,
-            'Drone Speed: {0}'.format(self.drone_speed))
+            'Drone Speed: {0} cm/s'.format(self.drone_speed))
 
         cvui.text(
             self.frame,
             416,
             64,
-            'Drone Battery: {0}'.format(self.drone_battery))
+            'Drone Battery: {0}%'.format(self.drone_battery))
 
         cvui.text(
             self.frame,
             416,
             80,
-            'Drone Height: {0}'.format(self.drone_height))
-
-        cvui.text(
-            self.frame,
-            416,
-            96,
             'CAM FPS: {0}'.format(self.cam_fps))
+
 
     def show(self, publish_user_cmd):
         self.frame[:] = (49, 52, 49)

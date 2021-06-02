@@ -1,6 +1,6 @@
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import Int16MultiArray, String, Float32, Bool
+from std_msgs.msg import String, Int8
 
 from tellobot.fake_drone import FakeDrone
 from tellobot.tello_drone import TelloDrone
@@ -23,14 +23,13 @@ class DroneNode(Node):
             self.listener_drone_cmd_callback,
             10)
 
-        self.drone_height_publisher = self.create_publisher(Float32, 'drone_height', 10)
-        self.drone_battery_publisher = self.create_publisher(Float32, 'drone_battery', 10)
-        self.drone_speed_publisher = self.create_publisher(Float32, 'drone_speed', 10)
+        self.drone_battery_publisher = self.create_publisher(Int8, 'drone_battery', 10)
+        self.drone_speed_publisher = self.create_publisher(Int8, 'drone_speed', 10)
 
         self.timer = self.create_timer(timer_period, self.timer_callback)
 
     def create_to_float_ros_msg(self, data):
-        msg = Float32()
+        msg = Int8()
         msg.data = data
         return msg
 
@@ -61,11 +60,9 @@ class DroneNode(Node):
         self.drone.start()
 
     def timer_callback(self):
-        drone_height = self.drone.get_height()
         drone_battery = self.drone.get_battery()
         drone_speed = self.drone.get_speed()
 
-        self.drone_height_publisher.publish(self.create_to_float_ros_msg(drone_height))
         self.drone_battery_publisher.publish(self.create_to_float_ros_msg(drone_battery))
         self.drone_speed_publisher.publish(self.create_to_float_ros_msg(drone_speed))
 

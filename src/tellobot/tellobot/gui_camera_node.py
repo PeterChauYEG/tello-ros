@@ -1,7 +1,7 @@
 import rclpy
 from rclpy.node import Node
 import cv2
-from std_msgs.msg import String, Int16MultiArray, Float32, Bool, UInt8MultiArray
+from std_msgs.msg import String, Int16MultiArray, Bool, UInt8MultiArray
 import numpy as np
 
 from tellobot.gui_camera import GUICamera
@@ -23,7 +23,7 @@ class GUICCameraNode(Node):
             UInt8MultiArray,
             'video_frames',
             self.listener_video_frames_callback,
-            1)
+            20)
 
         self.pose_subscription = self.create_subscription(
             String,
