@@ -59,8 +59,7 @@ class AINode(Node):
         self.drone_cmd_publisher.publish(self.convert_drone_cmd_to_ros_msg(self.ai.drone_cmd))
         self.is_pose_in_box_publisher.publish(self.convert_is_pose_in_box_to_ros_msg(self.ai.is_pose_in_box))
 
-        if self.ai.user_cmd == CMDS['NONE']:
-            self.ai.reset_state()
+        self.ai.reset_state()
 
 
 def main(args=None):

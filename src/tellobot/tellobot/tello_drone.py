@@ -63,7 +63,7 @@ class TelloDrone:
             height_val = height_val / cnt
 
             # if the height value is in normal range
-            if height_val == 9 or height_val == 10 or height_val == 11:
+            if 9 <= height_val <= 11:
                 self.send_command(TELLO_CMDS['z_inc'] + ' 0.5')
             else:
                 self.land()
@@ -150,6 +150,7 @@ class TelloDrone:
         """
         height = self.send_command('height?')
         height = str(height)
+        print('height %s' % height)
         height = filter(str.isdigit, height)
 
         try:

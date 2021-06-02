@@ -10,7 +10,7 @@ class DroneNode(Node):
     def __init__(self):
         super().__init__('drone_node')
 
-        timer_period = 0.1
+        timer_period = 10
 
         self.drone = None
 
@@ -26,6 +26,7 @@ class DroneNode(Node):
         self.drone_height_publisher = self.create_publisher(Float32, 'drone_height', 10)
         self.drone_battery_publisher = self.create_publisher(Float32, 'drone_battery', 10)
         self.drone_speed_publisher = self.create_publisher(Float32, 'drone_speed', 10)
+        self.user_cmd_publisher = self.create_publisher(String, 'user_cmd', 10)
 
         self.timer = self.create_timer(timer_period, self.timer_callback)
 
@@ -43,7 +44,7 @@ class DroneNode(Node):
         tello_cmd = TELLO_CMDS[drone_cmd]
 
         if drone_cmd != CMDS['TAKE_OFF'] and drone_cmd != CMDS['LAND'] and drone_cmd != CMDS['NONE']:
-            tello_cmd = tello_cmd + ' %d' % 1
+            tello_cmd = tello_cmd + ' %d' % 20
 
         return tello_cmd
 

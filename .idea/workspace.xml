@@ -6,35 +6,23 @@
   <component name="ChangeListManager">
     <list default="true" id="9e6b7c52-96dc-4b8b-9b15-d3eca34e35e1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/ai.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/ai.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/ai_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/ai_node.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/camera_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/camera_node.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/drone_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/drone_node.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/gui_buttons_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/gui_buttons_node.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/gui_camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/gui_camera.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/gui_camera_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/gui_camera_node.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/pose_ml.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/pose_ml.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/pose_ml_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/pose_ml_node.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/gui_buttons.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/gui_buttons.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/tello_drone.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/build/tellobot/build/lib/tellobot/tello_drone.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/ai.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/ai.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/ai_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/ai_node.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/camera_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/camera_node.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/drone_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/drone_node.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/gui_buttons_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/gui_buttons_node.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/gui_camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/gui_camera.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/gui_camera_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/gui_camera_node.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/pose_ml.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/pose_ml.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/pose_ml_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/pose_ml_node.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/gui_buttons.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/gui_buttons.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/tello_drone.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/install/tellobot/lib/python3.8/site-packages/tellobot/tello_drone.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/install/tellobot/share/tellobot/launch/basic.launch.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/install/tellobot/share/tellobot/launch/basic.launch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install/tellobot/share/tellobot/launch/tello_camera.launch.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/install/tellobot/share/tellobot/launch/tello_camera.launch.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/log/latest_build" beforeDir="false" afterPath="$PROJECT_DIR$/src/log/latest_build" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tellobot/launch/basic.launch.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/launch/basic.launch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/ai.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/ai.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/launch/tello_camera.launch.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/launch/tello_camera.launch.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/ai_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/ai_node.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/camera_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/camera_node.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/drone_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/drone_node.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/gui_buttons_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/gui_buttons_node.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/gui_camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/gui_camera.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/gui_camera_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/gui_camera_node.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/pose_ml.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/pose_ml.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/pose_ml_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/pose_ml_node.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/gui_buttons.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/gui_buttons.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/tello_drone.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/tello_drone.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

@@ -62,11 +62,11 @@ class CameraNode(Node):
             self.fps = self.frames / seconds
 
     def timer_callback(self):
-        if self.fps > 60:
-            if self.camera and self.camera.thread_started == True:
+        if self.fps >= 60 or self.fps == 0:
+            if self.camera and self.camera.thread_started:
                 grabbed, frame = self.camera.read_frame()
 
-                if grabbed == True and frame is not None:
+                if grabbed and frame is not None:
                     msg = self.convert_frame_to_ros_msg(frame)
                     self.publisher_.publish(msg)
 
