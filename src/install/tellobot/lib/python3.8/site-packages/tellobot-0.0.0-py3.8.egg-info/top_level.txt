@@ -1,2 +1,0 @@
-libh264decoder
-tellobot

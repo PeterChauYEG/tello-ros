@@ -26,7 +26,6 @@ class DroneNode(Node):
         self.drone_height_publisher = self.create_publisher(Float32, 'drone_height', 10)
         self.drone_battery_publisher = self.create_publisher(Float32, 'drone_battery', 10)
         self.drone_speed_publisher = self.create_publisher(Float32, 'drone_speed', 10)
-        self.user_cmd_publisher = self.create_publisher(String, 'user_cmd', 10)
 
         self.timer = self.create_timer(timer_period, self.timer_callback)
 
