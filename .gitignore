@@ -3,6 +3,6 @@
 *.dat
 **/*.caffemodel
 **/*/.idea/
-**/*/build/
-**/*/install/
-**/*/log/
+build/
+install/
+log/
