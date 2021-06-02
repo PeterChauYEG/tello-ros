@@ -81,7 +81,6 @@ class GUIButtonsNode(Node):
     def listener_pose_callback(self, msg):
         self.gui_buttons.pose = msg.data
 
-
     def timer_callback(self):
         self.gui_buttons.show(self.publish_user_cmd)
 

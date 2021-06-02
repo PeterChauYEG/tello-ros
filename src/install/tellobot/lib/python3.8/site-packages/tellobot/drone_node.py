@@ -26,7 +26,6 @@ class DroneNode(Node):
         self.drone_height_publisher = self.create_publisher(Float32, 'drone_height', 10)
         self.drone_battery_publisher = self.create_publisher(Float32, 'drone_battery', 10)
         self.drone_speed_publisher = self.create_publisher(Float32, 'drone_speed', 10)
-        self.user_cmd_publisher = self.create_publisher(String, 'user_cmd', 10)
 
         self.timer = self.create_timer(timer_period, self.timer_callback)
 
@@ -43,7 +42,7 @@ class DroneNode(Node):
     def convert_drone_cmd_to_tello_cmd(self, drone_cmd):
         tello_cmd = TELLO_CMDS[drone_cmd]
 
-        if drone_cmd != CMDS['TAKE_OFF'] and drone_cmd != CMDS['LAND']:
+        if drone_cmd != CMDS['TAKE_OFF'] and drone_cmd != CMDS['LAND'] and drone_cmd != CMDS['NONE']:
             tello_cmd = tello_cmd + ' %d' % 1
 
         return tello_cmd
@@ -80,9 +79,6 @@ class DroneNode(Node):
                 self.drone.land()
             else:
                 self.drone.send_command(tello_cmd)
-        else:
-            self.user_cmd_publisher.publish(self.create_none_user_cmd_ros_msg(tello_cmd))
-
 
 def main(args=None):
     rclpy.init(args=args)

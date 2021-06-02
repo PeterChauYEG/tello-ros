@@ -19,25 +19,25 @@ def draw_pose(frame, current_pose, points):
 
     # Draw the detected skeleton points
     if len(points) != 0:
+        # Draw Skeleton
+        for pair in POSE_PAIRS:
+            partA = pair[0]
+            partB = pair[1]
+
+            if points[partA][0] != overflow_null and points[partA][1] != overflow_null and points[partB][0] != overflow_null and points[partB][1] != overflow_null:
+                cv2.line(
+                    frame,
+                    (points[partA][0], points[partA][1]),
+                    (points[partB][0], points[partB][1]),
+                    pose_line_color,
+                    2)
+
         for i in range(15):
-            # Draw Skeleton
-            for pair in POSE_PAIRS:
-                partA = pair[0]
-                partB = pair[1]
-
-                if points[partA][0] != overflow_null and points[partA][1] != overflow_null and points[partB][0] != overflow_null and points[partB][1] != overflow_null:
-                    cv2.line(
-                        frame,
-                        (points[partA][0], points[partA][1]),
-                        (points[partB][0], points[partB][1]),
-                        pose_line_color,
-                        2)
-
             # Draw points
             cv2.circle(
                 frame,
                 points[i],
-                8,
+                4,
                 NORMAL_COLOR,
                 thickness=-1,
                 lineType=cv2.FILLED)
@@ -63,7 +63,7 @@ class GUICamera:
         cv2.moveWindow(WINDOW, 600, 360)  # do this dynamically
 
     def get_center_box_points(self):
-        center_box_half_size = int(TARGET_FRAME_HEIGHT / 3)
+        center_box_half_size = int(TARGET_FRAME_HEIGHT / 4)
 
         return [
             (self.center_point[0] - center_box_half_size, self.center_point[1] - center_box_half_size),

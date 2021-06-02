@@ -6,7 +6,7 @@ import numpy as np
 
 from tellobot.gui_camera import GUICamera
 from tellobot.cmds import CMDS
-from tellobot.resolutions import TARGET_FRAME_WIDTH, TARGET_FRAME_HEIGHT,  TELLO_CAMERA_FRAME_WIDTH, TELLO_CAMERA_FRAME_HEIGHT
+from tellobot.resolutions import TARGET_FRAME_WIDTH, TARGET_FRAME_HEIGHT
 
 class GUICCameraNode(Node):
     def __init__(self):

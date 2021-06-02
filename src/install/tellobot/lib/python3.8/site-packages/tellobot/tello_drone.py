@@ -168,7 +168,7 @@ class TelloDrone:
         """
 
         battery = self.send_command('battery?')
-        print('battery %s' % battery)
+
         try:
             battery = float(battery)
             return battery

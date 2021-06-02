@@ -238,7 +238,6 @@ class PoseML:
         if key not in self.current_poses_captured:
             self.current_poses_captured[key] = 0
         self.current_poses_captured[key] += 1
-        print("%d:%s captured" % (self.frame_cnt, key))
 
     def calculate_pose(self):
         if self.is_arms_down_45():
