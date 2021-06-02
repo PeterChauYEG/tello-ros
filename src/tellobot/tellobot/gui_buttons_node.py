@@ -8,37 +8,37 @@ class GUIButtonsNode(Node):
     def __init__(self):
         super().__init__('gui_buttons_node')
 
-        self.user_cmd_publisher = self.create_publisher(String, 'user_cmd', 10)
+        self.user_cmd_publisher = self.create_publisher(String, 'user_cmd', 1)
 
         self.drone_battery_subscription = self.create_subscription(
             Int8,
             'drone_battery',
             self.drone_battery_callback,
-            10)
+            500)
 
         self.drone_speed_subscription = self.create_subscription(
             Int8,
             'drone_speed',
             self.drone_speed_callback,
-            10)
+            500)
 
         self.fps_subscription = self.create_subscription(
             Float32,
             'fps',
             self.fps_callback,
-            60)
+            500)
 
         self.drone_cmd_subscription = self.create_subscription(
             String,
             'drone_cmd',
             self.listener_drone_cmd_callback,
-            10)
+            1)
 
         self.pose_subscription = self.create_subscription(
             String,
             'pose',
             self.listener_pose_callback,
-            10)
+            1)
 
         self.gui_buttons = GUIButtons()
 

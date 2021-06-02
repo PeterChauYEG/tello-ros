@@ -16,9 +16,9 @@ class PoseMLNode(Node):
             UInt8MultiArray,
             'video_frames',
             self.listener_callback,
-            60)
-        self.pose_publisher = self.create_publisher(String, 'pose', 10)
-        self.pose_points_publisher = self.create_publisher(Int16MultiArray, 'pose_points', 10)
+            1)
+        self.pose_publisher = self.create_publisher(String, 'pose', 1)
+        self.pose_points_publisher = self.create_publisher(Int16MultiArray, 'pose_points', 1)
 
     def convert_ros_msg_to_frame(self, msg):
         current_frame = np.array(msg.data)

@@ -23,25 +23,25 @@ class GUICCameraNode(Node):
             UInt8MultiArray,
             'video_frames',
             self.listener_video_frames_callback,
-            20)
+            1)
 
         self.pose_subscription = self.create_subscription(
             String,
             'pose',
             self.listener_pose_callback,
-            10)
+            1)
 
         self.is_pose_in_box_subscription = self.create_subscription(
             Bool,
             'is_pose_in_box',
             self.listener_is_pose_in_box_callback,
-            10)
+            1)
 
         self.pose_points_subscription = self.create_subscription(
             Int16MultiArray,
             'pose_points',
             self.listener_pose_points_callback,
-            10)
+            1)
 
     def convert_ros_msg_to_frame(self, msg):
         current_frame = np.array(msg.data)

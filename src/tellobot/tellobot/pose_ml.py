@@ -46,8 +46,8 @@ class PoseML:
         self.nPoints = 15
 
         # read the path of the trained model of the neural network for pose recognition
-        self.protoFile = "/Users/peterchau/robotics/ros-drone/src/tellobot/tellobot/model/pose/mpi/pose_deploy_linevec_faster_4_stages.prototxt"
-        self.weightsFile = "/Users/peterchau/robotics/ros-drone/src/tellobot/tellobot/model/pose/mpi/pose_iter_160000.caffemodel"
+        self.protoFile = "/Users/peterchau/robotics/ros-drone/src/tellobot/tellobot/models/pose/mpi/pose_deploy_linevec_faster_4_stages.prototxt"
+        self.weightsFile = "/Users/peterchau/robotics/ros-drone/src/tellobot/tellobot/models/pose/mpi/pose_iter_160000.caffemodel"
 
         # init vars ===========
         # input frame

@@ -11,19 +11,20 @@ class CameraNode(Node):
     def __init__(self):
         super().__init__('camera_node')
 
+        timer_period = 0.0001
+        self.frames = 0
+        self.fps = 0.00
+        self.start_time = 0
+        self.end_time = 0
         self.camera = None
 
         self.declare_parameter('camera_type', 'web_camera')
         self.handle_camera_type()
 
-        self.publisher_ = self.create_publisher(UInt8MultiArray, 'video_frames', 20)
-        self.fps_publisher = self.create_publisher(Float32, 'fps', 60)
-        timer_period = 0.0001
+        self.publisher_ = self.create_publisher(UInt8MultiArray, 'video_frames', 1)
+        self.fps_publisher = self.create_publisher(Float32, 'fps', 500)
+
         self.timer = self.create_timer(timer_period, self.timer_callback)
-        self.frames = 0
-        self.fps = 0.00
-        self.start_time = 0
-        self.end_time = 0
 
     def handle_camera_type(self):
         camera_type = self.get_parameter('camera_type').get_parameter_value().string_value

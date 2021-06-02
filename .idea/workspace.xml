@@ -5,13 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e6b7c52-96dc-4b8b-9b15-d3eca34e35e1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/camera_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/camera_node.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/drone_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/drone_node.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/fake_drone.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/fake_drone.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/gui_buttons.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/gui_buttons.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/gui_buttons_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/gui_buttons_node.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/gui_camera_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/gui_camera_node.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/tello_drone.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/tello_drone.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/h264decoder/CMakeCache.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/h264decoder/CMakeFiles/3.18.4/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/h264decoder/CMakeFiles/3.18.4/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/h264decoder/CMakeFiles/3.18.4/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/h264decoder/CMakeFiles/3.18.4/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/h264decoder/CMakeFiles/3.18.4/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/h264decoder/CMakeFiles/3.18.4/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/h264decoder/CMakeFiles/3.18.4/CompilerIdC/CMakeCCompilerId.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/h264decoder/CMakeFiles/3.18.4/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/h264decoder/CMakeFiles/3.18.4/CompilerIdCXX/CMakeCXXCompilerId.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/h264decoder/CMakeFiles/CMakeError.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/h264decoder/CMakeFiles/CMakeOutput.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/h264decoder/CMakeFiles/cmake.check_cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/h264decoder/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/h264decoder/Linux/libh264decoder.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/h264decoder/Mac/libh264decoder.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/h264decoder/Windows/x64/libh264decoder.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/h264decoder/Windows/x86/libh264decoder.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/h264decoder/h264decoder.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/h264decoder/h264decoder.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/h264decoder/h264decoder_python.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/h264decoder/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/model/getModels.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/model/getModels.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/model/pose/mpi/pose_deploy_linevec_faster_4_stages.prototxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/pose_ml.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/pose_ml.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/pose_ml_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/pose_ml_node.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -21,10 +21,10 @@ class DroneNode(Node):
             String,
             'drone_cmd',
             self.listener_drone_cmd_callback,
-            10)
+            1)
 
-        self.drone_battery_publisher = self.create_publisher(Int8, 'drone_battery', 10)
-        self.drone_speed_publisher = self.create_publisher(Int8, 'drone_speed', 10)
+        self.drone_battery_publisher = self.create_publisher(Int8, 'drone_battery', 500)
+        self.drone_speed_publisher = self.create_publisher(Int8, 'drone_speed', 500)
 
         self.timer = self.create_timer(timer_period, self.timer_callback)
 
