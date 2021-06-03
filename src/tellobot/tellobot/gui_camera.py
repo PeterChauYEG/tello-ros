@@ -1,22 +1,21 @@
 import cv2
 from tellobot.resolutions import TARGET_FRAME_WIDTH, TARGET_FRAME_HEIGHT
 from tellobot.gui_constants import GUI_CENTER_BOX_HALF_SIZE
+from tellobot.colors import POSE_COLOR, POSE_IN_BOX_COLOR, BOX_COLOR, POSE_DETECTED_COLOR, IMAGE_TEXT_COLOR
 
 # +++++++++++++===============================
 WINDOW = "ML SHIT"
 POSE_PAIRS = [[0, 1], [1, 2], [2, 3], [3, 4], [1, 5], [5, 6], [6, 7], [1, 14], [14, 8], [8, 9], [9, 10], [14, 11],
               [11, 12], [12, 13]]
-NORMAL_COLOR = (66, 144, 245)
-ACTIVE_COLOR = (0, 0, 245)
 overflow_null = -999
 
 
 def draw_pose(frame, current_pose, points):
-    pose_line_color = NORMAL_COLOR
+    pose_line_color = POSE_COLOR
 
     # highlight skeleton when there is a pose
     if current_pose != '':
-        pose_line_color = ACTIVE_COLOR
+        pose_line_color = POSE_DETECTED_COLOR
 
     # Draw the detected skeleton points
     if len(points) != 0:
@@ -39,7 +38,7 @@ def draw_pose(frame, current_pose, points):
                 frame,
                 points[i],
                 4,
-                NORMAL_COLOR,
+                POSE_COLOR,
                 thickness=-1,
                 lineType=cv2.FILLED)
 
@@ -50,8 +49,8 @@ def draw_pose(frame, current_pose, points):
                 points[i],
                 cv2.FONT_HERSHEY_SIMPLEX,
                 0.75,
-                NORMAL_COLOR,
-                1,
+                IMAGE_TEXT_COLOR,
+                2,
                 lineType=cv2.LINE_AA)
 
 
@@ -72,18 +71,18 @@ class GUICamera:
         ]
 
     def draw_box(self, frame, is_pose_in_box):
-        box_line_color = NORMAL_COLOR
+        box_line_color = BOX_COLOR
 
         # highlight box
         if is_pose_in_box:
-            box_line_color = ACTIVE_COLOR
+            box_line_color = POSE_IN_BOX_COLOR
 
         # DRAW Center
         cv2.circle(
             frame,
             self.center_point,
             4,
-            box_line_color,
+            POSE_IN_BOX_COLOR,
             thickness=-1,
             lineType=cv2.FILLED)
 

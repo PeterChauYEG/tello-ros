@@ -61,6 +61,10 @@ class TakePictureService(Node):
 
     def listener_video_frames_callback(self, msg):
         current_frame = np.array(msg.data)
+
+        if len(current_frame) != TARGET_FRAME_HEIGHT*TARGET_FRAME_WIDTH*3:
+            return
+
         reshaped_frame = current_frame.reshape(TARGET_FRAME_HEIGHT, TARGET_FRAME_WIDTH, 3)
         self.frame = reshaped_frame
 

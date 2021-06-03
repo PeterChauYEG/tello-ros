@@ -57,4 +57,15 @@ def generate_launch_description():
                 {'drone_type': 'tello_drone'}
             ]
         ),
+        Node(
+            package='tellobot',
+            node_executable='take_picture_service_node',
+            name='take_picture_service_node',
+            output='screen',
+            arguments=['--ros-args', '--log-level', logger],
+            parameters=[
+                {'picture_timeout': 10},
+                {'enable_take_picture': True}
+            ]
+        ),
     ])

@@ -1,7 +1,9 @@
 import cv2
 import numpy as np
+
 import tellobot.cvui as cvui
 from tellobot.cmds import CMDS
+from tellobot.colors import BACKGROUND_COLOR, TEXT_COLOR
 
 # +++++++++++++===============================
 WINDOW = "BUTTONS"
@@ -50,35 +52,45 @@ class GUIButtons:
             self.frame,
             416,
             16,
-            'Detected pose: {0}'.format(self.pose))
+            'Detected pose: {0}'.format(self.pose),
+            0.4,
+            TEXT_COLOR)
 
         cvui.text(
             self.frame,
             416,
             32,
-            'Drone CMD: {0}'.format(self.drone_cmd))
+            'Drone CMD: {0}'.format(self.drone_cmd),
+            0.4,
+            TEXT_COLOR)
 
         cvui.text(
             self.frame,
             416,
             48,
-            'Drone Speed: {0} cm/s'.format(self.drone_speed))
+            'Drone Speed: {0} cm/s'.format(self.drone_speed),
+            0.4,
+            TEXT_COLOR)
 
         cvui.text(
             self.frame,
             416,
             64,
-            'Drone Battery: {0}%'.format(self.drone_battery))
+            'Drone Battery: {0}%'.format(self.drone_battery),
+            0.4,
+            TEXT_COLOR)
 
         cvui.text(
             self.frame,
             416,
             80,
-            'CAM FPS: {0}'.format(self.cam_fps))
+            'CAM FPS: {0}'.format(self.cam_fps),
+            0.4,
+            TEXT_COLOR)
 
 
     def show(self, publish_user_cmd):
-        self.frame[:] = (49, 52, 49)
+        self.frame[:] = BACKGROUND_COLOR
         self.draw_buttons(publish_user_cmd)
         self.draw_info()
         cvui.imshow(WINDOW, self.frame)

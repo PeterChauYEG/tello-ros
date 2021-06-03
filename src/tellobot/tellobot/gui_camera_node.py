@@ -45,6 +45,10 @@ class GUICCameraNode(Node):
 
     def convert_ros_msg_to_frame(self, msg):
         current_frame = np.array(msg.data)
+
+        if len(current_frame) != TARGET_FRAME_HEIGHT*TARGET_FRAME_WIDTH*3:
+            return
+        
         reshaped_frame = current_frame.reshape(TARGET_FRAME_HEIGHT, TARGET_FRAME_WIDTH, 3)
 
         return reshaped_frame
