@@ -64,8 +64,11 @@ class AINode(Node):
 
     def listener_pose_points_callback(self, msg):
         pose_points = np.array(msg.data)
-        resized_pose_points = pose_points.reshape(15, 2).tolist()
 
+        if pose_points.shape[0] != 30:
+            return
+
+        resized_pose_points = pose_points.reshape(15, 2).tolist()
         self.ai.set_pose_points(resized_pose_points)
         drone_cmd, is_pose_in_box = self.ai.read_drone_cmd_and_is_pose_in_box()
 

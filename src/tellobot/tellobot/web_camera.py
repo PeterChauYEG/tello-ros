@@ -47,5 +47,6 @@ class WebCamera:
         self.thread_started = False
 
     def __del__(self):
-        self.thread.stop()
+        if self.thread:
+            self.thread.stop()
 

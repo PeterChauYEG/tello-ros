@@ -63,5 +63,9 @@ def generate_launch_description():
             name='take_picture_service_node',
             output='screen',
             arguments=['--ros-args', '--log-level', logger],
+            parameters=[
+                {'picture_timeout': 10},
+                {'enable_take_picture': True}
+            ]
         ),
     ])

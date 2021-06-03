@@ -356,4 +356,5 @@ class PoseML:
         self.calculate_period_pose()
 
     def __del__(self):
-        self.thread.stop()
+        if self.thread:
+            self.thread.stop()

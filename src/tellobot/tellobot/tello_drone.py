@@ -107,7 +107,8 @@ class TelloDrone:
         self.thread_started = False
 
     def __del__(self):
-        self.thread.stop()
-
+        if self.thread:
+            self.thread.stop()
+            
         if self.socket is not None:
             self.socket.close()

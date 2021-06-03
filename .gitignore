@@ -2,7 +2,7 @@
 *.DS_Store
 *.dat
 **/*.caffemodel
-**/*/.idea/
+.idea/
 build/
 install/
 log/

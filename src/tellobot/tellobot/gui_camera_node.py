@@ -57,7 +57,11 @@ class GUICCameraNode(Node):
 
     def listener_pose_points_callback(self, msg):
         pose_points = np.array(msg.data)
-        resized_frame = pose_points.reshape(15,2).tolist()
+
+        if pose_points.shape[0] != 30:
+            return
+
+        resized_frame = pose_points.reshape(15, 2).tolist()
         self.pose_points = resized_frame
 
     def listener_video_frames_callback(self, msg):

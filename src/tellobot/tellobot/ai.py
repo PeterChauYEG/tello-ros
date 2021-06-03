@@ -48,7 +48,8 @@ class AI:
         self.thread_started = False
 
     def __del__(self):
-        self.thread.stop()
+        if self.thread:
+            self.thread.stop()
 
     def reset_state(self):
         self.current_pose = ''
