@@ -1,13 +1,7 @@
 import cv2
-from tellobot.resolutions import TARGET_FRAME_WIDTH, TARGET_FRAME_HEIGHT
-from tellobot.gui_constants import GUI_CENTER_BOX_HALF_SIZE
+from tellobot.gui_constants import GUI_CENTER_BOX_HALF_SIZE, CENTER_POINT, WINDOW
 from tellobot.colors import POSE_COLOR, POSE_IN_BOX_COLOR, BOX_COLOR, POSE_DETECTED_COLOR, IMAGE_TEXT_COLOR
-
-# +++++++++++++===============================
-WINDOW = "ML SHIT"
-POSE_PAIRS = [[0, 1], [1, 2], [2, 3], [3, 4], [1, 5], [5, 6], [6, 7], [1, 14], [14, 8], [8, 9], [9, 10], [14, 11],
-              [11, 12], [12, 13]]
-overflow_null = -999
+from tellobot.ai_constants import POSE_PAIRS, OVERFLOW_NULL
 
 
 def draw_pose(frame, current_pose, points):
@@ -24,7 +18,7 @@ def draw_pose(frame, current_pose, points):
             partA = pair[0]
             partB = pair[1]
 
-            if points[partA][0] != overflow_null and points[partA][1] != overflow_null and points[partB][0] != overflow_null and points[partB][1] != overflow_null:
+            if points[partA][0] != OVERFLOW_NULL and points[partA][1] != OVERFLOW_NULL and points[partB][0] != OVERFLOW_NULL and points[partB][1] != OVERFLOW_NULL:
                 cv2.line(
                     frame,
                     (points[partA][0], points[partA][1]),
@@ -56,7 +50,6 @@ def draw_pose(frame, current_pose, points):
 
 class GUICamera:
     def __init__(self):
-        self.center_point = (int(TARGET_FRAME_WIDTH / 2), int(TARGET_FRAME_HEIGHT / 2))
         self.center_box_points = self.get_center_box_points()
 
         cv2.namedWindow(WINDOW)
@@ -64,10 +57,10 @@ class GUICamera:
 
     def get_center_box_points(self):
         return [
-            (self.center_point[0] - GUI_CENTER_BOX_HALF_SIZE, self.center_point[1] - GUI_CENTER_BOX_HALF_SIZE),
-            (self.center_point[0] + GUI_CENTER_BOX_HALF_SIZE, self.center_point[1] - GUI_CENTER_BOX_HALF_SIZE),
-            (self.center_point[0] + GUI_CENTER_BOX_HALF_SIZE, self.center_point[1] + GUI_CENTER_BOX_HALF_SIZE),
-            (self.center_point[0] - GUI_CENTER_BOX_HALF_SIZE, self.center_point[1] + GUI_CENTER_BOX_HALF_SIZE),
+            (CENTER_POINT[0] - GUI_CENTER_BOX_HALF_SIZE, CENTER_POINT[1] - GUI_CENTER_BOX_HALF_SIZE),
+            (CENTER_POINT[0] + GUI_CENTER_BOX_HALF_SIZE, CENTER_POINT[1] - GUI_CENTER_BOX_HALF_SIZE),
+            (CENTER_POINT[0] + GUI_CENTER_BOX_HALF_SIZE, CENTER_POINT[1] + GUI_CENTER_BOX_HALF_SIZE),
+            (CENTER_POINT[0] - GUI_CENTER_BOX_HALF_SIZE, CENTER_POINT[1] + GUI_CENTER_BOX_HALF_SIZE),
         ]
 
     def draw_box(self, frame, is_pose_in_box):
@@ -80,7 +73,7 @@ class GUICamera:
         # DRAW Center
         cv2.circle(
             frame,
-            self.center_point,
+            CENTER_POINT,
             4,
             POSE_IN_BOX_COLOR,
             thickness=-1,

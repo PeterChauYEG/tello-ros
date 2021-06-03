@@ -2,27 +2,8 @@ import cv2
 import time
 import math
 from threading import Thread
+from tellobot.ai_constants import OVERFLOW_NULL, POSES, POSE_PROTOFILE, POSE_WEIGHTSFILE
 
-poses = {
-    'arms_down_45': 'arms_down_45',
-    'arms_flat': 'arms_flat',
-    'arms_V': 'arms_V',
-    'arms_up_45': 'arms_up_45',
-
-    'left_arm_down_45': 'left_arm_down_45',  # 225 202.5,247.5
-    'left_arm_flat': 'left_arm_flat',  # 180 202.5,157.5
-    'left_arm_up_45': 'left_arm_up_45',  # 135 157.5,112.5
-
-    'right_arm_down_45': 'right_arm_down_45',  # -45 -67.5,-22.5
-    'right_arm_flat': 'right_arm_flat',  # 0 -22.5,22.5
-    'right_arm_up_45': 'right_arm_up_45',  # 45 67.5,22.5
-
-    # =======
-    'left_arm_v': 'left_arm_v',  # 120 < shoulder_angle < 180
-    'right_arm_v': 'right_arm_v',  # 20 < shoulder_angle < 80
-}
-
-overflow_null = -999
 
 class PoseML:
     def __init__(self):
@@ -45,10 +26,6 @@ class PoseML:
 
         # total number of the skeleton nodes
         self.nPoints = 15
-
-        # read the path of the trained model of the neural network for pose recognition
-        self.protoFile = "/Users/peterchau/robotics/ros-drone/src/tellobot/tellobot/models/pose/mpi/pose_deploy_linevec_faster_4_stages.prototxt"
-        self.weightsFile = "/Users/peterchau/robotics/ros-drone/src/tellobot/tellobot/models/pose/mpi/pose_iter_160000.caffemodel"
 
         # init vars ===========
         # input frame
@@ -77,7 +54,7 @@ class PoseML:
 
         # init ===============
         # read the neural network of the pose recognition
-        self.net = cv2.dnn.readNetFromCaffe(self.protoFile, self.weightsFile)
+        self.net = cv2.dnn.readNetFromCaffe(POSE_PROTOFILE, POSE_WEIGHTSFILE)
 
         self.thread = Thread(target=self.update, args=(), daemon=True)
         self.start()
@@ -119,7 +96,7 @@ class PoseML:
     def get_left_arm_position(self, min_angle, max_angle, is_straight, is_v=False):
         left = False
 
-        if self.points[5][0] != overflow_null and self.points[6][0] != overflow_null and self.points[7][0] != overflow_null:
+        if self.points[5][0] != OVERFLOW_NULL and self.points[6][0] != OVERFLOW_NULL and self.points[7][0] != OVERFLOW_NULL:
             shoulder_angle = self.get_angle(self.points[5], self.points[6])
             # correct the dimension
             if shoulder_angle < 0:
@@ -143,7 +120,7 @@ class PoseML:
     def get_right_arm_position(self, min_angle, max_angle, is_straight, is_v=False):
         right = False
 
-        if self.points[2][0] != overflow_null and self.points[3][0] != overflow_null and self.points[4][0] != overflow_null:
+        if self.points[2][0] != OVERFLOW_NULL and self.points[3][0] != OVERFLOW_NULL and self.points[4][0] != OVERFLOW_NULL:
             shoulder_angle = self.get_angle(self.points[2], self.points[3])
             if min_angle < shoulder_angle < max_angle:
                 elbow_angle = self.get_angle(self.points[2], self.points[3])
@@ -269,25 +246,25 @@ class PoseML:
 
     def calculate_pose(self):
         if self.is_arms_down_45():
-            self.update_poses_captured(poses['arms_down_45'])
+            self.update_poses_captured(POSES['arms_down_45'])
         elif self.is_arms_flat():
-            self.update_poses_captured(poses['arms_flat'])
+            self.update_poses_captured(POSES['arms_flat'])
         elif self.is_arms_v():
-            self.update_poses_captured(poses['arms_V'])
+            self.update_poses_captured(POSES['arms_V'])
         elif self.is_arms_up_45():
-            self.update_poses_captured(poses['arms_up_45'])
+            self.update_poses_captured(POSES['arms_up_45'])
         elif self.is_left_arm_up_45():
-            self.update_poses_captured(poses['left_arm_up_45'])
+            self.update_poses_captured(POSES['left_arm_up_45'])
         elif self.is_right_arm_up_45():
-            self.update_poses_captured(poses['right_arm_up_45'])
+            self.update_poses_captured(POSES['right_arm_up_45'])
         elif self.is_left_arm_down_45():
-            self.update_poses_captured(poses['left_arm_down_45'])
+            self.update_poses_captured(POSES['left_arm_down_45'])
         elif self.is_right_arm_down_45():
-            self.update_poses_captured(poses['right_arm_down_45'])
+            self.update_poses_captured(POSES['right_arm_down_45'])
         elif self.is_left_arm_flat():
-            self.update_poses_captured(poses['left_arm_flat'])
+            self.update_poses_captured(POSES['left_arm_flat'])
         elif self.is_right_arm_flat():
-            self.update_poses_captured(poses['right_arm_flat'])
+            self.update_poses_captured(POSES['right_arm_flat'])
 
     def handle_pose_points(self, output):
         # get shape of the output
@@ -308,7 +285,7 @@ class PoseML:
             if prob > self.prob_threshold:
                 self.points.append([int(x), int(y)])
             else:
-                self.points.append([overflow_null, overflow_null])
+                self.points.append([OVERFLOW_NULL, OVERFLOW_NULL])
 
     def detect(self):
         """

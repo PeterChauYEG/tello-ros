@@ -1,9 +1,8 @@
 from threading import Thread
 
-from tellobot.resolutions import TARGET_FRAME_WIDTH, TARGET_FRAME_HEIGHT
-from tellobot.gui_constants import GUI_CENTER_BOX_HALF_SIZE
+from tellobot.gui_constants import GUI_CENTER_BOX_HALF_SIZE, CENTER_POINT
 from tellobot.cmds import CMDS
-from tellobot.pose_ml import overflow_null
+from tellobot.ai_constants import MAX_HEAD_Y, MIN_HEAD_Y, POSE_CENTERED_SENSITIVITY, OVERFLOW_NULL
 
 
 class AI:
@@ -12,14 +11,13 @@ class AI:
         self.is_pose_in_box = False
         self.distance = {
             "x": 0,
-            "z": 0
+            "z": 0,
+            "y": 0
         }
         self.drone_cmd = CMDS['NONE']
         self.find_human_tick = 0
         self.max_find_human_period = 0.5
-        self.center_point = (TARGET_FRAME_WIDTH / 2, TARGET_FRAME_HEIGHT / 2)
         self.user_cmd = CMDS['NONE']
-        self.pose_centered_sensitivity = 0
         self.thread_started = False
         self.pose_points = None
 
@@ -64,18 +62,25 @@ class AI:
             abs_distance = {
                 'x': abs(self.distance['x']),
                 'z': abs(self.distance['z']),
+                'y': abs(self.distance['y']),
             }
 
-            if abs_distance['x'] >= abs_distance['z']:
+            if abs_distance['x'] >= abs_distance['z'] and abs_distance['x'] >= abs_distance['y']:
                 if self.distance['x'] < 0:
                     self.drone_cmd = CMDS['Z_CW']
                 elif self.distance['x'] > 0:
                     self.drone_cmd = CMDS['Z_CCW']
-            else:
+            elif abs_distance['z'] >= abs_distance['x'] and abs_distance['z'] >= abs_distance['y']:
                 if self.distance['z'] < 0:
                     self.drone_cmd = CMDS['Z_DEC']
                 elif self.distance['z'] > 0:
                     self.drone_cmd = CMDS['Z_INC']
+            elif abs_distance['y'] >= abs_distance['z'] and abs_distance['y'] >= abs_distance['x']:
+                if self.distance['y'] < 0:
+                    self.drone_cmd = CMDS['Y_DEC']
+                elif self.distance['y'] > 0:
+                    self.drone_cmd = CMDS['Y_INC']
+
         else:
             self.reset_state()
 
@@ -97,30 +102,42 @@ class AI:
     def get_sum_of_distance(self, points):
         self.distance = {
             "x": 0,
-            "z": 0
+            "z": 0,
+            "y": 0
         }
 
-        if self.center_point is not None and points is not None:
-            for point in points:
-                if point is not None and point[0] != overflow_null and point[1] != overflow_null:
-                    if point[0] < self.center_point[0] - GUI_CENTER_BOX_HALF_SIZE:
-                        self.distance['x'] = self.distance['x'] + (
-                                    point[0] - (self.center_point[0] - GUI_CENTER_BOX_HALF_SIZE))
-                    elif point[0] > self.center_point[0] + GUI_CENTER_BOX_HALF_SIZE:
-                        self.distance['x'] = self.distance['x'] + (
-                                    point[0] - (self.center_point[0] + GUI_CENTER_BOX_HALF_SIZE))
+        if points is None:
+            return
 
-                    if point[1] < self.center_point[1] - GUI_CENTER_BOX_HALF_SIZE:
+        if points[0] is not None and points[1] is not None and points[0][1] != OVERFLOW_NULL and points[1][1] != OVERFLOW_NULL:
+            head_size = points[1][1] - points[0][1]
+
+            if head_size < MIN_HEAD_Y:
+                self.distance['y'] = MIN_HEAD_Y - head_size
+            elif head_size > MAX_HEAD_Y:
+                self.distance['y'] = MAX_HEAD_Y - head_size
+
+        if CENTER_POINT is not None:
+            for point in points:
+                if point is not None and point[0] != OVERFLOW_NULL and point[1] != OVERFLOW_NULL:
+                    if point[0] < CENTER_POINT[0] - GUI_CENTER_BOX_HALF_SIZE:
+                        self.distance['x'] = self.distance['x'] + (
+                                    point[0] - (CENTER_POINT[0] - GUI_CENTER_BOX_HALF_SIZE))
+                    elif point[0] > CENTER_POINT[0] + GUI_CENTER_BOX_HALF_SIZE:
+                        self.distance['x'] = self.distance['x'] + (
+                                    point[0] - (CENTER_POINT[0] + GUI_CENTER_BOX_HALF_SIZE))
+
+                    if point[1] < CENTER_POINT[1] - GUI_CENTER_BOX_HALF_SIZE:
                         self.distance['z'] = self.distance['z'] + (
-                                    point[1] - (self.center_point[1] - GUI_CENTER_BOX_HALF_SIZE))
-                    elif point[1] > self.center_point[1] + GUI_CENTER_BOX_HALF_SIZE:
+                                    point[1] - (CENTER_POINT[1] - GUI_CENTER_BOX_HALF_SIZE))
+                    elif point[1] > CENTER_POINT[1] + GUI_CENTER_BOX_HALF_SIZE:
                         self.distance['z'] = self.distance['z'] + (
-                                    point[1] - (self.center_point[1] + GUI_CENTER_BOX_HALF_SIZE))
+                                    point[1] - (CENTER_POINT[1] + GUI_CENTER_BOX_HALF_SIZE))
 
     def get_is_pose_in_box(self):
-        if self.pose_centered_sensitivity >= self.distance[
-            'x'] >= -self.pose_centered_sensitivity and self.pose_centered_sensitivity >= \
-                self.distance['z'] >= -self.pose_centered_sensitivity:
+        if POSE_CENTERED_SENSITIVITY >= self.distance[
+            'x'] >= -POSE_CENTERED_SENSITIVITY and POSE_CENTERED_SENSITIVITY >= \
+                self.distance['z'] >= -POSE_CENTERED_SENSITIVITY:
             self.is_pose_in_box = True
             return
 
