@@ -82,8 +82,5 @@ class TelloCamera:
         self.thread_started = False
 
     def __del__(self):
-        if self.thread:
-            self.thread.stop()
-
         if self.socket_video is not None:
             self.socket_video.close()

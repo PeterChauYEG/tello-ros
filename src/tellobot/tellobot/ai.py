@@ -45,10 +45,6 @@ class AI:
     def stop(self):
         self.thread_started = False
 
-    def __del__(self):
-        if self.thread:
-            self.thread.stop()
-
     def reset_state(self):
         self.current_pose = ''
         self.drone_cmd = CMDS['NONE']

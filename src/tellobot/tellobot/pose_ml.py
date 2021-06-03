@@ -332,6 +332,3 @@ class PoseML:
         # certain times of pose recognition
         self.calculate_period_pose()
 
-    def __del__(self):
-        if self.thread:
-            self.thread.stop()

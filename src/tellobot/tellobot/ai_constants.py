@@ -21,7 +21,6 @@ POSES = {
     'right_arm_flat': 'right_arm_flat',  # 0 -22.5,22.5
     'right_arm_up_45': 'right_arm_up_45',  # 45 67.5,22.5
 
-    # =======
     'left_arm_v': 'left_arm_v',  # 120 < shoulder_angle < 180
     'right_arm_v': 'right_arm_v',  # 20 < shoulder_angle < 80
 }
