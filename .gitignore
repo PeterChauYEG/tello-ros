@@ -1,0 +1,9 @@
+*.pyc
+*.DS_Store
+*.dat
+**/*.caffemodel
+**/*/.idea/
+build/
+install/
+log/
+images/
