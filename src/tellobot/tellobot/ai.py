@@ -53,30 +53,31 @@ class AI:
 
     def get_center_human_cmd(self):
         # when the human is not centered
-        if not self.is_pose_in_box:
-            # determine if x or y is more off
-            abs_distance = {
-                'x': abs(self.distance['x']),
-                'z': abs(self.distance['z']),
-                'y': abs(self.distance['y']),
-            }
+        if self.is_pose_in_box:
+            self.reset_state()
 
-            if abs_distance['x'] >= abs_distance['z'] and abs_distance['x'] >= abs_distance['y']:
-                if self.distance['x'] < 0:
-                    self.drone_cmd = CMDS['Z_CW']
-                elif self.distance['x'] > 0:
-                    self.drone_cmd = CMDS['Z_CCW']
-            elif abs_distance['z'] >= abs_distance['x'] and abs_distance['z'] >= abs_distance['y']:
-                if self.distance['z'] < 0:
-                    self.drone_cmd = CMDS['Z_DEC']
-                elif self.distance['z'] > 0:
-                    self.drone_cmd = CMDS['Z_INC']
-            elif abs_distance['y'] >= abs_distance['z'] and abs_distance['y'] >= abs_distance['x']:
-                if self.distance['y'] < 0:
-                    self.drone_cmd = CMDS['Y_DEC']
-                elif self.distance['y'] > 0:
-                    self.drone_cmd = CMDS['Y_INC']
+         # determine if x or y is more off
+        abs_distance = {
+            'x': abs(self.distance['x']),
+            'z': abs(self.distance['z']),
+            'y': abs(self.distance['y']),
+        }
 
+        if abs_distance['x'] >= abs_distance['z'] and abs_distance['x'] >= abs_distance['y']:
+            if self.distance['x'] < 0:
+                self.drone_cmd = CMDS['Z_CCW']
+            elif self.distance['x'] > 0:
+                self.drone_cmd = CMDS['Z_CW']
+        elif abs_distance['z'] >= abs_distance['x'] and abs_distance['z'] >= abs_distance['y']:
+            if self.distance['z'] < 0:
+                self.drone_cmd = CMDS['Z_DEC']
+            elif self.distance['z'] > 0:
+                self.drone_cmd = CMDS['Z_INC']
+        elif abs_distance['y'] >= abs_distance['z'] and abs_distance['y'] >= abs_distance['x']:
+            if self.distance['y'] < 0:
+                self.drone_cmd = CMDS['Y_DEC']
+            elif self.distance['y'] > 0:
+                self.drone_cmd = CMDS['Y_INC']
         else:
             self.reset_state()
 
@@ -94,6 +95,8 @@ class AI:
 
         if self.user_cmd == CMDS['NONE']:
             self.get_center_human_cmd()
+        else:
+            self.reset_state()
 
     def get_sum_of_distance(self, points):
         self.distance = {

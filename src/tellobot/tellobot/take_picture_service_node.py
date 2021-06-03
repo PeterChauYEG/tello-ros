@@ -69,7 +69,6 @@ class TakePictureService(Node):
         self.frame = reshaped_frame
 
     def take_picture_cb(self, request, response):
-        self.get_logger().info('Incoming request')
         end_time = time.time()
         response.result = True
 

@@ -21,7 +21,7 @@ TELLO_CMDS = {
     'y_inc': 'forward',
     'z_dec': 'down',
     'z_inc': 'up',
-    'z_cw': 'rotate cw',
-    'z_ccw': 'rotate ccw',
+    'z_cw': 'cw',
+    'z_ccw': 'ccw',
     'none': 'none',
 }
