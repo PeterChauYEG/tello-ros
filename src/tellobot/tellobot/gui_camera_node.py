@@ -71,7 +71,6 @@ class GUICCameraNode(Node):
 
   def listener_video_frames_callback(self, msg):
     resized_frame = self.convert_ros_msg_to_frame(msg)
-    print('%s' % resized_frame[0][0])
     self.gui.update_image(resized_frame, self.pose_points, self.pose, self.is_pose_in_box)
 
     cv2.waitKey(1)

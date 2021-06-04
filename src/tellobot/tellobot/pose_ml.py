@@ -3,7 +3,7 @@ import time
 from threading import Thread
 
 import cv2
-from tellobot.ai_constants import OVERFLOW_NULL, POSES, POSE_PROTOFILE, POSE_WEIGHTSFILE
+from tellobot.ai_constants import OVERFLOW_NULL, POSES, POSE_PROTO_FILE, POSE_WEIGHTS_FILE
 
 # pylint: disable=too-many-public-methods
 class PoseML:
@@ -55,7 +55,7 @@ class PoseML:
 
     # init ===============
     # read the neural network of the pose recognition
-    self.net = cv2.dnn.readNetFromCaffe(POSE_PROTOFILE, POSE_WEIGHTSFILE)
+    self.net = cv2.dnn.readNetFromCaffe(POSE_PROTO_FILE, POSE_WEIGHTS_FILE)
 
     self.thread = Thread(target=self.update, args=(), daemon=True)
     self.start()

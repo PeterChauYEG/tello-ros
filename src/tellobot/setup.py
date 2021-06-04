@@ -32,6 +32,7 @@ setup(
             'drone_node = tellobot.drone_node:main',
             'pose_ml_node = tellobot.pose_ml_node:main',
             'ai_node = tellobot.ai_node:main',
+            'object_detection_node = tellobot.object_detection_node:main',
             'take_picture_service_node = tellobot.take_picture_service_node:main'
         ],
     },
