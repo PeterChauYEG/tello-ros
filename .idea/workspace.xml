@@ -5,11 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e6b7c52-96dc-4b8b-9b15-d3eca34e35e1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.pylintrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/ai.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/ai.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/ai_constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/ai_constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/cmds.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/cmds.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/ai_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/ai_node.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/camera_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/camera_node.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/drone_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/drone_node.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/fake_drone.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/fake_drone.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/gui_buttons.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/gui_buttons.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/gui_buttons_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/gui_buttons_node.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/gui_camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/gui_camera.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/gui_camera_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/gui_camera_node.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/pose_ml.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/pose_ml.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/pose_ml_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/pose_ml_node.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/resolutions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/resolutions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/take_picture_service_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/take_picture_service_node.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/tello_camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/tello_camera.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/tello_drone.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/tello_drone.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/web_camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/web_camera.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +64,10 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/tellobot/tellobot" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Python" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
