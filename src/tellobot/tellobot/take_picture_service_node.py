@@ -2,8 +2,8 @@ import datetime
 import os
 import time
 
-import cv2
 import numpy as np
+import cv2
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import UInt8MultiArray

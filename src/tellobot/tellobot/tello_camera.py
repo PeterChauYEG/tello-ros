@@ -1,9 +1,9 @@
 import socket
 from threading import Thread
 
+import numpy as np
 import cv2
 import h264decoder
-import numpy as np
 # pylint: disable=line-too-long
 from tellobot.resolutions import TELLO_CAMERA_FRAME_WIDTH, TELLO_CAMERA_FRAME_HEIGHT, TARGET_FRAME_WIDTH, TARGET_FRAME_HEIGHT
 

@@ -42,4 +42,4 @@ POSES = {
 # pylint: disable=line-too-long
 POSE_PROTOFILE = "/Users/peterchau/robotics/ros-drone/src/tellobot/tellobot/models/pose/mpi/pose_deploy_linevec_faster_4_stages.prototxt"
 # pylint: disable=line-too-long
-POSE_WEIGHTSFILE = "/Users/peterchau/robotics/ros-drone/src/tellobot/tellobot/models/pose/mpi/pose_iter_16000.caffemodel"
+POSE_WEIGHTSFILE = "/Users/peterchau/robotics/ros-drone/src/tellobot/tellobot/models/pose/mpi/pose_iter_160000.caffemodel"
