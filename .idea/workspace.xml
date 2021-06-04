@@ -5,14 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e6b7c52-96dc-4b8b-9b15-d3eca34e35e1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/tellobot_interfaces/msg/StringArray.msg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/gui_camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/gui_camera.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/gui_camera_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/gui_camera_node.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/launch/basic.launch.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/launch/basic.launch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/launch/tello.launch.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/launch/tello.launch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/launch/tello_camera.launch.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/launch/tello_camera.launch.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/object_detection.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/object_detection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/object_detection_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/object_detection_node.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tellobot_interfaces/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot_interfaces/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/tello_camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/tello_camera.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

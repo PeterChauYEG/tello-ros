@@ -76,7 +76,7 @@ class ObjectDetection:
       confidence = int(detection[2] * 100)
 
       if confidence > 30:
-        processed_label = self.classes[int(detection[1])]
+        processed_label = self.classes[int(detection[1] - 1)]
         processed_detection = [
           confidence,
           int(detection[3] * self.frame_w),

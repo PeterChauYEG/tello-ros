@@ -68,4 +68,11 @@ def generate_launch_description():
                 {'enable_take_picture': False}
             ]
         ),
+        Node(
+            package='tellobot',
+            node_executable='object_detection_node',
+            name='object_detection_node',
+            output='screen',
+            arguments=['--ros-args', '--log-level', logger]
+        ),
     ])

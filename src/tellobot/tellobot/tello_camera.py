@@ -70,7 +70,7 @@ class TelloCamera:
     frames = self.decoder.decode(packet_data)
 
     for framedata in frames:
-      (frame) = framedata
+      (frame, _, _, _) = framedata
 
       if frame is not None:
         frame = np.fromstring(frame, dtype=np.ubyte, count=len(frame), sep='')
