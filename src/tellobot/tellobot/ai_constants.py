@@ -39,5 +39,7 @@ POSES = {
   'right_arm_v': 'right_arm_v',  # 20 < shoulder_angle < 80
 }
 
+# pylint: disable=line-too-long
 POSE_PROTOFILE = "/Users/peterchau/robotics/ros-drone/src/tellobot/tellobot/models/pose/mpi/pose_deploy_linevec_faster_4_stages.prototxt"
+# pylint: disable=line-too-long
 POSE_WEIGHTSFILE = "/Users/peterchau/robotics/ros-drone/src/tellobot/tellobot/models/pose/mpi/pose_iter_16000.caffemodel"

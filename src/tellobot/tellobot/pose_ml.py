@@ -5,7 +5,7 @@ from threading import Thread
 import cv2
 from tellobot.ai_constants import OVERFLOW_NULL, POSES, POSE_PROTOFILE, POSE_WEIGHTSFILE
 
-
+# pylint: disable=too-many-public-methods
 class PoseML:
   def __init__(self):
 
@@ -187,7 +187,7 @@ class PoseML:
 
     if is_right_arm_in_position and is_left_arm_in_position:
       return True
-    
+
     return False
 
   def preprocess(self, frame):
@@ -232,6 +232,7 @@ class PoseML:
   def calculate_period_pose(self):
     if self.frame_cnt >= self.frame_cnt_threshold:
       if len(self.current_poses_captured) != 0:
+        # pylint: disable=line-too-long
         self.current_pose = max(self.current_poses_captured, key=lambda k: self.current_poses_captured[k])
 
         # we need a map of pose to pose

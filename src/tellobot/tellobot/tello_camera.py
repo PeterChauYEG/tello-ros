@@ -4,8 +4,8 @@ from threading import Thread
 import cv2
 import h264decoder
 import numpy as np
-from tellobot.resolutions import TELLO_CAMERA_FRAME_WIDTH, TELLO_CAMERA_FRAME_HEIGHT, TARGET_FRAME_WIDTH, \
-  TARGET_FRAME_HEIGHT
+# pylint: disable=line-too-long
+from tellobot.resolutions import TELLO_CAMERA_FRAME_WIDTH, TELLO_CAMERA_FRAME_HEIGHT, TARGET_FRAME_WIDTH, TARGET_FRAME_HEIGHT
 
 
 class TelloCamera:
@@ -18,6 +18,7 @@ class TelloCamera:
     self.socket_video = None
     self.packet_data = b""
     self.raw_frame = None
+    # pylint: disable=c-extension-no-member
     self.decoder = h264decoder.H264Decoder()
     self.thread = Thread(target=self.update, args=(), daemon=True)
 

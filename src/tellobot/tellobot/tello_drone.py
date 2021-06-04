@@ -84,6 +84,7 @@ class TelloDrone:
 
     try:
       return round(int(battery))
+    # pylint: disable=bare-except
     except:
       return 0
 
@@ -92,6 +93,7 @@ class TelloDrone:
 
     try:
       return round(int(speed))
+    # pylint: disable=bare-except
     except:
       return 0
 

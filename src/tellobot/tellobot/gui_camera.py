@@ -19,6 +19,7 @@ def draw_pose(frame, current_pose, points):
       partA = pair[0]
       partB = pair[1]
 
+      # pylint: disable=line-too-long
       if OVERFLOW_NULL not in (points[partA][0], points[partA][1], points[partB][0], points[partB][1]):
         cv2.line(
           frame,

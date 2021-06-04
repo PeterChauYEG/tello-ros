@@ -49,6 +49,7 @@ class GUICCameraNode(Node):
     if len(current_frame) != TARGET_FRAME_HEIGHT * TARGET_FRAME_WIDTH * 3:
       return None
 
+    # pylint: disable=too-many-function-args
     reshaped_frame = current_frame.reshape(TARGET_FRAME_HEIGHT, TARGET_FRAME_WIDTH, 3)
 
     return reshaped_frame

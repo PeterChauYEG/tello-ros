@@ -66,6 +66,7 @@ class TakePictureService(Node):
     if len(current_frame) != TARGET_FRAME_HEIGHT * TARGET_FRAME_WIDTH * 3:
       return
 
+    # pylint: disable=too-many-function-args
     reshaped_frame = current_frame.reshape(TARGET_FRAME_HEIGHT, TARGET_FRAME_WIDTH, 3)
     self.frame = reshaped_frame
 
@@ -73,6 +74,7 @@ class TakePictureService(Node):
     end_time = time.time()
     response.result = True
 
+    # pylint: disable=line-too-long
     if self.enable_take_picture and end_time - self.can_take_picture_start_time > self.picture_timeout:
       self.take_picture()
       self.can_take_picture_start_time = time.time()
