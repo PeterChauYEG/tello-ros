@@ -15,10 +15,10 @@ class ObjectDetection:
     self.frame_h = None
 
     self.objects = None
-    self.object_labels = None
     self.thread_started = False
     self.current_frame = None
     self.detections = None
+    self.object_labels = None
 
     # init ===============
     # read the neural network of the pose recognition
@@ -56,16 +56,15 @@ class ObjectDetection:
       self.frame_w = frame.shape[1]
       self.frame_h = frame.shape[0]
 
-    frame_blob = cv2.dnn.blobFromImage(frame, 1.0 / 255, (self.input_w, self.input_h),
-                                       (0, 0, 0), swapRB=False, crop=False)
+    frame_blob = cv2.dnn.blobFromImage(frame, size=(self.input_w, self.input_h), swapRB=False, crop=False)
     self.net.setInput(frame_blob)
 
     return frame
 
   def clear_detection_state(self):
     self.objects = None
-    self.detections = None
     self.object_labels = None
+    self.detections = None
 
   def postprocess(self):
     detections = self.detections[0][0]
@@ -74,18 +73,20 @@ class ObjectDetection:
 
     for detection in detections:
       # confidence
-      if float(detection[2]) > 0.3:
+      confidence = int(detection[2] * 100)
+
+      if confidence > 30:
+        processed_label = self.classes[int(detection[1])]
         processed_detection = [
+          confidence,
           int(detection[3] * self.frame_w),
           int(detection[4] * self.frame_h),
           int(detection[5] * self.frame_w),
-          int(detection[6] * self.frame_w)
+          int(detection[6] * self.frame_h)
         ]
-        processed_label = self.classes[int(detection[0])]
-        
+
         self.objects.append(processed_detection)
         self.object_labels.append(processed_label)
-
   def detect(self):
     self.clear_detection_state()
 

@@ -60,9 +60,7 @@ class GUICamera:
   def get_center_box_points(self):
     return [
       (CENTER_POINT[0] - GUI_CENTER_BOX_HALF_SIZE, CENTER_POINT[1] - GUI_CENTER_BOX_HALF_SIZE),
-      (CENTER_POINT[0] + GUI_CENTER_BOX_HALF_SIZE, CENTER_POINT[1] - GUI_CENTER_BOX_HALF_SIZE),
       (CENTER_POINT[0] + GUI_CENTER_BOX_HALF_SIZE, CENTER_POINT[1] + GUI_CENTER_BOX_HALF_SIZE),
-      (CENTER_POINT[0] - GUI_CENTER_BOX_HALF_SIZE, CENTER_POINT[1] + GUI_CENTER_BOX_HALF_SIZE),
     ]
 
   def draw_box(self, frame, is_pose_in_box):
@@ -83,33 +81,37 @@ class GUICamera:
 
     # change line color if person is in box
     if self.center_box_points is not None:
-      cv2.line(
+      cv2.rectangle(
         frame,
         self.center_box_points[0],
         self.center_box_points[1],
-        box_line_color,
-        2)
-      cv2.line(
-        frame,
-        self.center_box_points[1],
-        self.center_box_points[2],
-        box_line_color,
-        2)
-      cv2.line(
-        frame,
-        self.center_box_points[2],
-        self.center_box_points[3],
-        box_line_color,
-        2)
-      cv2.line(
-        frame,
-        self.center_box_points[3],
-        self.center_box_points[0],
         box_line_color,
         2)
 
-  def update_image(self, frame, points, current_pose, is_pose_in_box):
+  def draw_detected_object_boxes(self, frame, detected_objects, detected_object_labels):
+    box_line_color = BOX_COLOR
+
+    if len(detected_objects) != 0:
+      for i, detected_object in enumerate(detected_objects):
+        cv2.rectangle(
+          frame,
+          (detected_object[1], detected_object[2]),
+          (detected_object[3], detected_object[4]),
+          box_line_color,
+          1)
+        cv2.putText(
+          frame,
+          "{0} {1}%".format(detected_object_labels[i], detected_object[0]),
+          (detected_object[1], detected_object[2]),
+          cv2.FONT_HERSHEY_SIMPLEX,
+          0.5,
+          IMAGE_TEXT_COLOR,
+          1,
+          lineType=cv2.LINE_AA)
+
+  def update_image(self, frame, points, current_pose, is_pose_in_box, detected_objects, detected_object_labels):
     if frame is not None:
       draw_pose(frame, current_pose, points)
       self.draw_box(frame, is_pose_in_box)
+      self.draw_detected_object_boxes(frame, detected_objects, detected_object_labels)
       cv2.imshow(WINDOW, frame)

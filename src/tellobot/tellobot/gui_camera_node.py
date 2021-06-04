@@ -3,12 +3,13 @@ import cv2
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String, Int16MultiArray, Bool, UInt8MultiArray
+from tellobot_interfaces.msg import StringArray
 from tellobot.cmds import CMDS
 from tellobot.gui_camera import GUICamera
 from tellobot.resolutions import TARGET_FRAME_WIDTH, TARGET_FRAME_HEIGHT
 
 
-class GUICCameraNode(Node):
+class GUICameraNode(Node):
   def __init__(self):
     super().__init__('gui_camera_node')
 
@@ -16,6 +17,8 @@ class GUICCameraNode(Node):
     self.pose_points = []
     self.drone_cmd = CMDS['NONE']
     self.is_pose_in_box = False
+    self.detected_objects = []
+    self.detected_object_labels = []
 
     self.gui = GUICamera()
 
@@ -41,6 +44,18 @@ class GUICCameraNode(Node):
       Int16MultiArray,
       'pose_points',
       self.listener_pose_points_callback,
+      1)
+
+    self.detected_object_labels_subscription = self.create_subscription(
+      StringArray,
+      'detected_object_labels',
+      self.detected_object_labels_callback,
+      1)
+
+    self.detected_objects_subscription = self.create_subscription(
+      Int16MultiArray,
+      'detected_objects',
+      self.detected_objects_callback,
       1)
 
   def convert_ros_msg_to_frame(self, msg):
@@ -69,9 +84,18 @@ class GUICCameraNode(Node):
     resized_frame = pose_points.reshape(15, 2).tolist()
     self.pose_points = resized_frame
 
+  def detected_objects_callback(self, msg):
+    objects = np.array(msg.data)
+
+    resized_frame = objects.reshape(-1, 5).tolist()
+    self.detected_objects = resized_frame
+
+  def detected_object_labels_callback(self, msg):
+    self.detected_object_labels = msg.data
+
   def listener_video_frames_callback(self, msg):
     resized_frame = self.convert_ros_msg_to_frame(msg)
-    self.gui.update_image(resized_frame, self.pose_points, self.pose, self.is_pose_in_box)
+    self.gui.update_image(resized_frame, self.pose_points, self.pose, self.is_pose_in_box, self.detected_objects, self.detected_object_labels)
 
     cv2.waitKey(1)
 
@@ -79,7 +103,7 @@ class GUICCameraNode(Node):
 def main(args=None):
   rclpy.init(args=args)
 
-  gui_camera_node = GUICCameraNode()
+  gui_camera_node = GUICameraNode()
 
   rclpy.spin(gui_camera_node)
   gui_camera_node.destroy_node()

@@ -7,6 +7,9 @@ https://github.com/DaWelter/h264decoder
 python3 -m pip install ./downloads/SomeProject-1.0.4.tar.gz
 python3 -m pip install <path>
 
+$ export OPENSSL_ROOT_DIR=/usr/local/opt/openssl
+$ export NDDSHOME=/Applications/rti_connext_dds-6.1.0
+
 build:
 `colcon build --packages-select tellobot`
 `colcon build --packages-select tellobot`
