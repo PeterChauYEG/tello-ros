@@ -87,11 +87,14 @@ class AI:
 
   def update_user_cmd(self, user_cmd):
     self.user_cmd = user_cmd
-    self.drone_cmd = user_cmd
 
     if self.user_cmd == CMDS['TAKE_OFF']:
       self.taken_off = True
-    elif self.user_cmd == CMDS['LAND']:
+
+    if self.taken_off is True:
+      self.drone_cmd = user_cmd
+
+    if self.user_cmd == CMDS['LAND']:
       self.taken_off = False
 
   def calculate_head_in_box(self):
@@ -99,7 +102,7 @@ class AI:
     self.get_sum_of_distance(key_pose_points)
     self.get_is_pose_in_box()
 
-    if self.user_cmd == CMDS['NONE']:
+    if self.user_cmd == CMDS['NONE'] and self.taken_off is True:
       self.get_center_human_cmd()
     else:
       self.reset_state()

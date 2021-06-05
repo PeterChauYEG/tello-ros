@@ -34,11 +34,6 @@ class DroneNode(Node):
     msg.speed = speed
     return msg
 
-  def create_none_user_cmd_ros_msg(self, user_cmd):
-    msg = String()
-    msg.data = user_cmd
-    return msg
-
   def convert_drone_cmd_to_tello_cmd(self, drone_cmd):
     tello_cmd = TELLO_CMDS[drone_cmd]
 

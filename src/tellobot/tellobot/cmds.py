@@ -41,4 +41,5 @@ TELLO_CMDS = {
     'flip_fr': 'flip fr',
     'flip_bl': 'flip bl',
     'flip_br': 'flip br',
+    'none': 'none',
 }

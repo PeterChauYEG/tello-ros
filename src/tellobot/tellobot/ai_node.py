@@ -55,7 +55,8 @@ class AINode(Node):
 
   def listener_user_cmd_callback(self, msg):
     self.ai.update_user_cmd(msg.data)
-    self.drone_cmd_publisher.publish(self.convert_drone_cmd_to_ros_msg(self.ai.drone_cmd))
+    drone_cmd, _ = self.ai.read_drone_cmd_and_is_pose_in_box()
+    self.drone_cmd_publisher.publish(self.convert_drone_cmd_to_ros_msg(drone_cmd))
 
   def listener_pose_callback(self, msg):
     self.ai.update_current_pose(msg.data)
@@ -73,9 +74,7 @@ class AINode(Node):
     if is_pose_in_box:
       self.send_take_picture_request()
 
-    if self.ai.taken_off is True:
-      self.drone_cmd_publisher.publish(self.convert_drone_cmd_to_ros_msg(drone_cmd))
-
+    self.drone_cmd_publisher.publish(self.convert_drone_cmd_to_ros_msg(drone_cmd))
     self.is_pose_in_box_publisher.publish(self.convert_is_pose_in_box_to_ros_msg(is_pose_in_box))
 
 
