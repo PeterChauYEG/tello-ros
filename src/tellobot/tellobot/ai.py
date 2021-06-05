@@ -70,9 +70,9 @@ class AI:
         self.drone_cmd = CMDS['Z_CW']
     elif abs_distance['z'] >= abs_distance['x'] and abs_distance['z'] >= abs_distance['y']:
       if self.distance['z'] < 0:
-        self.drone_cmd = CMDS['Z_DEC']
-      elif self.distance['z'] > 0:
         self.drone_cmd = CMDS['Z_INC']
+      elif self.distance['z'] > 0:
+        self.drone_cmd = CMDS['Z_DEC']
     elif abs_distance['y'] >= abs_distance['z'] and abs_distance['y'] >= abs_distance['x']:
       if self.distance['y'] < 0:
         self.drone_cmd = CMDS['Y_DEC']

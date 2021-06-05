@@ -75,7 +75,7 @@ class ObjectDetection:
       # confidence
       confidence = int(detection[2] * 100)
 
-      if confidence > 30:
+      if confidence > 50:
         processed_label = self.classes[int(detection[1] - 1)]
         processed_detection = [
           confidence,
