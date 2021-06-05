@@ -2,8 +2,8 @@ import numpy as np
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Int16MultiArray, String, Bool
-from tellobot.ai import AI
 from tellobot_interfaces.srv import TakePicture
+from tellobot.ai import AI
 
 
 class AINode(Node):
@@ -73,7 +73,7 @@ class AINode(Node):
     if is_pose_in_box:
       self.send_take_picture_request()
 
-    if self.ai.taken_off == True:
+    if self.ai.taken_off is True:
       self.drone_cmd_publisher.publish(self.convert_drone_cmd_to_ros_msg(drone_cmd))
 
     self.is_pose_in_box_publisher.publish(self.convert_is_pose_in_box_to_ros_msg(is_pose_in_box))

@@ -9,8 +9,7 @@ from rclpy.node import Node
 from std_msgs.msg import UInt8MultiArray
 from tellobot_interfaces.srv import TakePicture
 from tellobot.resolutions import TARGET_FRAME_WIDTH, TARGET_FRAME_HEIGHT
-
-base_path = '/Users/peterchau/robotics/ros-drone/src/tellobot/tellobot/images'
+from tellobot.ai_constants import IMAGES_DIR_PATH
 
 
 class TakePictureService(Node):
@@ -49,7 +48,7 @@ class TakePictureService(Node):
       self.make_dir()
 
   def make_dir(self):
-    dir_name = os.path.join(base_path, datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S'))
+    dir_name = os.path.join(IMAGES_DIR_PATH, datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S'))
     os.mkdir(dir_name)
     self.dir_name = dir_name
 

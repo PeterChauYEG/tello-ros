@@ -15,7 +15,6 @@ dev:
 
 build:
 `colcon build --packages-select tellobot`
-`colcon build --packages-select tellobot`
 `. install/setup.bash`
 
 run:
@@ -46,3 +45,11 @@ rgb: true
 classes: "object_detection_classes_coco.txt"
 sample: "object_detection"
 
+sim:
+`/usr/local/opt/gazebo11/share/gazebo-11/worlds`
+
+record and 
+playback:
+`ros2 bag record -o bags/video_frames_1 /video_frames`
+`ros2 launch tellobot camera_playback.launch.py`
+`ros2 bag play video_frames_2`

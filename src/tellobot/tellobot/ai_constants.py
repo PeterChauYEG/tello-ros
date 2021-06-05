@@ -50,3 +50,5 @@ POSE_WEIGHTS_FILE = "/Users/peterchau/robotics/ros-drone/src/tellobot/tellobot/m
 OBJECT_DETECTION_MODEL_FILE = "/Users/peterchau/robotics/ros-drone/src/tellobot/tellobot/models/ssd_mobilenet_v1_coco_2017_11_17/frozen_inference_graph.pb"
 OBJECT_DETECTION_CONFIG_FILE = "/Users/peterchau/robotics/ros-drone/src/tellobot/tellobot/models/ssd_mobilenet_v1_coco_2017_11_17/ssd_mobilenet_v1_coco_2017_11_17.pbtxt"
 OBJECT_DETECTION_CLASSES_FILE = "/Users/peterchau/robotics/ros-drone/src/tellobot/tellobot/models/ssd_mobilenet_v1_coco_2017_11_17/object_detection_classes_coco.txt"
+
+IMAGES_DIR_PATH = '/Users/peterchau/robotics/ros-drone/src/images'

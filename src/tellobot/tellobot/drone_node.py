@@ -1,6 +1,6 @@
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import String, Int8
+from std_msgs.msg import String
 from tellobot_interfaces.msg import DroneInfo
 from tellobot.cmds import CMDS, TELLO_CMDS
 from tellobot.fake_drone import FakeDrone

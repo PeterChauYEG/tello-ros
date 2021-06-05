@@ -2,7 +2,7 @@ import cv2
 import rclpy
 from rclpy.node import Node
 from tellobot_interfaces.msg import DroneInfo
-from std_msgs.msg import String, Int8, Float32
+from std_msgs.msg import String, Float32
 from tellobot.gui_buttons import GUIButtons
 
 
