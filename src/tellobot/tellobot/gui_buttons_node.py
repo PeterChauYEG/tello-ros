@@ -1,6 +1,7 @@
 import cv2
 import rclpy
 from rclpy.node import Node
+from tellobot_interfaces.msg import DroneInfo
 from std_msgs.msg import String, Int8, Float32
 from tellobot.gui_buttons import GUIButtons
 
@@ -11,16 +12,10 @@ class GUIButtonsNode(Node):
 
     self.user_cmd_publisher = self.create_publisher(String, 'user_cmd', 1)
 
-    self.drone_battery_subscription = self.create_subscription(
-      Int8,
+    self.drone_info_subscription = self.create_subscription(
+      DroneInfo,
       'drone_battery',
-      self.drone_battery_callback,
-      500)
-
-    self.drone_speed_subscription = self.create_subscription(
-      Int8,
-      'drone_speed',
-      self.drone_speed_callback,
+      self.drone_info_callback,
       500)
 
     self.fps_subscription = self.create_subscription(
@@ -57,11 +52,9 @@ class GUIButtonsNode(Node):
   def fps_callback(self, msg):
     self.gui_buttons.cam_fps = round(msg.data, 2)
 
-  def drone_battery_callback(self, msg):
-    self.gui_buttons.drone_battery = msg.data
-
-  def drone_speed_callback(self, msg):
-    self.gui_buttons.drone_speed = msg.data
+  def drone_info_callback(self, msg):
+    self.gui_buttons.drone_battery = msg.battery
+    self.gui_buttons.drone_speed = msg.speed
 
   def listener_drone_cmd_callback(self, msg):
     self.gui_buttons.drone_cmd = msg.data

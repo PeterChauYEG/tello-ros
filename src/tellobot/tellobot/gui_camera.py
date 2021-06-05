@@ -2,7 +2,7 @@ import cv2
 from tellobot.ai_constants import POSE_PAIRS, OVERFLOW_NULL
 from tellobot.colors import POSE_COLOR, POSE_IN_BOX_COLOR, BOX_COLOR, \
   POSE_DETECTED_COLOR, IMAGE_TEXT_COLOR
-from tellobot.gui_constants import GUI_CENTER_BOX_HALF_SIZE, CENTER_POINT, WINDOW
+from tellobot.gui_constants import GUI_CENTER_BOX_HALF_SIZE, CENTER_POINT, CAMERA_WINDOW
 
 
 def draw_pose(frame, current_pose, points):
@@ -20,7 +20,11 @@ def draw_pose(frame, current_pose, points):
       partB = pair[1]
 
       # pylint: disable=line-too-long
-      if OVERFLOW_NULL not in (points[partA][0], points[partA][1], points[partB][0], points[partB][1]):
+      if OVERFLOW_NULL not in (
+          points[partA][0],
+          points[partA][1],
+          points[partB][0],
+          points[partB][1]):
         cv2.line(
           frame,
           (points[partA][0], points[partA][1]),
@@ -54,8 +58,8 @@ class GUICamera:
   def __init__(self):
     self.center_box_points = self.get_center_box_points()
 
-    cv2.namedWindow(WINDOW)
-    cv2.moveWindow(WINDOW, 600, 360)  # do this dynamically
+    cv2.namedWindow(CAMERA_WINDOW)
+    cv2.moveWindow(CAMERA_WINDOW, 600, 360)  # do this dynamically
 
   def get_center_box_points(self):
     return [
@@ -109,9 +113,10 @@ class GUICamera:
           1,
           lineType=cv2.LINE_AA)
 
+  # pylint: disable=line-too-long
   def update_image(self, frame, points, current_pose, is_pose_in_box, detected_objects, detected_object_labels):
     if frame is not None:
       draw_pose(frame, current_pose, points)
       self.draw_box(frame, is_pose_in_box)
       self.draw_detected_object_boxes(frame, detected_objects, detected_object_labels)
-      cv2.imshow(WINDOW, frame)
+      cv2.imshow(CAMERA_WINDOW, frame)

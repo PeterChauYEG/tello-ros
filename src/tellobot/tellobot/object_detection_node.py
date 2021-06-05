@@ -14,7 +14,10 @@ class ObjectDetectionNode(Node):
     self.object_detection = ObjectDetection()
 
     self.detected_objects_publisher = self.create_publisher(Int16MultiArray, 'detected_objects', 1)
-    self.detected_object_labels_publisher = self.create_publisher(StringArray, 'detected_object_labels', 1)
+    self.detected_object_labels_publisher = self.create_publisher(
+      StringArray,
+      'detected_object_labels',
+      1)
     self.subscription = self.create_subscription(
       UInt8MultiArray,
       'video_frames',
@@ -49,7 +52,8 @@ class ObjectDetectionNode(Node):
 
     if objects is not None:
       self.detected_objects_publisher.publish(self.convert_objects_to_ros_msg(objects))
-      self.detected_object_labels_publisher.publish(self.convert_object_labels_to_ros_msg(object_labels))
+      self.detected_object_labels_publisher.publish(
+        self.convert_object_labels_to_ros_msg(object_labels))
 
 def main(args=None):
   rclpy.init(args=args)

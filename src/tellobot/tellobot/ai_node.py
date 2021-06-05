@@ -2,8 +2,8 @@ import numpy as np
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Int16MultiArray, String, Bool
-from tellobot_interfaces.srv import TakePicture
 from tellobot.ai import AI
+from tellobot_interfaces.srv import TakePicture
 
 
 class AINode(Node):
@@ -34,6 +34,7 @@ class AINode(Node):
       10)
 
     self.take_picture_service = self.create_client(TakePicture, 'take_picture')
+
     while not self.take_picture_service.wait_for_service(timeout_sec=1.0):
       self.get_logger().info('service not available, waiting again...')
 

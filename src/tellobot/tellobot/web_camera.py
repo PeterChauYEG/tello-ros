@@ -2,9 +2,7 @@ from threading import Thread
 
 import cv2
 from tellobot.resolutions import WEB_CAMERA_FRAME_WIDTH, WEB_CAMERA_FRAME_HEIGHT
-
-VIDEO_CAPTURE_DEVICE = 0
-WINDOW_BRIGHTNESS = 150
+from tellobot.hardware_constants import VIDEO_CAPTURE_DEVICE, VIDEO_CAPTURE_BRIGHTNESS
 
 
 class WebCamera:
@@ -32,7 +30,7 @@ class WebCamera:
     self.feed = cv2.VideoCapture(VIDEO_CAPTURE_DEVICE)
     self.feed.set(3, WEB_CAMERA_FRAME_WIDTH)
     self.feed.set(4, WEB_CAMERA_FRAME_HEIGHT)
-    self.feed.set(10, WINDOW_BRIGHTNESS)
+    self.feed.set(10, VIDEO_CAPTURE_BRIGHTNESS)
     self.feed.set(cv2.CAP_PROP_FPS, 10)
 
     self.thread.start()

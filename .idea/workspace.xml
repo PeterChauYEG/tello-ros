@@ -4,7 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e6b7c52-96dc-4b8b-9b15-d3eca34e35e1" name="Default Changelist" comment="" />
+    <list default="true" id="9e6b7c52-96dc-4b8b-9b15-d3eca34e35e1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/tellobot_interfaces/msg/DroneInfo.msg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/ai_constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/ai_constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/ai_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/ai_node.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/drone_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/drone_node.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/gui_buttons.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/gui_buttons.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/gui_buttons_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/gui_buttons_node.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/gui_camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/gui_camera.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/gui_camera_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/gui_camera_node.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/gui_constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/gui_constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/hardware_constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/hardware_constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/object_detection.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/object_detection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/object_detection_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/object_detection_node.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/pose_ml.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/pose_ml.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/web_camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/web_camera.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot_interfaces/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot_interfaces/CMakeLists.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,7 +59,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/tellobot_interfaces" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/tellobot_interfaces/msg" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="SDKs" />
@@ -51,11 +69,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/tellobot_interfaces/msg" />
+      <recent name="$PROJECT_DIR$/src/tellobot/tellobot" />
       <recent name="$PROJECT_DIR$/src/tellobot_interfaces" />
       <recent name="$PROJECT_DIR$/src/tellobot/launch" />
-      <recent name="$PROJECT_DIR$/src/tellobot/tellobot" />
       <recent name="$PROJECT_DIR$/src/tellobot/tellobot/models/pose/mpi" />
-      <recent name="$PROJECT_DIR$/src/build/tellobot/build/lib/libh264decoder" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/tellobot_interfaces" />

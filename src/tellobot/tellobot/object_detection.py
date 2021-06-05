@@ -1,13 +1,12 @@
 from threading import Thread
 import numpy as np
 import cv2
-from tellobot.ai_constants import OBJECT_DETECTION_MODEL_FILE, OBJECT_DETECTION_CONFIG_FILE, OBJECT_DETECTION_CLASSES_FILE
+# pylint: disable=line-too-long
+from tellobot.ai_constants import OBJECT_DETECTION_MODEL_FILE, OBJECT_DETECTION_CONFIG_FILE, OBJECT_DETECTION_CLASSES_FILE, OBJECT_DETECTION_SENSITIVITY
 
 
 class ObjectDetection:
   def __init__(self):
-    self.prob_threshold = 0.05
-
     self.input_w = 128
     self.input_h = 128
 
@@ -20,9 +19,9 @@ class ObjectDetection:
     self.detections = None
     self.object_labels = None
 
-    # init ===============
-    # read the neural network of the pose recognition
-    self.net = cv2.dnn.readNetFromTensorflow(OBJECT_DETECTION_MODEL_FILE, OBJECT_DETECTION_CONFIG_FILE)
+    self.net = cv2.dnn.readNetFromTensorflow(
+      OBJECT_DETECTION_MODEL_FILE,
+      OBJECT_DETECTION_CONFIG_FILE)
     self.classes = np.loadtxt(OBJECT_DETECTION_CLASSES_FILE, dtype=np.str, delimiter='\n')
     self.thread = Thread(target=self.update, args=(), daemon=True)
     self.start()
@@ -56,7 +55,11 @@ class ObjectDetection:
       self.frame_w = frame.shape[1]
       self.frame_h = frame.shape[0]
 
-    frame_blob = cv2.dnn.blobFromImage(frame, size=(self.input_w, self.input_h), swapRB=False, crop=False)
+    frame_blob = cv2.dnn.blobFromImage(
+      frame,
+      size=(self.input_w, self.input_h),
+      swapRB=False,
+      crop=False)
     self.net.setInput(frame_blob)
 
     return frame
@@ -72,10 +75,9 @@ class ObjectDetection:
     self.object_labels = []
 
     for detection in detections:
-      # confidence
       confidence = int(detection[2] * 100)
 
-      if confidence > 50:
+      if confidence > OBJECT_DETECTION_SENSITIVITY:
         processed_label = self.classes[int(detection[1] - 1)]
         processed_detection = [
           confidence,
@@ -87,6 +89,7 @@ class ObjectDetection:
 
         self.objects.append(processed_detection)
         self.object_labels.append(processed_label)
+
   def detect(self):
     self.clear_detection_state()
 

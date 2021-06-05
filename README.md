@@ -10,6 +10,9 @@ python3 -m pip install <path>
 $ export OPENSSL_ROOT_DIR=/usr/local/opt/openssl
 $ export NDDSHOME=/Applications/rti_connext_dds-6.1.0
 
+dev:
+`pylint --rcfile=~/robotics/ros-drone/.pylintrc *.py`
+
 build:
 `colcon build --packages-select tellobot`
 `colcon build --packages-select tellobot`

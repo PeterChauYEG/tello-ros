@@ -1,6 +1,7 @@
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String, Int8
+from tellobot_interfaces.msg import DroneInfo
 from tellobot.cmds import CMDS, TELLO_CMDS
 from tellobot.fake_drone import FakeDrone
 from tellobot.tello_drone import TelloDrone
@@ -23,14 +24,14 @@ class DroneNode(Node):
       self.listener_drone_cmd_callback,
       1)
 
-    self.drone_battery_publisher = self.create_publisher(Int8, 'drone_battery', 500)
-    self.drone_speed_publisher = self.create_publisher(Int8, 'drone_speed', 500)
+    self.drone_info_publisher = self.create_publisher(Int8, 'drone_info', 500)
 
     self.timer = self.create_timer(timer_period, self.timer_callback)
 
-  def create_to_float_ros_msg(self, data):
-    msg = Int8()
-    msg.data = data
+  def create_drone_info_msg(self, battery, speed):
+    msg = DroneInfo()
+    msg.battery = battery
+    msg.speed = speed
     return msg
 
   def create_none_user_cmd_ros_msg(self, user_cmd):
@@ -63,8 +64,7 @@ class DroneNode(Node):
     drone_battery = self.drone.get_battery()
     drone_speed = self.drone.get_speed()
 
-    self.drone_battery_publisher.publish(self.create_to_float_ros_msg(drone_battery))
-    self.drone_speed_publisher.publish(self.create_to_float_ros_msg(drone_speed))
+    self.drone_info_publisher.publish(self.create_drone_info_msg(drone_battery, drone_speed))
 
   def listener_drone_cmd_callback(self, msg):
     tello_cmd = self.convert_drone_cmd_to_tello_cmd(msg.data)

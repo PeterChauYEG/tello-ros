@@ -3,58 +3,31 @@ import time
 from threading import Thread
 
 import cv2
-from tellobot.ai_constants import OVERFLOW_NULL, POSES, POSE_PROTO_FILE, POSE_WEIGHTS_FILE
+# pylint: disable=line-too-long
+from tellobot.ai_constants import OVERFLOW_NULL, POSES, POSE_PROTO_FILE, POSE_WEIGHTS_FILE, POSE_DETECTION_SENSITIVITY
 
 # pylint: disable=too-many-public-methods
 class PoseML:
   def __init__(self):
-
-    # statics ============
-    self.prob_threshold = 0.05
-
-    # input image dimensions for the network
-    # IMPORTANT:
-    # Greater inWidth and inHeight will result in higher accuracy but longer process time
-    # Smaller inWidth and inHeight will result in lower accuracy but shorter process time
-    # Play around it by yourself to get best result!
-    # https://learnopencv.com/deep-learning-based-human-pose-estimation-using-opencv-cpp-python/
-
-    # og
-    # inWidth = 168
-    # inHeight = 168
     self.input_w = 128
     self.input_h = 128
-
-    # total number of the skeleton nodes
     self.nPoints = 15
 
-    # init vars ===========
-    # input frame
     self.frame_w = None
     self.frame_h = None
-
-    # count the number of frames
     self.frame_cnt = 0
 
-    # posses detected
     self.current_poses_captured = {}
-
-    # the period of pose reconigtion,it depends on your computer performance
     self.period = 0
-
-    # record how many times the period of pose reconigtion called
     self.period_calculate_cnt = 0
     self.frame_cnt_threshold = 0
     self.current_pose_captured_threshold = 0
 
-    # detection return
     self.current_pose = ''
     self.points = []
     self.current_frame = None
     self.thread_started = False
 
-    # init ===============
-    # read the neural network of the pose recognition
     self.net = cv2.dnn.readNetFromCaffe(POSE_PROTO_FILE, POSE_WEIGHTS_FILE)
 
     self.thread = Thread(target=self.update, args=(), daemon=True)
@@ -232,8 +205,9 @@ class PoseML:
   def calculate_period_pose(self):
     if self.frame_cnt >= self.frame_cnt_threshold:
       if len(self.current_poses_captured) != 0:
-        # pylint: disable=line-too-long
-        self.current_pose = max(self.current_poses_captured, key=lambda k: self.current_poses_captured[k])
+        self.current_pose = max(
+          self.current_poses_captured,
+          key=lambda k: self.current_poses_captured[k])
 
         # we need a map of pose to pose
         if self.current_pose != '':
@@ -284,7 +258,7 @@ class PoseML:
       x = (self.frame_w * point[0]) / W
       y = (self.frame_h * point[1]) / H
 
-      if prob > self.prob_threshold:
+      if prob > POSE_DETECTION_SENSITIVITY:
         self.points.append([int(x), int(y)])
       else:
         self.points.append([OVERFLOW_NULL, OVERFLOW_NULL])

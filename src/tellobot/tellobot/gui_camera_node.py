@@ -1,5 +1,5 @@
-import numpy as np
 import cv2
+import numpy as np
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String, Int16MultiArray, Bool, UInt8MultiArray
@@ -95,7 +95,13 @@ class GUICameraNode(Node):
 
   def listener_video_frames_callback(self, msg):
     resized_frame = self.convert_ros_msg_to_frame(msg)
-    self.gui.update_image(resized_frame, self.pose_points, self.pose, self.is_pose_in_box, self.detected_objects, self.detected_object_labels)
+    self.gui.update_image(
+      resized_frame,
+      self.pose_points,
+      self.pose,
+      self.is_pose_in_box,
+      self.detected_objects,
+      self.detected_object_labels)
 
     cv2.waitKey(1)
 

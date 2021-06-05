@@ -38,6 +38,7 @@ find_package(rosidl_default_generators REQUIRED)
 rosidl_generate_interfaces(tellobot_interfaces
   "srv/TakePicture.srv"
   "msg/StringArray.msg"
+  "msg/DroneInfo.msg"
  )
 
 ament_package()
