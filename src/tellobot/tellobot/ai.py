@@ -20,6 +20,7 @@ class AI:
     self.user_cmd = CMDS['NONE']
     self.thread_started = False
     self.pose_points = None
+    self.taken_off = False
 
     self.thread = Thread(target=self.update, args=(), daemon=True)
     self.start()
@@ -87,6 +88,11 @@ class AI:
   def update_user_cmd(self, user_cmd):
     self.user_cmd = user_cmd
     self.drone_cmd = user_cmd
+
+    if self.user_cmd == CMDS['TAKE_OFF']:
+      self.taken_off = True
+    elif self.user_cmd == CMDS['LAND']:
+      self.taken_off = False
 
   def calculate_head_in_box(self):
     key_pose_points = [self.pose_points[0], self.pose_points[1]]

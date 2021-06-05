@@ -73,7 +73,9 @@ class AINode(Node):
     if is_pose_in_box:
       self.send_take_picture_request()
 
-    self.drone_cmd_publisher.publish(self.convert_drone_cmd_to_ros_msg(drone_cmd))
+    if self.ai.taken_off == True:
+      self.drone_cmd_publisher.publish(self.convert_drone_cmd_to_ros_msg(drone_cmd))
+
     self.is_pose_in_box_publisher.publish(self.convert_is_pose_in_box_to_ros_msg(is_pose_in_box))
 
 

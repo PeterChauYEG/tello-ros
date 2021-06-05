@@ -24,7 +24,7 @@ class DroneNode(Node):
       self.listener_drone_cmd_callback,
       1)
 
-    self.drone_info_publisher = self.create_publisher(Int8, 'drone_info', 500)
+    self.drone_info_publisher = self.create_publisher(DroneInfo, 'drone_info', 500)
 
     self.timer = self.create_timer(timer_period, self.timer_callback)
 
@@ -64,7 +64,10 @@ class DroneNode(Node):
     drone_battery = self.drone.get_battery()
     drone_speed = self.drone.get_speed()
 
-    self.drone_info_publisher.publish(self.create_drone_info_msg(drone_battery, drone_speed))
+    print('s %s' % drone_speed)
+    print('b %s' % drone_battery)
+    if drone_speed and drone_speed:
+      self.drone_info_publisher.publish(self.create_drone_info_msg(drone_battery, drone_speed))
 
   def listener_drone_cmd_callback(self, msg):
     tello_cmd = self.convert_drone_cmd_to_tello_cmd(msg.data)

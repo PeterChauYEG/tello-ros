@@ -38,8 +38,10 @@ class TelloCamera:
 
   def read_frame(self):
     if self.grabbed is not None and self.raw_frame is not None:
-      resized_frame = cv2.resize(self.raw_frame, dsize=(TARGET_FRAME_WIDTH, TARGET_FRAME_HEIGHT),
-                                 interpolation=cv2.INTER_LINEAR)
+      resized_frame = cv2.resize(
+        self.raw_frame,
+        dsize=(TARGET_FRAME_WIDTH, TARGET_FRAME_HEIGHT),
+        interpolation=cv2.INTER_LINEAR)
       recolored_frame = cv2.cvtColor(resized_frame, cv2.COLOR_BGR2RGB)
       self.frame = recolored_frame.reshape(-1).tolist()
       self.grabbed = True

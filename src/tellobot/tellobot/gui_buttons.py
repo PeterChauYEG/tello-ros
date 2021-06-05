@@ -12,7 +12,7 @@ class GUIButtons:
     self.cam_fps = 0
     self.drone_battery = 100
     self.drone_speed = 1
-    self.drone_cmd = 0
+    self.drone_cmd = CMDS['NONE']
     self.pose = 0
 
   def draw_buttons(self, publish_user_cmd):

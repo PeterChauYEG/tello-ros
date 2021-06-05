@@ -83,7 +83,7 @@ class TelloDrone:
     battery = self.send_command('battery?')
 
     try:
-      return round(int(battery))
+      return int(battery)
     # pylint: disable=bare-except
     except:
       return 0
@@ -92,7 +92,7 @@ class TelloDrone:
     speed = self.send_command('speed?')
 
     try:
-      return round(int(speed))
+      return int(speed)
     # pylint: disable=bare-except
     except:
       return 0
