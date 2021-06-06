@@ -6,7 +6,7 @@ from tellobot.colors import BACKGROUND_COLOR, TEXT_COLOR
 from tellobot.gui_constants import UI_WINDOW
 
 button_height = 32
-button_width = 64
+button_width = 72
 ui_height = 320
 ui_width = 720
 padding = 16
@@ -35,12 +35,12 @@ class GUIButtons:
       padding)
 
     # pylint: disable=no-value-for-parameter
-    if cvui.button(button_width, button_height, "TAKE OFF"):
+    if cvui.button(button_width, button_height, CMDS['TAKE_OFF']):
     # pylint: enable=no-value-for-parameter
       publish_user_cmd(CMDS['TAKE_OFF'])
 
     # pylint: disable=no-value-for-parameter
-    if cvui.button(button_width, button_height, "LAND"):
+    if cvui.button(button_width, button_height, CMDS['LAND']):
     # pylint: enable=no-value-for-parameter
       publish_user_cmd(CMDS['LAND'])
 
@@ -55,17 +55,17 @@ class GUIButtons:
       padding)
 
     # pylint: disable=no-value-for-parameter
-    if cvui.button(button_width, button_height, "USER_CONTROL"):
+    if cvui.button(button_width, button_height, CMDS['USER']):
       # pylint: enable=no-value-for-parameter
-      publish_user_cmd(CMDS['USER_CONTROL'])
+      publish_user_cmd(CMDS['USER'])
 
     # pylint: disable=no-value-for-parameter
-    if cvui.button(button_width, button_height, "TRACK"):
+    if cvui.button(button_width, button_height, CMDS['TRACK']):
       # pylint: enable=no-value-for-parameter
       publish_user_cmd(CMDS['TRACK'])
 
     # pylint: disable=no-value-for-parameter
-    if cvui.button(button_width, button_height, "SENTRY"):
+    if cvui.button(button_width, button_height, CMDS['SENTRY']):
       # pylint: enable=no-value-for-parameter
       publish_user_cmd(CMDS['SENTRY'])
 
@@ -80,22 +80,22 @@ class GUIButtons:
       padding)
 
     # pylint: disable=no-value-for-parameter
-    if cvui.button(button_width, button_height, "X_DEC"):
+    if cvui.button(button_width, button_height, CMDS['X_DEC']):
     # pylint: enable=no-value-for-parameter
       publish_user_cmd(CMDS['X_DEC'])
 
     # pylint: disable=no-value-for-parameter
-    if cvui.button(button_width, button_height, "X_INC"):
+    if cvui.button(button_width, button_height, CMDS['X_INC']):
     # pylint: enable=no-value-for-parameter
       publish_user_cmd(CMDS['X_INC'])
 
     # pylint: disable=no-value-for-parameter
-    if cvui.button(button_width, button_height, "Y_DEC"):
+    if cvui.button(button_width, button_height, CMDS['Y_DEC']):
     # pylint: enable=no-value-for-parameter
       publish_user_cmd(CMDS['Y_DEC'])
 
     # pylint: disable=no-value-for-parameter
-    if cvui.button(button_width, button_height, "Y_INC"):
+    if cvui.button(button_width, button_height, CMDS['Y_INC']):
     # pylint: enable=no-value-for-parameter
       publish_user_cmd(CMDS['Y_INC'])
 
@@ -110,19 +110,19 @@ class GUIButtons:
       padding)
 
     # pylint: disable=no-value-for-parameter
-    if cvui.button(button_width, button_height, "Z_DEC"):
+    if cvui.button(button_width, button_height, CMDS['Z_DEC']):
       publish_user_cmd(CMDS['Z_DEC'])
 
     # pylint: disable=no-value-for-parameter
-    if cvui.button(button_width, button_height, "Z_INC"):
+    if cvui.button(button_width, button_height, CMDS['Z_INC']):
       publish_user_cmd(CMDS['Z_INC'])
 
     # pylint: disable=no-value-for-parameter
-    if cvui.button(button_width, button_height, "Z_CW"):
+    if cvui.button(button_width, button_height, CMDS['Z_CW']):
       publish_user_cmd(CMDS['Z_CW'])
 
     # pylint: disable=no-value-for-parameter
-    if cvui.button(button_width, button_height, "Z_CCW"):
+    if cvui.button(button_width, button_height, CMDS['Z_CCW']):
       publish_user_cmd(CMDS['Z_CCW'])
 
     cvui.endRow()
@@ -136,19 +136,19 @@ class GUIButtons:
       padding)
 
     # pylint: disable=no-value-for-parameter
-    if cvui.button(button_width, button_height, "FLIP_L"):
+    if cvui.button(button_width, button_height, CMDS['FLIP_L']):
       publish_user_cmd(CMDS['FLIP_L'])
 
     # pylint: disable=no-value-for-parameter
-    if cvui.button(button_width, button_height, "FLIP_R"):
+    if cvui.button(button_width, button_height, CMDS['FLIP_R']):
       publish_user_cmd(CMDS['FLIP_R'])
 
     # pylint: disable=no-value-for-parameter
-    if cvui.button(button_width, button_height, "FLIP_F"):
+    if cvui.button(button_width, button_height, CMDS['FLIP_F']):
       publish_user_cmd(CMDS['FLIP_F'])
 
     # pylint: disable=no-value-for-parameter
-    if cvui.button(button_width, button_height, "FLIP_B"):
+    if cvui.button(button_width, button_height, CMDS['FLIP_B']):
       publish_user_cmd(CMDS['FLIP_B'])
 
     cvui.endRow()
@@ -162,19 +162,19 @@ class GUIButtons:
       padding)
 
     # pylint: disable=no-value-for-parameter
-    if cvui.button(button_width, button_height, "FLIP_FL"):
+    if cvui.button(button_width, button_height, CMDS['FLIP_FL']):
       publish_user_cmd(CMDS['FLIP_FL'])
 
     # pylint: disable=no-value-for-parameter
-    if cvui.button(button_width, button_height, "FLIP_FR"):
+    if cvui.button(button_width, button_height, CMDS['FLIP_FR']):
       publish_user_cmd(CMDS['FLIP_FR'])
 
     # pylint: disable=no-value-for-parameter
-    if cvui.button(button_width, button_height, "FLIP_BL"):
+    if cvui.button(button_width, button_height, CMDS['FLIP_BL']):
       publish_user_cmd(CMDS['FLIP_BL'])
 
     # pylint: disable=no-value-for-parameter
-    if cvui.button(button_width, button_height, "FLIP_BR"):
+    if cvui.button(button_width, button_height, CMDS['FLIP_BR']):
       publish_user_cmd(CMDS['FLIP_BR'])
 
     cvui.endRow()

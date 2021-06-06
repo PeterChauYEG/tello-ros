@@ -19,7 +19,7 @@ CMDS = {
     'FLIP_FR': 'flip_fr',
     'TRACK': 'track',
     'SENTRY': 'sentry',
-    'USER_CONTROL': 'user control',
+    'USER': 'user',
     'NONE': 'none',
 }
 

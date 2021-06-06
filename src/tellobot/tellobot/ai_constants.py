@@ -1,4 +1,5 @@
 from tellobot.gui_constants import GUI_CENTER_BOX_HALF_SIZE
+from tellobot.cmds import CMDS
 
 MAX_HEAD_Y = GUI_CENTER_BOX_HALF_SIZE + GUI_CENTER_BOX_HALF_SIZE
 MIN_HEAD_Y = GUI_CENTER_BOX_HALF_SIZE
@@ -55,3 +56,44 @@ IMAGES_DIR_PATH = '/Users/peterchau/robotics/ros-drone/src/images'
 
 DEFAULT_DRONE_MOVE_DISTANCE = 20
 DEFAULT_DRONE_MOVE_DEGREES = 10
+
+SENTRY_SEQUENCE = [
+  CMDS['TAKE_OFF'],
+  CMDS['Z_CW'],
+  CMDS['Z_CW'],
+  CMDS['Z_CW'],
+  CMDS['Z_CW'],
+  CMDS['Z_CW'],
+  CMDS['Z_CW'],
+  CMDS['Z_CW'],
+  CMDS['Z_CW'],
+  CMDS['Z_CW'],
+  CMDS['Z_CW'],
+  CMDS['Z_CW'],
+  CMDS['Z_CW'],
+  CMDS['Z_CW'],
+  CMDS['Z_CW'],
+  CMDS['Z_CW'],
+  CMDS['Z_CW'],
+  CMDS['Z_CW'],
+  CMDS['Z_CW'],
+  CMDS['Z_CW'],
+  CMDS['Z_CW'],
+  CMDS['Z_CW'],
+  CMDS['Z_CW'],
+  CMDS['Z_CW'],
+  CMDS['Z_CW'],
+  CMDS['Z_CW'],
+  CMDS['Z_CW'],
+  CMDS['Z_CW'],
+  CMDS['Z_CW'],
+  CMDS['Z_CW'],
+  CMDS['Z_CW'],
+  CMDS['Z_CW'],
+  CMDS['Z_CW'],
+  CMDS['Z_CW'],
+  CMDS['Z_CW'],
+  CMDS['Z_CW'],
+  CMDS['Z_CW'],
+  CMDS['LAND']
+]

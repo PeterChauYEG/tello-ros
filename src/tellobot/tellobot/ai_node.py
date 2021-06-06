@@ -50,7 +50,7 @@ class AINode(Node):
 
   def user_cmd_callback(self, request, response):
     self.ai.update_user_cmd_and_drone_cmd(request.cmd)
-    drone_cmd = self.ai.drone_cmd
+    drone_cmd = self.ai.get_drone_cmd()
     self.drone_cmd_publisher.publish(self.convert_drone_cmd_to_ros_msg(drone_cmd))
 
     response.result = True
@@ -67,14 +67,13 @@ class AINode(Node):
 
     resized_pose_points = pose_points.reshape(15, 2).tolist()
     self.ai.update_pose_points(resized_pose_points)
-    drone_cmd = self.ai.drone_cmd
+    drone_cmd = self.ai.get_drone_cmd()
     is_pose_in_box = self.ai.is_pose_in_box
 
     if is_pose_in_box:
       self.send_take_picture_request()
 
     self.is_pose_in_box_publisher.publish(self.convert_is_pose_in_box_to_ros_msg(is_pose_in_box))
-    self.get_logger().info('%s' % drone_cmd)
     self.drone_cmd_publisher.publish(self.convert_drone_cmd_to_ros_msg(drone_cmd))
 
 

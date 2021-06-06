@@ -2,7 +2,7 @@ from threading import Thread
 
 # pylint: disable=line-too-long
 from tellobot.ai_constants import MAX_HEAD_Y, MIN_HEAD_Y, OVERFLOW_NULL, DEFAULT_DRONE_MOVE_DISTANCE, \
-  DEFAULT_DRONE_MOVE_DEGREES, POSE_CENTERED_SENSITIVITY
+  DEFAULT_DRONE_MOVE_DEGREES, POSE_CENTERED_SENSITIVITY, SENTRY_SEQUENCE
 from tellobot.cmds import CMDS, DRONE_CMDS
 from tellobot.gui_constants import GUI_CENTER_BOX_HALF_SIZE, CENTER_POINT
 
@@ -11,7 +11,7 @@ class AI:
   def __init__(self):
     self.user_cmd = CMDS['NONE']
     self.drone_cmd = CMDS['NONE']
-    self.mode = CMDS['USER_CONTROL']
+    self.mode = CMDS['USER']
     self.taken_off = False
     self.thread_started = False
 
@@ -23,6 +23,8 @@ class AI:
       "z": 0,
       "y": 0
     }
+
+    self.sentry_sequence_index = 0
 
     self.find_human_tick = 0
     self.max_find_human_period = 0.5
@@ -36,6 +38,19 @@ class AI:
     self.user_cmd = CMDS['NONE']
     self.pose_points = None
 
+  def get_drone_cmd(self):
+
+    if self.mode == CMDS['SENTRY']:
+      self.sentry_update()
+      return self.drone_cmd
+
+    cmd = self.drone_cmd
+
+    if self.mode == CMDS['USER']:
+      self.user_control_update()
+
+    return cmd
+
   def update_pose_points(self, pose_points):
     self.pose_points = pose_points
 
@@ -46,26 +61,27 @@ class AI:
     self.reset_state()
     self.user_cmd = user_cmd
 
-    if self.user_cmd == CMDS['TAKE_OFF']:
+    if user_cmd == CMDS['TAKE_OFF']:
       self.taken_off = True
 
-    if self.taken_off is True:
+    if self.taken_off is True or user_cmd == CMDS['SENTRY']:
       self.calculate_drone_cmd_from_cmd(user_cmd, None)
 
-    if self.user_cmd == CMDS['LAND']:
+    if user_cmd == CMDS['LAND']:
       self.taken_off = False
 
   def calculate_drone_cmd_from_cmd(self, cmd, amount):
     if cmd == CMDS['NONE']:
       self.drone_cmd = cmd
-      return
 
-    if cmd in (
-        CMDS['SENTRY'],
-        CMDS['TRACK'],
-        CMDS['USER_CONTROL']):
+    if cmd == CMDS['TRACK']:
       self.mode = cmd
-      return
+
+    if cmd == CMDS['SENTRY']:
+      self.mode = cmd
+
+    if cmd == CMDS['USER']:
+      self.mode = cmd
 
     tello_cmd = DRONE_CMDS[cmd]
 
@@ -82,7 +98,6 @@ class AI:
         cmd_amount = amount
 
       self.drone_cmd = '{0} {1}'.format(tello_cmd, cmd_amount)
-      return
 
     if cmd in (CMDS['Z_CW'], CMDS['Z_CCW']):
       cmd_amount = DEFAULT_DRONE_MOVE_DEGREES
@@ -91,7 +106,6 @@ class AI:
         cmd_amount = amount
 
       self.drone_cmd = '{0} {1}'.format(tello_cmd, cmd_amount)
-      return
 
     if cmd in (
         CMDS['FLIP_L'],
@@ -105,9 +119,6 @@ class AI:
         CMDS['TAKE_OFF'],
         CMDS['LAND']):
       self.drone_cmd = tello_cmd
-      return
-
-    return
 
   def start(self):
     self.thread_started = True
@@ -126,12 +137,6 @@ class AI:
 
       if self.mode == CMDS['TRACK']:
         self.track_update()
-
-      if self.mode == CMDS['SENTRY']:
-        self.sentry_update()
-
-      if self.mode == CMDS['USER_CONTROL']:
-        self.user_control_update()
 
   def track_update(self):
     if not self.pose_points:
@@ -154,7 +159,18 @@ class AI:
     self.calculate_drone_cmd_from_cmd(cmd, None)
 
   def sentry_update(self):
-    self.reset_state()
+    if self.sentry_sequence_index >= len(SENTRY_SEQUENCE):
+      self.mode = CMDS['USER']
+      self.reset_state()
+      self.sentry_sequence_index = 0
+      return
+
+    if self.sentry_sequence_index == 0:
+      self.taken_off = True
+
+    cmd = SENTRY_SEQUENCE[self.sentry_sequence_index]
+    self.update_user_cmd_and_drone_cmd(cmd)
+    self.sentry_sequence_index += 1
 
   def user_control_update(self):
     self.reset_state()
@@ -232,7 +248,8 @@ class AI:
                 point[1] - (CENTER_POINT[1] + GUI_CENTER_BOX_HALF_SIZE))
 
   def get_is_pose_in_box(self):
-    if POSE_CENTERED_SENSITIVITY >= self.distance['x'] >= -POSE_CENTERED_SENSITIVITY and POSE_CENTERED_SENSITIVITY >= self.distance['z'] >= -POSE_CENTERED_SENSITIVITY:
+    if POSE_CENTERED_SENSITIVITY >= self.distance['x'] >= -POSE_CENTERED_SENSITIVITY and POSE_CENTERED_SENSITIVITY >= \
+        self.distance['z'] >= -POSE_CENTERED_SENSITIVITY:
       self.is_pose_in_box = True
       return
 

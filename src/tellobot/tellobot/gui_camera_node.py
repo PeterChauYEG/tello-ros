@@ -1,5 +1,5 @@
-import cv2
 import numpy as np
+import cv2
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String, Int16MultiArray, Bool, UInt8MultiArray

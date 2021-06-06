@@ -36,7 +36,6 @@ class WebCamera:
     self.thread.start()
 
   def update(self):
-
     while True:
       if not self.thread_started:
         return
