@@ -105,6 +105,9 @@ class AI:
       if amount:
         cmd_amount = amount
 
+      if self.mode == CMDS['SENTRY']:
+        cmd_amount = 30
+
       self.drone_cmd = '{0} {1}'.format(tello_cmd, cmd_amount)
 
     if cmd in (

@@ -7,13 +7,7 @@
     <list default="true" id="9e6b7c52-96dc-4b8b-9b15-d3eca34e35e1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/ai.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/ai.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/ai_constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/ai_constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/ai_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/ai_node.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/cmds.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/cmds.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/gui_buttons.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/gui_buttons.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/hardware_constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/hardware_constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/resolutions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/resolutions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/web_camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/web_camera.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tellobot/tellobot/gui_camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tellobot/tellobot/gui_camera.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
