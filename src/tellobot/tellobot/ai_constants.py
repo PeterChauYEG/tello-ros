@@ -52,3 +52,6 @@ OBJECT_DETECTION_CONFIG_FILE = "/Users/peterchau/robotics/ros-drone/src/tellobot
 OBJECT_DETECTION_CLASSES_FILE = "/Users/peterchau/robotics/ros-drone/src/tellobot/tellobot/models/ssd_mobilenet_v1_coco_2017_11_17/object_detection_classes_coco.txt"
 
 IMAGES_DIR_PATH = '/Users/peterchau/robotics/ros-drone/src/images'
+
+DEFAULT_DRONE_MOVE_DISTANCE = 20
+DEFAULT_DRONE_MOVE_DEGREES = 10

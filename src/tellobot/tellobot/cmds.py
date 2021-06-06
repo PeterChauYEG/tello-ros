@@ -19,10 +19,11 @@ CMDS = {
     'FLIP_FR': 'flip_fr',
     'TRACK': 'track',
     'SENTRY': 'sentry',
+    'USER_CONTROL': 'user control',
     'NONE': 'none',
 }
 
-TELLO_CMDS = {
+DRONE_CMDS = {
     'take_off': 'takeoff',
     'land': 'land',
     'x_dec': 'right',
@@ -41,5 +42,4 @@ TELLO_CMDS = {
     'flip_fr': 'flip fr',
     'flip_bl': 'flip bl',
     'flip_br': 'flip br',
-    'none': 'none',
 }

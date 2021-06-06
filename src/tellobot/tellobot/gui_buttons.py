@@ -44,14 +44,29 @@ class GUIButtons:
     # pylint: enable=no-value-for-parameter
       publish_user_cmd(CMDS['LAND'])
 
+    cvui.endRow()
+
+    cvui.beginRow(
+      self.frame,
+      column_width + (padding * 2),
+      row_height + padding,
+      column_width,
+      row_height,
+      padding)
+
+    # pylint: disable=no-value-for-parameter
+    if cvui.button(button_width, button_height, "USER_CONTROL"):
+      # pylint: enable=no-value-for-parameter
+      publish_user_cmd(CMDS['USER_CONTROL'])
+
     # pylint: disable=no-value-for-parameter
     if cvui.button(button_width, button_height, "TRACK"):
-    # pylint: enable=no-value-for-parameter
+      # pylint: enable=no-value-for-parameter
       publish_user_cmd(CMDS['TRACK'])
 
     # pylint: disable=no-value-for-parameter
     if cvui.button(button_width, button_height, "SENTRY"):
-    # pylint: enable=no-value-for-parameter
+      # pylint: enable=no-value-for-parameter
       publish_user_cmd(CMDS['SENTRY'])
 
     cvui.endRow()
@@ -59,7 +74,7 @@ class GUIButtons:
     cvui.beginRow(
       self.frame,
       column_width + (padding * 2),
-      row_height + (padding * 2),
+      (row_height * 2) + padding,
       column_width,
       row_height,
       padding)
@@ -89,7 +104,7 @@ class GUIButtons:
     cvui.beginRow(
       self.frame,
       column_width + (padding * 2),
-      (row_height * 2) + (padding * 2),
+      (row_height * 3) + padding,
       column_width,
       row_height,
       padding)
@@ -115,7 +130,7 @@ class GUIButtons:
     cvui.beginRow(
       self.frame,
       column_width + (padding * 2),
-      (row_height * 3) + (padding * 2),
+      (row_height * 4) + padding,
       column_width,
       row_height,
       padding)
@@ -141,7 +156,7 @@ class GUIButtons:
     cvui.beginRow(
       self.frame,
       column_width + (padding * 2),
-      (row_height * 4) + (padding * 2),
+      (row_height * 5) + padding,
       column_width,
       row_height,
       padding)

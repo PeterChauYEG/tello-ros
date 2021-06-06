@@ -97,15 +97,6 @@ class TelloDrone:
     except:
       return 0
 
-  def land(self):
-    return self.send_command('land')
-
-  def takeoff(self):
-    self.send_command('takeoff')
-
-  def flip(self, direction):
-    return self.send_command('flip %s' % direction)
-
   def stop(self):
     self.thread_started = False
 

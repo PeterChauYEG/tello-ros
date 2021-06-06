@@ -16,6 +16,7 @@ class CameraNode(Node):
     self.fps = 0.00
     self.start_time = 0
     self.end_time = 0
+
     self.camera = None
 
     self.declare_parameter('camera_type', 'web_camera')

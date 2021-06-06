@@ -2,6 +2,7 @@ import cv2
 import rclpy
 from rclpy.node import Node
 from tellobot_interfaces.msg import DroneInfo
+from tellobot_interfaces.srv import UserCmd
 from std_msgs.msg import String, Float32
 from tellobot.gui_buttons import GUIButtons
 
@@ -9,8 +10,6 @@ from tellobot.gui_buttons import GUIButtons
 class GUIButtonsNode(Node):
   def __init__(self):
     super().__init__('gui_buttons_node')
-
-    self.user_cmd_publisher = self.create_publisher(String, 'user_cmd', 1)
 
     self.drone_info_subscription = self.create_subscription(
       DroneInfo,
@@ -36,18 +35,21 @@ class GUIButtonsNode(Node):
       self.listener_pose_callback,
       1)
 
+    self.user_cmd_service = self.create_client(UserCmd, 'user_cmd')
+
+    while not self.user_cmd_service.wait_for_service(timeout_sec=1.0):
+      self.get_logger().info('service not available, waiting again...')
+
     self.gui_buttons = GUIButtons()
 
     timer_period = 0.01
     self.timer = self.create_timer(timer_period, self.timer_callback)
 
-  def convert_user_cmd_to_ros_msg(self, user_cmd):
-    msg = String()
-    msg.data = user_cmd
-    return msg
 
-  def publish_user_cmd(self, user_cmd):
-    self.user_cmd_publisher.publish(self.convert_user_cmd_to_ros_msg(user_cmd))
+  def send_user_cmd_request(self, cmd):
+    req = UserCmd.Request()
+    req.cmd = cmd
+    self.user_cmd_service.call_async(req)
 
   def fps_callback(self, msg):
     self.gui_buttons.cam_fps = round(msg.data, 2)
@@ -63,8 +65,7 @@ class GUIButtonsNode(Node):
     self.gui_buttons.pose = msg.data
 
   def timer_callback(self):
-    self.gui_buttons.show(self.publish_user_cmd)
-
+    self.gui_buttons.show(self.send_user_cmd_request)
     cv2.waitKey(1)
 
 

@@ -37,6 +37,7 @@ find_package(rosidl_default_generators REQUIRED)
 
 rosidl_generate_interfaces(tellobot_interfaces
   "srv/TakePicture.srv"
+  "srv/UserCmd.srv"
   "msg/StringArray.msg"
   "msg/DroneInfo.msg"
  )
